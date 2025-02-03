@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+const {projectName, projectRole, projectDate, projectImage, projectDescription} = Astro.props
+---
+
+<div class="max-w-7xl flex flex-col gap-20">
+    <div class="flex flex-row justify-between">
+        <div class="flex flex-col gap-4 items-left">
+            <h3>-Project Name</h3>
+            <p>{projectName}</p>
+        </div>
+        <div class="flex flex-col gap-4 items-left">
+            <h3>-Role</h3>
+            <p>{projectRole}</p>
+        </div>
+        <div class="flex flex-col gap-4 items-left">
+            <h3>-Date</h3>
+            <p>{projectDate}</p>
+        </div>
+    </div>
+    <div>
+        <img src={projectImage} alt={projectImage}>
+    </div>
+    <div>
+        <p>{projectDescription}</p>
+    </div>
+</div>
