@@ -2,18 +2,29 @@
 import "../styles/global.css";
 ---
 
-<div class="w-full h-80 items-center">
-    <div class="flex flex-row justify-between mx-auto sm:px-4 px-4 items-center">
+<div class="max-w-7xl h-40 items-center">
+    <div class="flex h-20 flex-row justify-between mx-auto sm:px-4 px-4 items-center">
         <div>
             <a href="/" class="text-2xl font-bold text-black">VALERI CIUTAC</a>
         </div>
-        <div class="flex flex-row gap-4">
-            <a href="/about" class="text-2xl font-bold text-black">About</a>
-            <a href="/contact" class="text-2xl font-bold text-black">Contact</a>
-            <a href="https://www.behance.net/valerychutak" class=" text-black transition duration-200 hover:translate-y-1 "></a>
-            <img src="../behance-icon.svg" alt="behance icon">
-
-
-        </div>
+        <ul class="flex flex-row gap-4">
+            <li class="text-xl font-bold text-black transition duration-100 hover:translate-y-[-4px]"><a href="/about" >About</a></li>
+            <li class="text-xl font-bold text-black transition duration-100 hover:translate-y-[-4px]"><a href="/contact" >Contact</a></li>
+            <li class="text-black transition duration-100 hover:translate-y-[-4px]">
+                <a target="_blank" href="https://www.behance.net/valerychutak" >
+                    <img src="../behance-icon.svg" alt="behance icon">
+                </a>
+            </li>
+            <li class="text-black transition duration-100 hover:translate-y-[-4px]">
+                <a target="_blank" href="https://www.instagram.com/valerichutak/" >
+                    <img src="../instagram-icon.svg" alt="instagram icon">
+                </a>
+            </li>
+            <li class="text-black transition duration-100 hover:translate-y-[-4px]">
+                <a target="_blank" href="https://www.linkedin.com/in/valery-chutak" >
+                    <img src="../linkedin-icon.svg" alt="linkedin icon">
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
