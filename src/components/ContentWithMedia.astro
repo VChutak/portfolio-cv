@@ -1,13 +1,35 @@
 ---
 import "../styles/global.css";
-const {contentImage, contentTitle, contentDescription, imageCellWidth=6, contentCellWidth=6} = Astro.props
+const {contentImage, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder} = Astro.props
+
+const gridClasses = {
+    1:"col-span-1",
+    2:"col-span-2",
+    3:"col-span-3",
+    4:"col-span-4",
+    5:"col-span-5",
+    6:"col-span-6",
+    7:"col-span-7",
+    8:"col-span-8",
+}
+
+const orderClasses = {
+    1:"order-first",
+    2:"order-last",
+}
+
+const imageOrder:string = orderClasses[imageCellOrder]
+const contentOrder:string = orderClasses[contentCellOrder]
+
+const imageSpan:string = gridClasses[imageCellWidth]
+const contentSpan:string = gridClasses[contentCellWidth]
 ---
 
-<div class="grid  sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 py-20 mx-auto bg-slate-100">
-    <div class={`col-span-${imageCellWidth} flex flex-col jsutify-center items-center`}>
+<div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 py-20 mx-auto bg-slate-100">
+    <div class={`${imageSpan} flex flex-col items-center ${imageOrder}`}>
         <img src={contentImage} alt={contentImage} class="min-w-40">
     </div>
-    <div class=`col-span-${contentCellWidth} flex flex-col gap-4`>
+    <div class={`${contentSpan} flex flex-col gap-4 ${contentOrder}`}>
         <h3 class="text-3xl font-bold">{contentTitle}</h3>
         <p >{contentDescription}</p>
     </div>

@@ -1,0 +1,15 @@
+---
+import "../styles/global.css";
+const {previousProjectLink, nextProjectLink,previousProjectTitle, nextProjectTitle} = Astro.props
+---
+
+<div class="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-10">
+    <div class="flex flex-col gap-4">
+        <h4 class="text-2xl">See other Projects</h4> 
+        <div class="flex sm:flex-row flex-col gap-4 justify-between">
+            <a href={previousProjectLink}>← {previousProjectTitle}</a> 
+            
+            <a href={nextProjectLink}>{nextProjectTitle} →</a>
+        </div>
+    </div>
+</div>
