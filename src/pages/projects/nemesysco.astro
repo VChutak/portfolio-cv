@@ -7,6 +7,7 @@ import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
 import TwoCards from "../../components/TwoCards.astro";
 import Heading from "../../components/Heading.astro";
+import FullWidthVideo from "../../components/FullWidthVideo.astro";
 ---
 
 <Layout>
@@ -16,7 +17,9 @@ import Heading from "../../components/Heading.astro";
         projectDate="05-2023" 
         projectImage="../../projects/nemesysco/Nemesysco-header.webp" 
         projectDescription="Nemesysco's app is a unique blend of technology and implementation. The app design needed to be simple and present a ton of information in real time, all while focusing the viewer on the important parts of the app.The challenge was to come up with a progressive disclosure of information and emphasizing different parts of the app at varying intervals."/>
-   
+   <FullWidthVideo 
+        videoLink="https://player.vimeo.com/video/840047836?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+        backgroundColor="#3c3c3c"/>
     <ContentWithMedia
         backgroundColor="#ececec"
         imageCellWidth={6}
@@ -27,14 +30,24 @@ import Heading from "../../components/Heading.astro";
         contentTitle="What is The Emotional Diamond"
         contentDescription="Nemesysco’s Emotional Diamond concept was developed in 2012 to simplify the visualization and understanding of the human emotional reaction complexity as detected by the LVA. It is built of 8 wings: “Energy” at the top, “Stress” at the bottom, “Logic and confidence” to the left, “Emotion” to the right, and 4 additional indications displaying levels of “Passion”, “Uneasy”, “Mental Effort” and “Concentration” (these are only the main 8 of the 14 emotional states LVA can detect).‍‍The core principle behind the Emotional Diamond is that there are no good or bad emotions, as they are all context dependent. For example, we would expect to see stressful reactions when discussing intimidating events, and we will look for energetic and emotional reactions when we discuss prospects and achievements. When examining the emotional reactions over time, certain traits can be easily observed, and teach us about the true personality of the evaluated party." />
     <Heading title="The Problem" />
+    <ContentWithMedia
+        backgroundColor="#ffffff"
+        imageCellWidth={8}
+        imageCellOrder={1}
+        contentCellWidth={4}
+        contentCellOrder={2}
+        contentImage="../../projects/nemesysco/heatmap-webp"
+        contentTitle="The eyes of the beholder"
+        contentDescription="The main issue was that the person’s face was the main thing you saw on the app. People usually notice faces first, so to make events stand out, I used a trick with an immediate change in color contrast of the diamond ray that expessed the highest emotional response.(heatmap as example, not actual data)" />
     <TwoCards 
         backgroundColor="#ffffff"
-        imageOne="../test.jpg"
-        imageTwo="../test.jpg"
-        cardOneTitle="Title One"
-        cardTwoTitle="Title Two"
-        cardOneDescription="lorem ipsum fjdlffjsfslfj lorem lorem ipsum fjdlffjsfslfjlorem ipsum fjdlffjsfslfjlorem ipsum fjdlffjsfslfj"
-        cardTwoDescription="lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj "/>
+        imageOne="../../projects/nemesysco/diamond-ok.webp"
+        imageTwo="../../projects/nemesysco/diamond-error.webp"
+        cardOneTitle="Normal state"
+        cardTwoTitle="Error state"
+        cardOneDescription="During normal operation, the diamond is operating as ususal."
+        cardTwoDescription="To signal that the app encountered an eror, the diamond rotates to form a stop sign, a signal that something went wrong and the app cannot continue."/>
+    <Heading title="The Solution" />
     <Conclusion
         conclusionTitle="Conclusion"
         conclusionText="No matter what, keep pushing"/>

@@ -6,20 +6,20 @@ const {imageOne, imageTwo, cardOneTitle, cardTwoTitle, cardOneDescription, cardT
     <div class="max-w-7xl mx-auto grid sm:grid-cols-2 grid-cols-1 gap-4 px-4" >
         <div class="flex flex-col gap-10">
                 <div >
-                <img src={imageOne} alt={imageOne} class="rounded-lg">
+                <img src={imageOne} alt={imageOne} class="rounded-lg mx-auto">
             </div>
             <div>
-                <h3 class="font-bold text-3xl">{cardOneTitle}</h3>
-                <p>{cardOneDescription}</p>
+                <h3 class="font-bold text-3xl text-center">{cardOneTitle}</h3>
+                <p class="max-w-[50ch] text-center mx-auto">{cardOneDescription}</p>
             </div>
         </div>
         <div class="flex flex-col gap-10">
             <div>
-                <img src={imageTwo} alt={imageOne} class="rounded-lg">
+                <img src={imageTwo} alt={imageOne} class="rounded-lg mx-auto">
             </div>
             <div>
-                <h3 class="font-bold text-3xl">{cardTwoTitle}</h3>
-                <p>{cardTwoDescription}</p>
+                <h3 class="font-bold text-3xl text-center">{cardTwoTitle}</h3>
+                <p class="max-w-[50ch] text-center mx-auto">{cardTwoDescription}</p>
             </div>
         </div>
     </div>

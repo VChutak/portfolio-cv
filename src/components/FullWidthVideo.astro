@@ -1,0 +1,11 @@
+---
+import "../styles/global.css";
+const {videoLink, backgroundColor, additionalText} = Astro.props
+
+---
+<div class="w-full py-20" style={{backgroundColor: backgroundColor}}>
+    <div class="max-w-7xl mx-auto">
+        <iframe src={videoLink} title="Nemesysco LVA design"></iframe>
+    </div>
+</div>
+   
