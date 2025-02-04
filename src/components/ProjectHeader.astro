@@ -3,8 +3,8 @@ import "../styles/global.css";
 const {projectName, projectRole, projectDate, projectImage, projectDescription} = Astro.props
 ---
 
-<div class="max-w-7xl flex sm:flex-col gap-10 sm:px-4 px-4">
-    <div class="flex sm:flex-row flex-col justify-between">
+<div class="max-w-7xl flex flex-col gap-10 sm:px-4 px-4 mx-auto sm:mt-0 mt-6">
+    <div class="flex sm:flex-row flex-col justify-between gap-y-6">
         <div class="flex flex-col gap-2 items-left">
             <h3>-Project Name</h3>
             <p class="font-bold">{projectName}</p>
@@ -13,8 +13,8 @@ const {projectName, projectRole, projectDate, projectImage, projectDescription} 
             <h3>-Role</h3>
             <p class="font-bold">{projectRole}</p>
         </div>
-        <div class="flex flex-col gap-2 items-right">
-            <h3 class="text-right">-Date</h3>
+        <div class="flex flex-col gap-2 sm:items-right items-left">
+            <h3 class="sm:text-right text-left">-Date</h3>
             <p class="font-bold">{projectDate}</p>
         </div>
     </div>

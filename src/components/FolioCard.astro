@@ -2,21 +2,22 @@
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 import "../styles/global.css";
-const {folioImage, backgroundColor, title="default"} = Astro.props
+const {folioImage, backgroundColor, title="default", link, projectRole} = Astro.props
 ---
 
-<div style={{backgroundColor}} class="min-w-40 min-h-40 rounded-lg focus:outnliene-none focus:ring-2 focus:ring-black">
-    <div class="flex flex-col gap-4 items-center content-center">
-        <div class="flex flex-row justify-between p-4 w-full">
-            <div class="flex flex-col gap-2 text-white">
-                <h3 class="text-xl font-bold">{title}</h3>
-                <p>Brand Identity • Web Design</p>
+<a href={link}>
+    <div style={{backgroundColor}} class="min-w-40 min-h-40 rounded-lg focus:outnliene-none focus:ring-2 focus:ring-black">
+        <div class="flex flex-col gap-4 items-center content-center">
+            <div class="flex flex-row justify-between p-4 w-full">
+                <div class="flex flex-col gap-2 text-white">
+                    <h3 class="text-xl font-bold">{title}</h3>
+                    <p>{projectRole}</p>
+                </div>
+                <div><span class="text-xl font-bold text-white">2025</span></div>
             </div>
-            <div><span class="text-xl font-bold text-white">2025</span></div>
-        </div>
-        <div>
-            <img src={folioImage} alt="" class="min-w-60 min-h-60">
+            <div>
+                <img src={folioImage} alt=`${title} project image` class="min-w-60 min-h-60">
+            </div>
         </div>
     </div>
-
-</div>
+</a>

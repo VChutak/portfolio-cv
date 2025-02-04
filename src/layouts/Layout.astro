@@ -12,23 +12,20 @@ import Header from "../components/Header.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
-	
-		<Header />
-		
-		<slot />
-
-		<Footer />
-	
-
+	<body >
+		<div class="w-full">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
 	</body>
 </html>
 
-<style>
+<!-- <style>
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
 	}
-</style>
+</style> -->
