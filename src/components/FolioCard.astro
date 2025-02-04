@@ -5,8 +5,8 @@ import "../styles/global.css";
 const {folioImage, backgroundColor, title="default", link, projectRole} = Astro.props
 ---
 
-<a href={link}>
-    <div style={{backgroundColor}} class="min-w-40 min-h-96 rounded-lg focus:outnliene-none focus:ring-2 focus:ring-black group">
+<a href={link} class="group focus:outline-none focus:ring-2 focus:ring-black">
+    <div style={{backgroundColor}} class="min-w-40 min-h-96 rounded-lg ">
         <div class="flex flex-col gap-4 items-center content-center">
             <div class="flex flex-row justify-between p-4 w-full">
                 <div class="flex flex-col gap-2 text-white">
@@ -16,7 +16,7 @@ const {folioImage, backgroundColor, title="default", link, projectRole} = Astro.
                 <div><span class="text-xl font-bold text-white">2025</span></div>
             </div>
             <div class="relative w-full h-full">
-                <img src={folioImage} alt=`${title} project image` class="min-w-60 min-h-60 m-0 group-hover:m-10 trasnition duration-150 absolute top-[50%] left-[50%]">
+                <img src={folioImage} alt=`${title} project image` class="min-w-40 min-h-40 m-0 group-hover:scale-[1.1] transition-transform duration-150  group-focus:scale-[1.1]">
             </div>
         </div>
     </div>
