@@ -26,10 +26,10 @@ const contentSpan:string = gridClasses[contentCellWidth]
 ---
 <div class="w-full py-20" style={{backgroundColor: backgroundColor}}>
     <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto" >
-        <div class={`${imageSpan} flex flex-col items-center ${imageOrder}`}>
+        <div class={`col-span-6 sm:${imageSpan}  flex flex-col items-center ${imageOrder}`}>
             <img src={contentImage} alt={contentImage} class="min-w-40 rounded-lg">
         </div>
-        <div class={`${contentSpan} flex flex-col gap-4 ${contentOrder}`}>
+        <div class={`col-span-6 sm:${contentSpan}  flex flex-col gap-4 ${contentOrder}`}>
             <h3 class="text-3xl font-bold">{contentTitle}</h3>
             <p >{contentDescription}</p>
         </div>
