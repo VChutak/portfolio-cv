@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+const {imageOne, imageTwo, cardOneTitle, cardTwoTitle, cardOneDescription, cardTwoDescription, backgroundColor} = Astro.props
+---
+<div class="w-full py-10" style={{backgroundColor: backgroundColor}}>
+    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 grid-cols-1 gap-4 px-4" >
+        <div class="flex flex-col gap-10">
+                <div >
+                <img src={imageOne} alt={imageOne} class="rounded-lg">
+            </div>
+            <div>
+                <h3 class="font-bold text-3xl">{cardOneTitle}</h3>
+                <p>{cardOneDescription}</p>
+            </div>
+        </div>
+        <div class="flex flex-col gap-10">
+            <div>
+                <img src={imageTwo} alt={imageOne} class="rounded-lg">
+            </div>
+            <div>
+                <h3 class="font-bold text-3xl">{cardTwoTitle}</h3>
+                <p>{cardTwoDescription}</p>
+            </div>
+        </div>
+    </div>
+</div>

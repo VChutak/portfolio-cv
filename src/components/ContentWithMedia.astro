@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-const {contentImage, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder} = Astro.props
+const {contentImage, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor} = Astro.props
 
 const gridClasses = {
     1:"col-span-1",
@@ -24,13 +24,14 @@ const contentOrder:string = orderClasses[contentCellOrder]
 const imageSpan:string = gridClasses[imageCellWidth]
 const contentSpan:string = gridClasses[contentCellWidth]
 ---
-
-<div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 py-20 mx-auto bg-slate-100">
-    <div class={`${imageSpan} flex flex-col items-center ${imageOrder}`}>
-        <img src={contentImage} alt={contentImage} class="min-w-40">
-    </div>
-    <div class={`${contentSpan} flex flex-col gap-4 ${contentOrder}`}>
-        <h3 class="text-3xl font-bold">{contentTitle}</h3>
-        <p >{contentDescription}</p>
+<div class="w-full py-20" style={{backgroundColor: backgroundColor}}>
+    <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto" >
+        <div class={`${imageSpan} flex flex-col items-center ${imageOrder}`}>
+            <img src={contentImage} alt={contentImage} class="min-w-40">
+        </div>
+        <div class={`${contentSpan} flex flex-col gap-4 ${contentOrder}`}>
+            <h3 class="text-3xl font-bold">{contentTitle}</h3>
+            <p >{contentDescription}</p>
+        </div>
     </div>
 </div>
