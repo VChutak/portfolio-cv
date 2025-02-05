@@ -3,6 +3,8 @@
 import "..//../styles/global.css";
 import ProjectHeader from '..//../components/ProjectHeader.astro';
 import Layout from '../../layouts/Layout.astro';
+import LayoutProject from './LayoutProject.astro';
+
 import ContentWithMedia from "../../components/ContentWithMedia.astro";
 import Conclusion from "../../components/Conclusion.astro";
 ---
@@ -10,6 +12,7 @@ import Conclusion from "../../components/Conclusion.astro";
 
 
 <Layout>
+    
     <ProjectHeader 
         projectName="Semrush" 
         projectRole="Designer Web Designer" 
@@ -27,4 +30,5 @@ import Conclusion from "../../components/Conclusion.astro";
         nextProjectLink="./semrush" 
         previousProjectTitle="Automaton" 
         nextProjectTitle="Semrush"/>
+    
 </Layout>
