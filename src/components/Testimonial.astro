@@ -3,17 +3,17 @@ import "../styles/global.css";
 const {personLink,personImage, personName, personRole, personTestimonial,cellWidth} = Astro.props
 ---
 
-<div class={`flex sm:flex-row md:flex-col gap-6 col-span-${cellWidth} p-4`}>
+<div class={`flex flex-col  sm:flex-row md:flex-col gap-6 col-span-${cellWidth} p-4`}>
     <div>
-        <img src={personImage} alt={personImage} class="min-w-16 max-w-16 rounded-full">
+        <img src={personImage} alt={personImage} class="min-w-16 max-w-16 rounded-full mx-auto  sm:mx-0">
     </div>
     <div class="flex flex-col gap-2">
         <div class="flex flex-col gap-0">
             <a href={personLink} target="_blank">
-                <h3 class="font-bold text-2xl">{personName}</h3>
+                <h3 class="font-bold text-2xl text-pretty sm:text-left text-center">{personName}</h3>
             </a>
-            <p>{personRole}</p>
+            <p class="text-pretty sm:text-left text-center">{personRole}</p>
         </div>
-        <p>{personTestimonial}</p>
+        <p class="text-pretty sm:text-left text-center">{personTestimonial}</p>
     </div>
 </div>

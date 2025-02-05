@@ -1,9 +1,20 @@
 ---
 import "../styles/global.css";
-const {conclusionText, conclusionTitle} = Astro.props
+const {conclusionText1, conclusionText2, conclusionText3, conclusionTitle} = Astro.props
 ---
 
 <div class="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-10">
     <h3 class="text-3xl font-bold">{conclusionTitle}</h3>
-    <p>{conclusionText}</p>
+    
+    <ul>
+        <li>
+            <p>{conclusionText1}</p>
+        </li>
+        <li>
+            <p>{conclusionText2}</p>
+        </li>
+        <li>
+            <p>{conclusionText3}</p>
+        </li>
+    </ul>
 </div>

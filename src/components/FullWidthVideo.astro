@@ -5,7 +5,9 @@ const {videoLink, backgroundColor, additionalText} = Astro.props
 ---
 <div class="w-full py-20" style={{backgroundColor: backgroundColor}}>
     <div class="max-w-7xl mx-auto">
-        <iframe src={videoLink} title="Nemesysco LVA design"></iframe>
+        <div class="pb-[56.25%] relative overflow-hidden max-w-full h-0`">
+            <iframe src={videoLink} title="Nemesysco LVA design" class="absolute top-0 left-0 w-full h-full border-0 rounded-lg"></iframe>
+        </div>
     </div>
 </div>
    
