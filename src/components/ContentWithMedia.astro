@@ -1,16 +1,18 @@
 ---
 import "../styles/global.css";
-const {contentImage, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor} = Astro.props
+const {contentImage, contentImage2, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor} = Astro.props
 
 const gridClasses = {
-    1:"col-span-1",
-    2:"col-span-2",
-    3:"col-span-3",
-    4:"col-span-4",
-    5:"col-span-5",
-    6:"col-span-6",
-    7:"col-span-7",
-    8:"col-span-8",
+    1:"sm:col-span-1",
+    2:"sm:col-span-2",
+    3:"sm:col-span-3",
+    4:"sm:col-span-4",
+    5:"sm:col-span-5",
+    6:"sm:col-span-6",
+    7:"sm:col-span-7",
+    8:"sm:col-span-8",
+    9:"sm:col-span-9",
+    10:"sm:col-span-10"
 }
 
 const orderClasses = {
@@ -26,12 +28,15 @@ const contentSpan:string = gridClasses[contentCellWidth]
 ---
 <div class="w-full py-20" style={{backgroundColor: backgroundColor}}>
     <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto" >
-        <div class={`col-span-6 sm:${imageSpan}  flex flex-col items-center ${imageOrder}`}>
+        <div class={`col-span-6 ${imageSpan}  flex flex-col items-center ${imageOrder} gap-4`}>
             <img src={contentImage} alt={contentImage} class="min-w-40 rounded-lg">
+            <img src={contentImage2} alt={contentImage2} class="min-w-40 rounded-lg">
+
         </div>
-        <div class={`col-span-6 sm:${contentSpan}  flex flex-col gap-4 ${contentOrder}`}>
+        <div class={`col-span-6 ${contentSpan}  flex flex-col gap-4 ${contentOrder}`}>
             <h3 class="text-3xl font-bold">{contentTitle}</h3>
             <p >{contentDescription}</p>
+            <slot/>
         </div>
     </div>
 </div>

@@ -3,8 +3,8 @@ import "../styles/global.css";
 const {imageOne, imageTwo, cardOneTitle, cardTwoTitle, cardOneDescription, cardTwoDescription, backgroundColor} = Astro.props
 ---
 <div class="w-full py-10" style={{backgroundColor: backgroundColor}}>
-    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 grid-cols-1 gap-4 px-4" >
-        <div class="flex flex-col gap-10">
+    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 grid-cols-1 gap-4 px-4 gap-y-10" >
+        <div class="flex flex-col gap-6">
                 <div >
                 <img src={imageOne} alt={imageOne} class="rounded-lg mx-auto">
             </div>
@@ -13,7 +13,7 @@ const {imageOne, imageTwo, cardOneTitle, cardTwoTitle, cardOneDescription, cardT
                 <p class="max-w-[50ch] text-center mx-auto">{cardOneDescription}</p>
             </div>
         </div>
-        <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-6">
             <div>
                 <img src={imageTwo} alt={imageOne} class="rounded-lg mx-auto">
             </div>
