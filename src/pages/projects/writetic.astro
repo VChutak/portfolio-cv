@@ -18,9 +18,14 @@ import ContactMe from "../../components/ContactMe.astro";
         projectDate="05-2023" 
         projectImage="../../projects/writetic/Writetic-header.webp" 
         projectDescription="Writetic is an AI-powered marketing platform designed to streamline content creation, campaign management, and team collaboration for small to medium-sized marketing teams. The platform integrates intelligent writing assistance, automated content optimization, and seamless team coordination tools to enhance productivity and creativity."/>
-    <ContentWithMedia
-        imageCellWidth=6
-        contentCellWidth=6
+   
+<FullHeightImage 
+image="../../projects/writetic/writetic-full.webp"
+backgroundColor="#6229CE"/>
+        <ContentWithMedia
+        imageFirst={true}
+        imageCellWidth={6}
+        contentCellWidth={6}
         contentImage="../../projects/writetic/Writetic-templates.gif"
         contentImage2="../../projects/writetic/Writetic-templates.gif"
 
@@ -29,17 +34,15 @@ import ContactMe from "../../components/ContactMe.astro";
     <!-- <h2>HFKHFKDSHFKSHFKSHFHF</h2> -->
     </ContentWithMedia>
     <ContentWithMedia 
+    imageFirst={false}
     imageBgColor="#6212ee"
-    `   imageCellWidth=6
-        contentCellWidth=6
+       imageCellWidth={6}
+        contentCellWidth={6}
         contentImage="../../projects/writetic/writetic-featureimage.webp"
         contentTitle="The new way to write"
         contentDescription=""
     />
 
-<FullHeightImage 
-        image="../../projects/writetic/writetic-full.webp"
-        backgroundColor="#6229CE"/>
     <Conclusion 
         previousProjectLink="./automaton" 
         nextProjectLink="./semrush" 

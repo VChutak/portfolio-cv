@@ -32,12 +32,11 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
         />
    
 
-        <ContentWithMedia
+        <ContentWithMedia 
+        imageFirst={true}
         backgroundColor="#fef3ee"
         imageCellWidth={6}
         contentCellWidth={6}
-        imageCellOrder={1}
-        contentCellOrder={2}
         contentImage="../../projects/bazinga/bazinga-brand0.webp"
         contentTitle="It al starts with a logo"
         contentDescription="A strong logo is simple, memorable, and versatile, ensuring it resonates with the audience across various platforms and mediums. Bazinga's logo represents a stylized chat bubble and the instantly recognizable AI magic star" 
@@ -45,10 +44,9 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
      
     
         <ContentWithMedia
+        imageFirst={false}
         imageCellWidth={4}
-        imageCellOrder={2}
         contentCellWidth={8}
-        contentCellOrder={1}
         contentImage="../../projects/bazinga/bazinga-brand1.webp"
         contentTitle="Base element for the brand identity"
         contentDescription=`All graphic elements are derived from the logo’s shapes, creating a unified and recognizable design across all materials. This ensures that every visual detail—whether it’s icons, buttons, or backgrounds—feels intentional and aligned with the brand’s identity. By maintaining this consistency, the brand becomes more visually cohesive, reinforcing trust and recognition while making the user experience feel polished and seamless.`
@@ -61,10 +59,9 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
         />
 
         <ContentWithMedia
+        imageFirst={true}
         imageCellWidth={6}
         contentCellWidth={6}
-        imageCellOrder={1}
-        contentCellOrder={2}
         contentImage="../../projects/bazinga/bazinga-brand3.webp"
         contentTitle="Color"
         contentDescription=`I carefully crafted a color palette centered around orange and blue to make the brand feel more approachable, especially for non-tech audiences. Orange conveys energy, warmth, and creativity, while blue adds a sense of trust and professionalism—striking a perfect balance between innovation and reliability.
@@ -73,20 +70,18 @@ Starting with these core colors, I systematically expanded the palette, ensuring
         />
 
         <ContentWithMedia
+        imageFirst={true}
         imageCellWidth={6}
         contentCellWidth={6}
-        imageCellOrder={1}
-        contentCellOrder={2}
         contentImage="../../projects/bazinga/bazinga-brand4.webp"
         contentTitle="Tailwind CSS Palette"
         contentDescription=`From the initial shades, I derived a comprehensive Tailwind CSS color system, defining variations for backgrounds, text, buttons, and accents. This approach provided scalability and flexibility, allowing for a visually cohesive experience across the entire platform while maintaining accessibility and contrast.`
         />
 
         <ContentWithMedia
+        imageFirst={false}
         imageCellWidth={8}
-        imageCellOrder={2}
         contentCellWidth={4}
-        contentCellOrder={1}
         contentImage="../../projects/bazinga/bazinga-pricing.webp"
         contentTitle="Expanding the style to UI elements"
         contentDescription="A major advantage of being both the brand designer and the UI/UX designer is the ability to create truly distinctive and cohesive user interfaces. This ensures that every element not only aligns seamlessly with the brand’s identity but also feels intentional, polished, and visually unique. By maintaining full creative control over both branding and UI/UX, I can design experiences that are not just functional, but also aesthetically compelling and instantly recognizable—giving the product a powerful competitive edge." 
@@ -101,12 +96,12 @@ Starting with these core colors, I systematically expanded the palette, ensuring
         conclusionTitle="Conclusion"
         conclusionText="No matter what, keep pushing"
         />
-        
+
         <ContactMe />
         <SeeOtherProjects 
-        previousProjectLink="./automaton" 
+        previousProjectLink="./semrush" 
         nextProjectLink="./writetic"
-        previousProjectTitle="Automaton AI" 
+        previousProjectTitle="Semrush" 
         nextProjectTitle="Writetic" 
         />
 </Layout>
