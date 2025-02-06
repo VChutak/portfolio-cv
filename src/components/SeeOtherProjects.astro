@@ -6,13 +6,29 @@ const {previousProjectLink, nextProjectLink,previousProjectTitle, nextProjectTit
 <div class="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-10">
     <div class="flex flex-col gap-4">
         <h4 class="text-2xl text-center">See some of my other Projects</h4> 
-        <div class="flex flex-row gap-4 justify-between">
-            <div class="flex flex-col justify-center items-center py-10 px-20 border-1 rounded-lg group">
-                <a href={previousProjectLink}class="group-hover:translate-x-[-10px] text-xl transition duration-100">← {previousProjectTitle}</a> 
-            </div>
-            <div class="flex flex-col justify-center items-center py-10 px-20 border-1 rounded-lg group">
-                <a href={nextProjectLink} class="group-hover:translate-x-[10px] text-xl transition duration-100">{nextProjectTitle} →</a>
-            </div>
+        <div class="flex sm:flex-row flex-col gap-4 justify-between">
+            <a href={previousProjectLink} class="flex flex-col justify-center items-center sm:py-10 py-6 px-20 border-1 rounded-lg group cursor">
+                <div class="group-hover:translate-x-[-10px] text-xl transition duration-100 inline-flex items-center gap-2">
+                    <svg width="28" height="15" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25.9851 7.40552L1.98511 7.40552" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.98511 12.4055L1.98511 7.40552L6.98511 2.40552" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                     {previousProjectTitle}
+                    </div> 
+            </a>
+            <a href={nextProjectLink} class="flex flex-row justify-center items-center sm:py-10 py-6 px-20 border-1 rounded-lg group"> 
+                <div  class="group-hover:translate-x-[10px] text-xl transition duration-100 inline-flex items-center gap-2">{nextProjectTitle} 
+                    <svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.01489 11.5945H29.0149" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M24.0149 6.59448L29.0149 11.5945L24.0149 16.5945" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
         </div>
     </div>
 </div>
+
+
+
+
+    

@@ -7,12 +7,13 @@ import ContentWithMedia from "../../components/ContentWithMedia.astro";
 import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
 import FullHeightImage from "../../components/FullHeightImage.astro";
+import ContactMe from "../../components/ContactMe.astro";
 ---
 
 
 
 
-<Layout>
+<Layout title="Bazinga AI Web design and UI/UX design project by Valeri Ciutac">
     <ProjectHeader 
         projectName="Bazinga AI" 
         projectRole="UX UI Design Brand Identity Web Design/Development" 
@@ -28,10 +29,12 @@ UI/UX Design for AI Assistant Creation Flow – Designed an intuitive and user-f
 Through a combination of thoughtful branding, sleek UI/UX, and performant web development, I helped deliver a polished and user-centric digital experience.`/>
     <FullHeightImage
         backgroundColor="#c9371e" 
-        image="../../projects/bazinga/bazinga-full-website.webp"/>
-        <FullHeightImage
+        image="../../projects/bazinga/bazinga-full-website.webp"
+        />
+    <FullHeightImage
         backgroundColor="#ffffff" 
-        image="../../projects/bazinga/bazinga-agent1.webp"/>
+        image="../../projects/bazinga/bazinga-agent1.webp"
+        />
     <ContentWithMedia
         imageCellWidth={4}
         imageCellOrder={2}
@@ -39,10 +42,12 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
         contentCellOrder={1}
         contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
         contentTitle="What is The Emotional Diamond"
-        contentDescription="lorem ipsum fjdlffjsfslfj" />
+        contentDescription="lorem ipsum fjdlffjsfslfj" 
+        />
     <Conclusion 
         conclusionTitle="Conclusion"
         conclusionText="No matter what, keep pushing"/>
+        <ContactMe />
     <SeeOtherProjects 
         previousProjectLink="./writetic" 
         nextProjectLink="./openlm"
