@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
-const {image,backgroundColor} = Astro.props
+const {image,backgroundColor, text} = Astro.props
 ---
 
-<div class="w-full py-10" style={{backgroundColor:backgroundColor}}>
+<div class="w-full py-10 flex flex-col gap-6" style={{backgroundColor:backgroundColor}}>
     <div class="sm:max-w-3xl max-w-lg mx-auto px-4">
         <img src={image} alt="" class="rounded-lg">
     </div>
+    <p class="mx-auto text-center">{text}</p>
 </div>
