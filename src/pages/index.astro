@@ -4,6 +4,8 @@ import "../styles/global.css";
 import FolioCard from '..//components/FolioCard.astro';
 import Testimonial from '../components/Testimonial.astro';
 import ContactMe from '../components/ContactMe.astro';
+import  data  from '../data.js';
+	
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -15,7 +17,7 @@ import ContactMe from '../components/ContactMe.astro';
 		<h1 class="sm:text-5xl text-4xl font-bold text-center sm:px-0 px-10  max-w-[17ch]">Finally, a designer that actually gets it</h1>
 		<p class="text-center sm:text-2xl text-xl max-w-[30ch]">Helping your Startup with Bold Branding and Web Design that converts</p>
 	</div>
-	<div id="foliocards-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 sm:gap-2 gap-4 px-0 px-4">
+	<div id="foliocards-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 sm:gap-2 gap-4 px-4">
 		<FolioCard
 			link="./projects/bazinga"
 			role="gridcell"
