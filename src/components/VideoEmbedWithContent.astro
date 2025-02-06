@@ -1,0 +1,42 @@
+---
+import "../styles/global.css";
+const {videoFirst, videoLink, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor, color, imageBgColor} = Astro.props
+
+const gridClasses = {
+    1:"sm:col-span-1",
+    2:"sm:col-span-2",
+    3:"sm:col-span-3",
+    4:"sm:col-span-4",
+    5:"sm:col-span-5",
+    6:"sm:col-span-6",
+    7:"sm:col-span-7",
+    8:"sm:col-span-8",
+    9:"sm:col-span-9",
+    10:"sm:col-span-10"
+}
+
+const orderClasses = {
+    1:"order-first",
+    2:"order-last",
+}
+
+const imageOrder:string = orderClasses[imageCellOrder]
+const contentOrder:string = orderClasses[contentCellOrder]
+
+const imageSpan:string = gridClasses[imageCellWidth]
+const contentSpan:string = gridClasses[contentCellWidth]
+---
+
+
+<div class="w-full py-20" style={{backgroundColor: backgroundColor}}>
+    <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto">
+        <div class={`col-span-6 ${imageSpan} pb-[56.25%] relative overflow-hidden max-w-full h-0 ${videoFirst == true ? "order-last" :"order-first"}`} style={{backgroundColor:imageBgColor}}>
+            <iframe src={videoLink} title="" class="absolute top-0 left-0 w-full h-full border-0 rounded-lg"></iframe>
+        </div>
+        <div class={`col-span-6 ${contentSpan}  flex flex-col gap-4 ${videoFirst == true ? "order-last" :"order-first"} justify-start`}>
+            <h3 class="text-3xl font-bold" style={{color}}>{contentTitle}</h3>
+            <p class="text-pretty max-w-[70ch]" style={{color}}>{contentDescription}</p>
+            <slot/>
+        </div>
+    </div>
+</div>
