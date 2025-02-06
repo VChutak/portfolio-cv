@@ -9,6 +9,7 @@ import TwoCards from "../../components/TwoCards.astro";
 import Heading from "../../components/Heading.astro";
 import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import BeforeAfterSlider from "../../components/BeforeAfterSlider.astro";
+import FullHeightImage from "../../components/FullHeightImage.astro";
 ---
 
 <Layout title="Nemesysco UI/UX design project by Valeri Ciutac">
@@ -30,8 +31,8 @@ import BeforeAfterSlider from "../../components/BeforeAfterSlider.astro";
         imageCellWidth={6}
         contentCellWidth={6}
         contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
-        contentTitle="What is The Emotional Diamond"
-        contentDescription="Nemesysco’s Emotional Diamond concept was developed in 2012 to simplify the visualization and understanding of the human emotional reaction complexity as detected by the LVA. It is built of 8 wings: “Energy” at the top, “Stress” at the bottom, “Logic and confidence” to the left, “Emotion” to the right, and 4 additional indications displaying levels of “Passion”, “Uneasy”, “Mental Effort” and “Concentration” (these are only the main 8 of the 14 emotional states LVA can detect).‍‍The core principle behind the Emotional Diamond is that there are no good or bad emotions, as they are all context dependent. For example, we would expect to see stressful reactions when discussing intimidating events, and we will look for energetic and emotional reactions when we discuss prospects and achievements. When examining the emotional reactions over time, certain traits can be easily observed, and teach us about the true personality of the evaluated party." />
+        contentTitle="What is The Emotional Diamond?"
+        contentDescription="Nemesysco’s Emotional Diamond, developed in 2012, simplifies the visualization of complex emotional responses detected by the LVA. It consists of 8 key indicators: Energy, Stress, Logic & Confidence, Emotion, Passion, Uneasy, Mental Effort, and Concentration (out of 14 total emotional states). The core idea is that emotions are context-dependent, not inherently good or bad. By analyzing emotional patterns over time, the Emotional Diamond helps reveal deeper personality traits and reactions." />
     <Heading title="The Problem" />
     <ContentWithMedia
     imageFirst = {true}
@@ -50,6 +51,10 @@ import BeforeAfterSlider from "../../components/BeforeAfterSlider.astro";
         cardOneDescription="During normal operation, the diamond is operating as ususal."
         cardTwoDescription="To signal that the app encountered an eror, the diamond rotates to form a stop sign, a signal that something went wrong and the app cannot continue."/>
     <Heading title="The Solution" />
+    <FullHeightImage 
+    backgroundColor="#00142f"
+        image="../../projects/nemesysco/nemesysco-anatomy.webp"
+    />
     <!-- <BeforeAfterSlider client:load/> -->
     <Conclusion
         conclusionTitle="Conclusion"

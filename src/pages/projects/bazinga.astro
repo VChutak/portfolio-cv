@@ -9,6 +9,7 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
 import ContactMe from "../../components/ContactMe.astro";
 import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import VideoEmbedWithContent from "../../components/VideoEmbedWithContent.astro";
+import Heading from "../../components/Heading.astro";
 ---
 
 
@@ -32,9 +33,13 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
         backgroundColor="#c9371e" 
         image="../../projects/bazinga/bazinga-full-website.webp"
         />
-   
+        <Heading 
+        title="The Objective"
+        subtitle="The objective was to establish a strong and cohesive brand identity by designing a comprehensive brand book and a visually engaging website. The brand book provided clear guidelines for consistency in logo usage, typography, colors, and tone. The website was designed for both aesthetics and usability, ensuring a seamless and engaging user experience while reinforcing the brand’s identity across all digital touchpoints."
+        />
 
         <ContentWithMedia 
+        centerText={true}
         imageFirst={true}
         backgroundColor="#fef3ee"
         imageCellWidth={6}
@@ -46,6 +51,7 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
      
     
         <ContentWithMedia
+        centerText={true}
         imageFirst={false}
         imageCellWidth={4}
         contentCellWidth={8}
@@ -61,9 +67,10 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
         />
 
         <ContentWithMedia
+        centerText={true}
         imageFirst={true}
-        imageCellWidth={6}
-        contentCellWidth={6}
+        imageCellWidth={8}
+        contentCellWidth={4}
         contentImage="../../projects/bazinga/bazinga-brand3.webp"
         contentTitle="Color"
         contentDescription=`I carefully crafted a color palette centered around orange and blue to make the brand feel more approachable, especially for non-tech audiences. Orange conveys energy, warmth, and creativity, while blue adds a sense of trust and professionalism—striking a perfect balance between innovation and reliability.
@@ -72,15 +79,17 @@ Starting with these core colors, I systematically expanded the palette, ensuring
         />
 
         <ContentWithMedia
+        centerText={true}
         imageFirst={true}
-        imageCellWidth={6}
-        contentCellWidth={6}
+        imageCellWidth={8}
+        contentCellWidth={4}
         contentImage="../../projects/bazinga/bazinga-brand4.webp"
         contentTitle="Tailwind CSS Palette"
         contentDescription=`From the initial shades, I derived a comprehensive Tailwind CSS color system, defining variations for backgrounds, text, buttons, and accents. This approach provided scalability and flexibility, allowing for a visually cohesive experience across the entire platform while maintaining accessibility and contrast.`
         />
 
         <ContentWithMedia
+        centerText={true}
         imageFirst={false}
         imageCellWidth={8}
         contentCellWidth={4}
@@ -96,16 +105,16 @@ Starting with these core colors, I systematically expanded the palette, ensuring
       
         <Conclusion 
         conclusionTitle="Conclusion"
-        conclusionText="No matter what, keep pushing"
-        />
-        <VideoEmbedWithContent
+        conclusionText="No matter what, keep pushing">
+            </Conclusion>
+        <!-- <VideoEmbedWithContent
         videoLink=`https://player.vimeo.com/video/1054267122?title=0&amp;controls=0&amp;badge=0&amp;autopause=0&amp;autoplay=1&loop=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; controls=0; sidedock=0; title=0` 
         videoFirst={true}
         contentDescription="TESSSSSST"
         contentTitle="TESSSSSST"
         imageCellWidth={6}
         contentCellWidth={6}
-        />
+        /> -->
 
       
         <ContactMe />
