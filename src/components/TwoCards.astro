@@ -1,6 +1,15 @@
 ---
 import "../styles/global.css";
-const {imageOne, imageTwo, cardOneTitle, cardTwoTitle, cardOneDescription, cardTwoDescription, backgroundColor} = Astro.props
+type Props = {
+    imageOne: string,
+    imageTwo: string,
+    cardOneTitle: string,
+    cardTwoTitle: string,
+    cardOneDescription?: string,
+    cardTwoDescription?: string,
+    backgroundColor?: string
+}
+const {imageOne, imageTwo, cardOneTitle, cardTwoTitle, cardOneDescription, cardTwoDescription, backgroundColor}: Props = Astro.props
 ---
 <div class="w-full py-10" style={{backgroundColor: backgroundColor}}>
     <div class="max-w-7xl mx-auto grid sm:grid-cols-2 grid-cols-1 gap-4 px-4 gap-y-10" >

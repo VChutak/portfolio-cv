@@ -1,6 +1,21 @@
 ---
 import "../styles/global.css";
-const {imageFirst, contentImage, contentImage2, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor, color,imageBgColor, centerText} = Astro.props
+type Props ={
+    imageFirst: boolean,
+    contentImage: string,
+    contentImage2?: string,
+    contentTitle: string,
+    contentDescription: string,
+    imageCellWidth: number,
+    contentCellWidth: number,
+    imageCellOrder: number,
+    contentCellOrder: number,
+    backgroundColor?: string,
+    color?: string,
+    imageBgColor?: string,
+    centerText?: boolean
+}
+const {imageFirst, contentImage, contentImage2, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor, color,imageBgColor, centerText}:Props = Astro.props
 
 const gridClasses = {
     1:"sm:col-span-1",

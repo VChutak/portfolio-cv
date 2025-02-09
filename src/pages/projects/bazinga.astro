@@ -10,6 +10,7 @@ import ContactMe from "../../components/ContactMe.astro";
 import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import VideoEmbedWithContent from "../../components/VideoEmbedWithContent.astro";
 import Heading from "../../components/Heading.astro";
+import TwoCards from "../../components/TwoCards.astro";
 ---
 
 
@@ -60,6 +61,7 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
         contentDescription=`All graphic elements are derived from the logo’s shapes, creating a unified and recognizable design across all materials. This ensures that every visual detail—whether it’s icons, buttons, or backgrounds—feels intentional and aligned with the brand’s identity. By maintaining this consistency, the brand becomes more visually cohesive, reinforcing trust and recognition while making the user experience feel polished and seamless.`
         />
 
+
         <FullHeightImage 
         backgroundColor="#fef3ee"
         text="Using the logo as the baseline, I derived a cohesive and memorable styleguide"
@@ -88,6 +90,18 @@ Starting with these core colors, I systematically expanded the palette, ensuring
         contentDescription=`From the initial shades, I derived a comprehensive Tailwind CSS color system, defining variations for backgrounds, text, buttons, and accents. This approach provided scalability and flexibility, allowing for a visually cohesive experience across the entire platform while maintaining accessibility and contrast.`
         />
 
+
+     
+
+        <TwoCards 
+        imageOne="../../projects/bazinga/bazinga_sparks.gif"
+        imageTwo="../../projects/bazinga/bazinga_chatbubbles.gif"        
+        cardOneTitle="Animated elements"
+        cardTwoTitle="Expanding the style guide to UI"
+        cardOneDescription=""
+        cardTwoDescription=""
+        />
+
         <ContentWithMedia
         centerText={true}
         imageFirst={false}
@@ -99,14 +113,20 @@ Starting with these core colors, I systematically expanded the palette, ensuring
         />
 
         <FullHeightImage 
-        backgroundColor="#fef3ee"
+        backgroundColor="#111A38"
         image="../../projects/bazinga/bazinga-brand2.webp"
+        />
+
+
+        <FullHeightImage 
+        backgroundColor="#ffffff"
+        image="../../projects/bazinga/bazinga_loader.gif"
         />
       
         <Conclusion 
         conclusionTitle="Conclusion"
         conclusionText="No matter what, keep pushing">
-            </Conclusion>
+        </Conclusion>
         <!-- <VideoEmbedWithContent
         videoLink=`https://player.vimeo.com/video/1054267122?title=0&amp;controls=0&amp;badge=0&amp;autopause=0&amp;autoplay=1&loop=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; controls=0; sidedock=0; title=0` 
         videoFirst={true}
