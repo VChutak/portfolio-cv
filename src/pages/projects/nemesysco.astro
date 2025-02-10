@@ -43,7 +43,13 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     contentCellWidth={4}
     contentImage="../../projects/nemesysco/heatmap-webp"
     contentTitle="The eyes of the beholder"
-    contentDescription="The main issue was that the person’s face was the main thing you saw on the app. People usually notice faces first, so to make events stand out, I used a trick with an immediate change in color contrast of the diamond ray that expessed the highest emotional response.(heatmap as example, not actual data)"
+    contentDescription="The person's face dominated the app’s visuals, drawing attention away from key events. Since people instinctively focus on faces first, I used a color contrast shift in the diamond ray representing the strongest emotional response—similar to a heatmap effect. This subtle yet effective tweak instantly directed focus to the most important events."
+  />
+
+  <Heading title="The Solution" />
+  <FullHeightImage
+    backgroundColor="#00142f"
+    image="../../projects/nemesysco/nemesysco-anatomy.webp"
   />
   <TwoCards
     backgroundColor="#ffffff"
@@ -52,12 +58,7 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     cardOneTitle="Normal state"
     cardTwoTitle="Error state"
     cardOneDescription="During normal operation, the diamond is operating as ususal."
-    cardTwoDescription="To signal that the app encountered an eror, the diamond rotates to form a stop sign, a signal that something went wrong and the app cannot continue."
-  />
-  <Heading title="The Solution" />
-  <FullHeightImage
-    backgroundColor="#00142f"
-    image="../../projects/nemesysco/nemesysco-anatomy.webp"
+    cardTwoDescription="To indicate an error, the diamond rotates into a stop sign, instantly signaling that something went wrong and the app cannot proceed."
   />
   <!-- <BeforeAfterSlider client:load/> -->
   <Conclusion
