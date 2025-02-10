@@ -18,11 +18,13 @@ const {
   lineColor,
   description,
 }: Props = Astro.props;
-// const lineColorString = `bg-[${lineColor}]`;
+
+const lineColorString = `bg-[${lineColor}]`;
+console.log(lineColorString);
 ---
 
-<div class="max-w-7xl px-10 flex flex-col gap-6 py-10 mx-auto">
-  <div class=`container mx-auto border `>
+<div class=`max-w-7xl px-10 flex flex-col gap-6 py-6 mx-auto `>
+  <div class=`container mx-auto border border-gray-300 rounded-lg w-full`>
     <div class="image-container">
       <img
         class="image-before slider-image sm:visible hidden"
@@ -36,7 +38,7 @@ const {
         alt="after image"
       />
     </div>
-    <!-- step="10" -->
+
     <input
       type="range"
       min="0"
@@ -45,7 +47,7 @@ const {
       aria-label="Percentage of before photo shown"
       class="slider absolute inset-0 cursor-grab h-full w-full"
     />
-    <div class="slider-line" aria-hidden="true"></div>
+    <div class=`slider-line ${lineColorString}` aria-hidden="true"></div>
     <div class="slider-button" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +126,7 @@ const {
     place-content: center;
     position: relative;
     overflow: hidden;
-    border-radius: 1rem;
+
     --position: 50%;
   }
 
@@ -154,8 +156,8 @@ const {
   }
 
   .slider:focus-visible ~ .slider-button {
-    outline: 5px solid black;
-    outline-offset: 3px;
+    outline: 2px solid black;
+    outline-offset: 4px;
   }
 
   .slider-line {
@@ -163,7 +165,7 @@ const {
     inset: 0;
     width: 0.2rem;
     height: 100%;
-    background-color: #fff;
+
     /* z-index: 10; */
     left: var(--position);
     transform: translateX(-50%);

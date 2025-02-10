@@ -45,8 +45,8 @@ const gridClasses = {
 };
 
 const orderClasses = {
-  1: "order-first",
-  2: "order-last",
+  1: "sm:order-first",
+  2: "sm:order-last",
 };
 
 const imageOrder: string = orderClasses[imageCellOrder];
@@ -59,7 +59,7 @@ const contentSpan: string = gridClasses[contentCellWidth];
 <div class="w-full sm:py-20 py-10" style={{ backgroundColor: backgroundColor }}>
   <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto">
     <div
-      class={`col-span-6 ${imageSpan}  flex flex-col items-center ${imageFirst == true ? "order-first" : "order-last"} gap-6`}
+      class={`col-span-6 ${imageSpan} flex flex-col items-center ${imageFirst == true ? "sm:order-first" : "sm:order-last"} order-first gap-6`}
     >
       <img
         src={contentImage}
@@ -79,7 +79,7 @@ const contentSpan: string = gridClasses[contentCellWidth];
       }
     </div>
     <div
-      class={`col-span-6 ${contentSpan}  flex flex-col gap-4 ${imageFirst == true ? "order-last" : "order-first"} ${centerText ? "justify-center" : "justify-start"} `}
+      class={`col-span-6 ${contentSpan}  flex flex-col gap-4 ${imageFirst == true ? "s,:order-last" : "sm:order-first"} order-last ${centerText ? "justify-center" : "justify-start"} `}
     >
       <h3 class="text-3xl font-bold" style={{ color }}>{contentTitle}</h3>
       <p class="text-pretty max-w-[70ch]" style={{ color }}>
