@@ -1,14 +1,17 @@
 ---
 import "../styles/global.css";
-const {videoLink, backgroundColor, additionalText, color} = Astro.props
-
+const { videoLink, backgroundColor, additionalText, color } = Astro.props;
 ---
-<div class="w-full py-20" style={{backgroundColor}}>
-    <div class="max-w-7xl mx-auto flex flex-col gap-4 px-4">
-        <div class="pb-[56.25%] relative overflow-hidden max-w-full h-0`">
-            <iframe src={videoLink} title="" class="absolute top-0 left-0 w-full h-full border-0 rounded-lg"></iframe>
-        </div>
-        <p style={{color}} class="max-w-[70ch] text-pretty">{additionalText}</p>
+
+<div class="w-full py-20" style={{ backgroundColor }}>
+  <div class="max-w-7xl mx-auto flex flex-col gap-4 px-4">
+    <div class="pb-[56.25%] relative overflow-hidden max-w-full h-0`">
+      <iframe
+        src={videoLink}
+        title=""
+        class="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
+      ></iframe>
     </div>
+    <p style={{ color }} class="max-w-[70ch] text-pretty">{additionalText}</p>
+  </div>
 </div>
-   

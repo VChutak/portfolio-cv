@@ -1,35 +1,47 @@
 ---
 import "../styles/global.css";
-type Props ={
-    projectName:string;
-    projectRole:string;
-    projectDate:string;
-    projectImage:string;
-    projectDescription:string
-}
+type Props = {
+  projectName: string;
+  projectRole: string;
+  projectDate: string;
+  projectImage: string;
+  projectDescription: string;
+};
 
-const {projectName, projectRole, projectDate, projectImage, projectDescription}: Props = Astro.props
+const {
+  projectName,
+  projectRole,
+  projectDate,
+  projectImage,
+  projectDescription,
+}: Props = Astro.props;
 ---
 
 <div class="max-w-7xl flex flex-col gap-10 sm:px-4 px-4 mx-auto mt-16 mb-20">
-    <div class="flex sm:flex-row flex-col justify-between gap-y-6">
-        <div class="flex flex-col gap-2 items-left">
-            <h3>Project Name</h3>
-            <p class="font-bold">{projectName}</p>
-        </div>
-        <div class="flex flex-col gap-2 items-left">
-            <h3>Roles</h3>
-            <p class="font-bold">{projectRole}</p>
-        </div>
-        <div class="flex flex-col gap-2 sm:items-right items-left">
-            <h3 class="sm:text-right text-left">Date</h3>
-            <p class="font-bold">{projectDate}</p>
-        </div>
+  <div class="flex sm:flex-row flex-col justify-between gap-y-6">
+    <div class="flex flex-col gap-2 items-left">
+      <h3>Project Name</h3>
+      <p class="font-bold">{projectName}</p>
     </div>
-    <div class="flex flex-col gap-4">
-        <img src={projectImage} alt={projectImage}  width="1350"
-        height=800" class="rounded-lg">
-        <p class="text-lg text-pretty sm:columns-2 columns-1 gap-4 ">{projectDescription}</p>
+    <div class="flex flex-col gap-2 items-left">
+      <h3>Roles</h3>
+      <p class="font-bold">{projectRole}</p>
     </div>
-
+    <div class="flex flex-col gap-2 sm:items-right items-left">
+      <h3 class="sm:text-right text-left">Date</h3>
+      <p class="font-bold">{projectDate}</p>
+    </div>
+  </div>
+  <div class="flex flex-col gap-4">
+    <img
+      src={projectImage}
+      alt={projectImage}
+      width="1350"
+      height='800"'
+      class="rounded-lg"
+    />
+    <p class="text-lg text-pretty sm:columns-2 columns-1 gap-4">
+      {projectDescription}
+    </p>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 ---
 import "..//../styles/global.css";
-import ProjectHeader from '..//../components/ProjectHeader.astro';
-import Layout from '../../layouts/Layout.astro';
+import ProjectHeader from "..//../components/ProjectHeader.astro";
+import Layout from "../../layouts/Layout.astro";
 import ContentWithMedia from "../../components/ContentWithMedia.astro";
 import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
@@ -10,45 +10,46 @@ import Heading from "../../components/Heading.astro";
 import ContactMe from "../../components/ContactMe.astro";
 ---
 
+<Layout
+  title="Automaton AI Web design and Web development project by Valeri Ciutac"
+>
+  <ProjectHeader
+    projectName="NAutomaton AI"
+    projectRole="Web Design Web Development"
+    projectDate="08-2024"
+    projectImage="../../projects/automaton/Automaton-header.webp"
+    projectDescription="Nemesysco's app is a unique blend of technology and implementation. The app design needed to be simple and present a ton of information in real time, all while focusing the viewer on the important parts of the app.The challenge was to come up with a progressive disclosure of information and emphasizing different parts of the app at varying intervals."
+  />
 
-
-<Layout title="Automaton AI Web design and Web development project by Valeri Ciutac">
-    <ProjectHeader 
-        projectName="NAutomaton AI" 
-        projectRole="Web Design Web Development" 
-        projectDate="08-2024" 
-        projectImage="../../projects/automaton/Automaton-header.webp" 
-        projectDescription="Nemesysco's app is a unique blend of technology and implementation. The app design needed to be simple and present a ton of information in real time, all while focusing the viewer on the important parts of the app.The challenge was to come up with a progressive disclosure of information and emphasizing different parts of the app at varying intervals."
-        />
-   
-    <ContentWithMedia
-        backgroundColor="#ffffff"
-        imageCellWidth={4}
-        imageCellOrder={2}
-        contentCellWidth={8}
-        contentCellOrder={1}
-        contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
-        contentTitle="What is The Emotional Diamond"
-        contentDescription="Nemesysco’s Emotional Diamond concept was developed in 2012 to simplify the visualization and understanding of the human emotional reaction complexity as detected by the LVA. It is built of 8 wings: “Energy” at the top, “Stress” at the bottom, “Logic and confidence” to the left, “Emotion” to the right, and 4 additional indications displaying levels of “Passion”, “Uneasy”, “Mental Effort” and “Concentration” (these are only the main 8 of the 14 emotional states LVA can detect).‍‍The core principle behind the Emotional Diamond is that there are no good or bad emotions, as they are all context dependent. For example, we would expect to see stressful reactions when discussing intimidating events, and we will look for energetic and emotional reactions when we discuss prospects and achievements. When examining the emotional reactions over time, certain traits can be easily observed, and teach us about the true personality of the evaluated party." 
-        />
-    <Heading title="The Problem" />
-    <TwoCards 
-        backgroundColor="#ffffff"
-        imageOne="../test.jpg"
-        imageTwo="../test.jpg"
-        cardOneTitle="Title One"
-        cardTwoTitle="Title Two"
-        cardOneDescription="lorem ipsum fjdlffjsfslfj lorem lorem ipsum fjdlffjsfslfjlorem ipsum fjdlffjsfslfjlorem ipsum fjdlffjsfslfj"
-        cardTwoDescription="lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj "/>
-    <Conclusion
-        conclusionTitle="Conclusion"
-        conclusionText="No matter what, keep pushing"
-        />
-    <ContactMe />
-    <SeeOtherProjects 
-        previousProjectLink="./semrush" 
-        nextProjectLink="./bazinga"
-        previousProjectTitle="Semrush" 
-        nextProjectTitle="Bazinga AI" 
-        />
+  <ContentWithMedia
+    backgroundColor="#ffffff"
+    imageCellWidth={4}
+    imageCellOrder={2}
+    contentCellWidth={8}
+    contentCellOrder={1}
+    contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
+    contentTitle="What is The Emotional Diamond"
+    contentDescription="Nemesysco’s Emotional Diamond concept was developed in 2012 to simplify the visualization and understanding of the human emotional reaction complexity as detected by the LVA. It is built of 8 wings: “Energy” at the top, “Stress” at the bottom, “Logic and confidence” to the left, “Emotion” to the right, and 4 additional indications displaying levels of “Passion”, “Uneasy”, “Mental Effort” and “Concentration” (these are only the main 8 of the 14 emotional states LVA can detect).‍‍The core principle behind the Emotional Diamond is that there are no good or bad emotions, as they are all context dependent. For example, we would expect to see stressful reactions when discussing intimidating events, and we will look for energetic and emotional reactions when we discuss prospects and achievements. When examining the emotional reactions over time, certain traits can be easily observed, and teach us about the true personality of the evaluated party."
+  />
+  <Heading title="The Problem" />
+  <TwoCards
+    backgroundColor="#ffffff"
+    imageOne="../test.jpg"
+    imageTwo="../test.jpg"
+    cardOneTitle="Title One"
+    cardTwoTitle="Title Two"
+    cardOneDescription="lorem ipsum fjdlffjsfslfj lorem lorem ipsum fjdlffjsfslfjlorem ipsum fjdlffjsfslfjlorem ipsum fjdlffjsfslfj"
+    cardTwoDescription="lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj lorem ipsum fjdlffjsfslfj "
+  />
+  <Conclusion
+    conclusionTitle="Conclusion"
+    conclusionText="No matter what, keep pushing"
+  />
+  <ContactMe />
+  <SeeOtherProjects
+    previousProjectLink="./semrush"
+    nextProjectLink="./bazinga"
+    previousProjectTitle="Semrush"
+    nextProjectTitle="Bazinga AI"
+  />
 </Layout>

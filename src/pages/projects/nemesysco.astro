@@ -1,7 +1,7 @@
 ---
 import "..//../styles/global.css";
-import ProjectHeader from '..//../components/ProjectHeader.astro';
-import Layout from '../../layouts/Layout.astro';
+import ProjectHeader from "..//../components/ProjectHeader.astro";
+import Layout from "../../layouts/Layout.astro";
 import ContentWithMedia from "../../components/ContentWithMedia.astro";
 import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
@@ -13,55 +13,61 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
 ---
 
 <Layout title="Nemesysco UI/UX design project by Valeri Ciutac">
-    <ProjectHeader 
-        projectName="Nemesysco" 
-        projectRole="UI/UX Design Motion Design" 
-        projectDate="05-2023" 
-        projectImage="../../projects/nemesysco/Nemesysco-header.webp" 
-        projectDescription="Nemesysco's app is a unique blend of technology and implementation. The app design needed to be simple and present a ton of information in real time, all while focusing the viewer on the important parts of the app.The challenge was to come up with a progressive disclosure of information and emphasizing different parts of the app at varying intervals."/>
-   <FullWidthVideo 
-        videoLink=`https://player.vimeo.com/video/840047836?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media` 
-        backgroundColor="#3c3c3c"
-        additionalText="Simone's interview used only for demonstration purposes"
-        color="#ffffff"
-        />
-    <ContentWithMedia
+  <ProjectHeader
+    projectName="Nemesysco"
+    projectRole="UI/UX Design Motion Design"
+    projectDate="05-2023"
+    projectImage="../../projects/nemesysco/Nemesysco-header.webp"
+    projectDescription="Nemesysco's app is a unique blend of technology and implementation. The app design needed to be simple and present a ton of information in real time, all while focusing the viewer on the important parts of the app.The challenge was to come up with a progressive disclosure of information and emphasizing different parts of the app at varying intervals."
+  />
+  <FullWidthVideo
+    videoLink=`https://player.vimeo.com/video/840047836?badge=0&autopause=0&player_id=0&app_id=58479"    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media`
+    backgroundColor="#3c3c3c"
+    additionalText="Simone's interview used only for demonstration purposes"
+    color="#ffffff"
+  />
+  <ContentWithMedia
     imageFirst={false}
-        backgroundColor="#ececec"
-        imageCellWidth={6}
-        contentCellWidth={6}
-        contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
-        contentTitle="What is The Emotional Diamond?"
-        contentDescription="Nemesysco’s Emotional Diamond, developed in 2012, simplifies the visualization of complex emotional responses detected by the LVA. It consists of 8 key indicators: Energy, Stress, Logic & Confidence, Emotion, Passion, Uneasy, Mental Effort, and Concentration (out of 14 total emotional states). The core idea is that emotions are context-dependent, not inherently good or bad. By analyzing emotional patterns over time, the Emotional Diamond helps reveal deeper personality traits and reactions." />
-    <Heading title="The Problem" />
-    <ContentWithMedia
-    imageFirst = {true}
-        backgroundColor="#ffffff"
-        imageCellWidth={8}
-        contentCellWidth={4}
-        contentImage="../../projects/nemesysco/heatmap-webp"
-        contentTitle="The eyes of the beholder"
-        contentDescription="The main issue was that the person’s face was the main thing you saw on the app. People usually notice faces first, so to make events stand out, I used a trick with an immediate change in color contrast of the diamond ray that expessed the highest emotional response.(heatmap as example, not actual data)" />
-    <TwoCards 
-        backgroundColor="#ffffff"
-        imageOne="../../projects/nemesysco/diamond-ok.webp"
-        imageTwo="../../projects/nemesysco/diamond-error.webp"
-        cardOneTitle="Normal state"
-        cardTwoTitle="Error state"
-        cardOneDescription="During normal operation, the diamond is operating as ususal."
-        cardTwoDescription="To signal that the app encountered an eror, the diamond rotates to form a stop sign, a signal that something went wrong and the app cannot continue."/>
-    <Heading title="The Solution" />
-    <FullHeightImage 
+    backgroundColor="#ececec"
+    imageCellWidth={6}
+    contentCellWidth={6}
+    contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
+    contentTitle="What is The Emotional Diamond?"
+    contentDescription="Nemesysco’s Emotional Diamond, developed in 2012, simplifies the visualization of complex emotional responses detected by the LVA. It consists of 8 key indicators: Energy, Stress, Logic & Confidence, Emotion, Passion, Uneasy, Mental Effort, and Concentration (out of 14 total emotional states). The core idea is that emotions are context-dependent, not inherently good or bad. By analyzing emotional patterns over time, the Emotional Diamond helps reveal deeper personality traits and reactions."
+  />
+  <Heading title="The Problem" />
+  <ContentWithMedia
+    imageFirst={true}
+    backgroundColor="#ffffff"
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/nemesysco/heatmap-webp"
+    contentTitle="The eyes of the beholder"
+    contentDescription="The main issue was that the person’s face was the main thing you saw on the app. People usually notice faces first, so to make events stand out, I used a trick with an immediate change in color contrast of the diamond ray that expessed the highest emotional response.(heatmap as example, not actual data)"
+  />
+  <TwoCards
+    backgroundColor="#ffffff"
+    imageOne="../../projects/nemesysco/diamond-ok.webp"
+    imageTwo="../../projects/nemesysco/diamond-error.webp"
+    cardOneTitle="Normal state"
+    cardTwoTitle="Error state"
+    cardOneDescription="During normal operation, the diamond is operating as ususal."
+    cardTwoDescription="To signal that the app encountered an eror, the diamond rotates to form a stop sign, a signal that something went wrong and the app cannot continue."
+  />
+  <Heading title="The Solution" />
+  <FullHeightImage
     backgroundColor="#00142f"
-        image="../../projects/nemesysco/nemesysco-anatomy.webp"
-    />
-    <!-- <BeforeAfterSlider client:load/> -->
-    <Conclusion
-        conclusionTitle="Conclusion"
-        conclusionText="No matter what, keep pushing"/>
-    <SeeOtherProjects 
-        previousProjectLink="./writetic" 
-        nextProjectLink="./openlm"
-        previousProjectTitle="Writetic" 
-        nextProjectTitle="OpenLM" />
+    image="../../projects/nemesysco/nemesysco-anatomy.webp"
+  />
+  <!-- <BeforeAfterSlider client:load/> -->
+  <Conclusion
+    conclusionTitle="Conclusion"
+    conclusionText="No matter what, keep pushing"
+  />
+  <SeeOtherProjects
+    previousProjectLink="./writetic"
+    nextProjectLink="./openlm"
+    previousProjectTitle="Writetic"
+    nextProjectTitle="OpenLM"
+  />
 </Layout>
