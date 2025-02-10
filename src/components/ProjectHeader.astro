@@ -1,6 +1,14 @@
 ---
 import "../styles/global.css";
-const {projectName, projectRole, projectDate, projectImage, projectDescription} = Astro.props
+type Props ={
+    projectName:string;
+    projectRole:string;
+    projectDate:string;
+    projectImage:string;
+    projectDescription:string
+}
+
+const {projectName, projectRole, projectDate, projectImage, projectDescription}: Props = Astro.props
 ---
 
 <div class="max-w-7xl flex flex-col gap-10 sm:px-4 px-4 mx-auto mt-16 mb-20">

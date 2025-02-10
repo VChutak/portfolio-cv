@@ -1,56 +1,91 @@
 ---
 import "../styles/global.css";
-type Props ={
-    imageFirst: boolean,
-    contentImage: string,
-    contentImage2?: string,
-    contentTitle: string,
-    contentDescription: string,
-    imageCellWidth: number,
-    contentCellWidth: number,
-    imageCellOrder: number,
-    contentCellOrder: number,
-    backgroundColor?: string,
-    color?: string,
-    imageBgColor?: string,
-    centerText?: boolean
-}
-const {imageFirst, contentImage, contentImage2, contentTitle, contentDescription, imageCellWidth, contentCellWidth, imageCellOrder, contentCellOrder, backgroundColor, color,imageBgColor, centerText}:Props = Astro.props
+type Props = {
+  imageFirst: boolean;
+  contentImage: string;
+  contentImage2?: string;
+  contentTitle: string;
+  contentDescription: string;
+  imageCellWidth: number;
+  contentCellWidth: number;
+  imageCellOrder: number;
+  contentCellOrder: number;
+  backgroundColor?: string;
+  color?: string;
+  imageBgColor?: string;
+  centerText?: boolean;
+};
+const {
+  imageFirst,
+  contentImage,
+  contentImage2,
+  contentTitle,
+  contentDescription,
+  imageCellWidth,
+  contentCellWidth,
+  imageCellOrder,
+  contentCellOrder,
+  backgroundColor,
+  color,
+  imageBgColor,
+  centerText,
+}: Props = Astro.props;
 
 const gridClasses = {
-    1:"sm:col-span-1",
-    2:"sm:col-span-2",
-    3:"sm:col-span-3",
-    4:"sm:col-span-4",
-    5:"sm:col-span-5",
-    6:"sm:col-span-6",
-    7:"sm:col-span-7",
-    8:"sm:col-span-8",
-    9:"sm:col-span-9",
-    10:"sm:col-span-10"
-}
+  1: "sm:col-span-1",
+  2: "sm:col-span-2",
+  3: "sm:col-span-3",
+  4: "sm:col-span-4",
+  5: "sm:col-span-5",
+  6: "sm:col-span-6",
+  7: "sm:col-span-7",
+  8: "sm:col-span-8",
+  9: "sm:col-span-9",
+  10: "sm:col-span-10",
+};
 
 const orderClasses = {
-    1:"order-first",
-    2:"order-last",
-}
+  1: "order-first",
+  2: "order-last",
+};
 
-const imageOrder:string = orderClasses[imageCellOrder]
-const contentOrder:string = orderClasses[contentCellOrder]
+const imageOrder: string = orderClasses[imageCellOrder];
+const contentOrder: string = orderClasses[contentCellOrder];
 
-const imageSpan:string = gridClasses[imageCellWidth]
-const contentSpan:string = gridClasses[contentCellWidth]
+const imageSpan: string = gridClasses[imageCellWidth];
+const contentSpan: string = gridClasses[contentCellWidth];
 ---
-<div class="w-full sm:py-20 py-10" style={{backgroundColor: backgroundColor}}>
-    <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto">
-        <div class={`col-span-6 ${imageSpan}  flex flex-col items-center ${imageFirst == true ? "order-first" :"order-last"} gap-6`}>
-            <img src={contentImage} alt={contentImage} class="min-w-40 rounded-lg p-6" style={{backgroundColor:imageBgColor}}/>
-            {contentImage2 && <img src={contentImage2} alt={contentImage2} class="min-w-40 rounded-lg p-6" style={{backgroundColor:imageBgColor}}/>}
-        </div>
-        <div class={`col-span-6 ${contentSpan}  flex flex-col gap-4 ${imageFirst == true ? "order-last" :"order-first"} ${centerText ? "justify-center" : "justify-start"} `}>
-            <h3 class="text-3xl font-bold" style={{color}}>{contentTitle}</h3>
-            <p class="text-pretty max-w-[70ch]" style={{color}}>{contentDescription}</p>
-            <slot/>
-        </div>
+
+<div class="w-full sm:py-20 py-10" style={{ backgroundColor: backgroundColor }}>
+  <div class="grid sm:grid-cols-12 grid-cols-1 gap-10 max-w-7xl px-4 mx-auto">
+    <div
+      class={`col-span-6 ${imageSpan}  flex flex-col items-center ${imageFirst == true ? "order-first" : "order-last"} gap-6`}
+    >
+      <img
+        src={contentImage}
+        alt={contentImage}
+        class="min-w-40 rounded-lg p-6"
+        style={{ backgroundColor: imageBgColor }}
+      />
+      {
+        contentImage2 && (
+          <img
+            src={contentImage2}
+            alt={contentImage2}
+            class="min-w-40 rounded-lg p-6"
+            style={{ backgroundColor: imageBgColor }}
+          />
+        )
+      }
     </div>
+    <div
+      class={`col-span-6 ${contentSpan}  flex flex-col gap-4 ${imageFirst == true ? "order-last" : "order-first"} ${centerText ? "justify-center" : "justify-start"} `}
+    >
+      <h3 class="text-3xl font-bold" style={{ color }}>{contentTitle}</h3>
+      <p class="text-pretty max-w-[70ch]" style={{ color }}>
+        {contentDescription}
+      </p>
+      <slot />
+    </div>
+  </div>
 </div>

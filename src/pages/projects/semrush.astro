@@ -1,9 +1,8 @@
 ---
-
 import "..//../styles/global.css";
-import ProjectHeader from '..//../components/ProjectHeader.astro';
-import Layout from '../../layouts/Layout.astro';
-import LayoutProject from './LayoutProject.astro';
+import ProjectHeader from "..//../components/ProjectHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+import LayoutProject from "./LayoutProject.astro";
 
 import ContentWithMedia from "../../components/ContentWithMedia.astro";
 import Conclusion from "../../components/Conclusion.astro";
@@ -13,44 +12,40 @@ import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
 import Heading from "../../components/Heading.astro";
 ---
 
-
-
 <Layout title="Web design by Valeri Ciutac">
-    
-    <ProjectHeader 
-        projectName="Semrush" 
-        projectRole="Designer Web Designer" 
-        projectDate="05-2023" 
-        projectImage="../../projects/semrush/semrush-header.webp" 
-        projectDescription=`I designed a marketing guide and its accompanying landing page for "21 Questions to Ask When Evaluating Market Intelligence." The goal was to create a visually engaging and highly informative resource that helps marketers assess and choose the right market intelligence solutions.
+  <ProjectHeader
+    projectName="Semrush"
+    projectRole="Designer Web Designer"
+    projectDate="05-2023"
+    projectImage="../../projects/semrush/semrush-header.webp"
+    projectDescription=`I designed a marketing guide and its accompanying landing page for "21 Questions to Ask When Evaluating Market Intelligence." The goal was to create a visually engaging and highly informative resource that helps marketers assess and choose the right market intelligence solutions.
 My Contributions:
 Guide Design – Created a structured, easy-to-read layout with clear typography, engaging visuals, and well-organized content to enhance readability and comprehension.
 Landing Page Design & Development – Designed and developed a high-converting landing page to promote the guide, focusing on clear messaging, persuasive call-to-action elements, and an intuitive user experience to maximize downloads.
-By combining strategic design with effective marketing principles, I ensured that the guide was both visually appealing and highly valuable for its target audience.`/>
-    <FullHeightImage 
-        backgroundColor="#AA2C00"
-        image="../../projects/semrush/semrush-full.webp" 
-            />
-            <Heading title="The Objective" />
-    <ContentWithMedia
+By combining strategic design with effective marketing principles, I ensured that the guide was both visually appealing and highly valuable for its target audience.`
+  />
+  <FullHeightImage
+    backgroundColor="#AA2C00"
+    image="../../projects/semrush/semrush-full.webp"
+  />
+  <Heading title="The Objective" />
+  <ContentWithMedia
     imageFirst={true}
-        imageCellWidth=4
-        contentCellWidth=8
-        contentImage="../../projects/semrush/chats.webp"
-        contentImage2="../../projects/semrush/chats_2.webp"
-        imageBgColor="#000000"
-        contentTitle="Stylized chat bubbles"
-        contentDescription="Used as both elements for the landing page, as well as the decorative element used in the Marketing kit." 
-        />
-   
-<Conclusion>
+    imageCellWidth={4}
+    contentCellWidth={8}
+    contentImage="../../projects/semrush/chats.webp"
+    contentImage2="../../projects/semrush/chats_2.webp"
+    imageBgColor="#000000"
+    contentTitle="Stylized chat bubbles"
+    contentDescription="Used as both elements for the landing page, as well as the decorative element used in the Marketing kit."
+  />
 
-</Conclusion>
-        <ContactMe />
-        <SeeOtherProjects 
-        previousProjectLink="./openlm" 
-        nextProjectLink="./bazinga" 
-        previousProjectTitle="OpenLM" 
-        nextProjectTitle="Bazinga AI"/>
-    
+  <Conclusion />
+  <ContactMe />
+  <SeeOtherProjects
+    previousProjectLink="./openlm"
+    nextProjectLink="./bazinga"
+    previousProjectTitle="OpenLM"
+    nextProjectTitle="Bazinga AI"
+  />
 </Layout>
