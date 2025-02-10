@@ -10,6 +10,7 @@ import Heading from "../../components/Heading.astro";
 import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import ContactMe from "../../components/ContactMe.astro";
 import ComparisonSlider from "../../components/ComparisonSlider.astro";
+import FullHeightImage from "../../components/FullHeightImage.astro";
 ---
 
 <Layout title="OpenLM Landing page design by Valeri Ciutac">
@@ -20,6 +21,11 @@ import ComparisonSlider from "../../components/ComparisonSlider.astro";
     projectImage="../../projects/openlm/OpenLM-header.webp"
     projectDescription="My goal for the project was to effectively communicate the advantages of the cloud version to our existing OpenLM customers. Instead of delving into introductory details about the OpenLM product, I focused on showcasing its features directly. The design aesthetic embraced simplicity and minimalism, using a snow-white theme to instill trust and provide an authentic representation of our product's capabilities. Pricing options were transparently presented without convoluted language. In the concluding section, I included a before-and-after comparison, emphasizing the streamlined experience of the Cloud solution."
   />
+
+  <FullHeightImage
+    backgroundColor="#051A4C"
+    image="../../projects/openlm/openlm-full.webp"
+  />
   <Heading title="The Objective" />
   <ContentWithMedia
     imageFirst={false}
@@ -29,8 +35,21 @@ import ComparisonSlider from "../../components/ComparisonSlider.astro";
     contentCellWidth={4}
     contentCellOrder={1}
     contentImage="../../projects/openlm/mobile.webp"
-    contentTitle="Mobile ready"
-    contentDescription=""
+    contentTitle="Mobile ready? Mobile First!"
+    contentDescription="For this project, I prioritized responsive design from the start, ensuring a seamless experience across all screen sizes. Instead of just rearranging elements, I fine-tuned details for each viewport, adjusting spacing, typography, and interactions to maintain usability and aesthetics. I also designed custom assets specifically for mobile, optimizing visuals and layouts to enhance clarity and engagement on smaller screens. This meticulous approach ensured a polished, high-performing experience on both desktop and mobile."
+  />
+
+  <ContentWithMedia
+    centerText={true}
+    imageFirst={true}
+    backgroundColor="#B7B7B7"
+    imageCellWidth={8}
+    imageCellOrder={2}
+    contentCellWidth={4}
+    contentCellOrder={1}
+    contentImage="../../projects/openlm/openlm-wireframes1.webp"
+    contentTitle="First things first"
+    contentDescription="Wireframes lay the groundwork for a smooth and intuitive user experience. They help plan structure, navigation, and functionality before diving into visuals, making sure everything flows logically. By focusing on layout first, wireframes save time, prevent design mistakes, and keep the team aligned—leading to a better final product."
   />
 
   <ComparisonSlider

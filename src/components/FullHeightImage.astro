@@ -1,6 +1,11 @@
 ---
 import "../styles/global.css";
-const { image, backgroundColor, text } = Astro.props;
+type Props = {
+  image: string;
+  backgroundColor: string;
+  text?: string;
+};
+const { image, backgroundColor, text }: Props = Astro.props;
 ---
 
 <div
