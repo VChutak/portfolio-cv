@@ -4,8 +4,8 @@ import "../styles/global.css";
 type Props = {
   imageBefore: string;
   imageAfter: string;
-  imageBeforeMobile: string;
-  imageAfterMobile: string;
+  // imageBeforeMobile: string;
+  // imageAfterMobile: string;
   lineColor?: string;
   description?: string;
 };
@@ -13,8 +13,8 @@ type Props = {
 const {
   imageBefore,
   imageAfter,
-  imageBeforeMobile,
-  imageAfterMobile,
+  // imageBeforeMobile,
+  // imageAfterMobile,
   lineColor,
   description,
 }: Props = Astro.props;
@@ -29,19 +29,10 @@ const lineColorString = `bg-[${lineColor}]`;
         src={imageBefore}
         alt="before image"
       />
-      <img
-        class="image-before slider-image sm:hidden visible"
-        src={imageBeforeMobile}
-        alt="before image"
-      />
+
       <img
         class="image-after slider-image sm:visible hidden"
         src={imageAfter}
-        alt="after image"
-      />
-      <img
-        class="image-after slider-image sm:hidden visible"
-        src={imageAfterMobile}
         alt="after image"
       />
     </div>
