@@ -24,7 +24,7 @@ console.log(lineColorString);
 ---
 
 <div class=`max-w-7xl px-10 flex flex-col gap-6 py-10 px-6 mx-auto `>
-  <div class=`container mx-auto border border-gray-300 rounded-lg w-full`>
+  <div class=`container mx-auto border-2 border-[#FAC471] rounded-lg w-full`>
     <div class="image-container">
       <img
         class="image-before slider-image sm:visible hidden"
@@ -47,7 +47,7 @@ console.log(lineColorString);
       aria-label="Percentage of before photo shown"
       class="slider absolute inset-0 cursor-grab h-full w-full"
     />
-    <div class=`slider-line ${lineColorString}` aria-hidden="true"></div>
+    <div class=`slider-line bg-[#FAC471]` aria-hidden="true"></div>
     <div class="slider-button" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@ console.log(lineColorString);
   .slider-line {
     position: absolute;
     inset: 0;
-    width: 0.2rem;
+    width: 0.15rem;
     height: 100%;
 
     /* z-index: 10; */
@@ -174,7 +174,7 @@ console.log(lineColorString);
 
   .slider-button {
     position: absolute;
-    background-color: #fff;
+    background-color: #fac471;
     color: black;
     padding: 0.5rem;
     border-radius: 100vw;
