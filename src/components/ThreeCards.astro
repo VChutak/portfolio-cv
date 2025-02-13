@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+type Props = {
+  imageOne: string;
+  imageTwo: string;
+  imageThree: string;
+  titleOne: string;
+  titleTwo: string;
+  titleThree: string;
+  descriptionOne: string;
+  descriptionTwo: string;
+  descriptionThree: string;
+  backgroundColor?: string;
+};
+const {} = Astro.props;
+
+const {
+  imageOne,
+  imageTwo,
+  imageThree,
+  titleOne,
+  titleTwo,
+  titleThree,
+  descriptionOne,
+  descriptionTwo,
+  descriptionThree,
+  backgroundColor,
+}: Props = Astro.props;
+---
+
+<div class="w-full py-10" style={{ backgroundColor: backgroundColor }}>
+  <div
+    class="max-w-7xl mx-auto grid sm:grid-cols-3 grid-cols-1 gap-4 px-4 gap-y-10"
+  >
+    <div class="flex flex-col gap-6">
+      <div>
+        <img src={imageOne} alt={imageOne} class="rounded-lg mx-auto" />
+      </div>
+      <div>
+        <h3 class="font-bold text-3xl text-center">{titleOne}</h3>
+        <p class="max-w-[50ch] text-center mx-auto">{descriptionOne}</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-6">
+      <div>
+        <img src={imageTwo} alt={imageOne} class="rounded-lg mx-auto" />
+      </div>
+      <div>
+        <h3 class="font-bold text-3xl text-center">{titleTwo}</h3>
+        <p class="max-w-[50ch] text-center mx-auto">{descriptionTwo}</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-6">
+      <div>
+        <img src={imageThree} alt={imageThree} class="rounded-lg mx-auto" />
+      </div>
+      <div>
+        <h3 class="font-bold text-3xl text-center">{titleThree}</h3>
+        <p class="max-w-[50ch] text-center mx-auto">{descriptionThree}</p>
+      </div>
+    </div>
+  </div>
+</div>

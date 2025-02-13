@@ -11,6 +11,7 @@ import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import VideoEmbedWithContent from "../../components/VideoEmbedWithContent.astro";
 import Heading from "../../components/Heading.astro";
 import TwoCards from "../../components/TwoCards.astro";
+import ThreeCards from "../../components/ThreeCards.astro";
 ---
 
 <Layout title="Bazinga AI Web design and UI/UX design project by Valeri Ciutac">
@@ -41,6 +42,8 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
     centerText={true}
     imageFirst={true}
     backgroundColor="#fef3ee"
+    imageCellOrder={1}
+    contentCellOrder={2}
     imageCellWidth={6}
     contentCellWidth={6}
     contentImage="../../projects/bazinga/bazinga-brand0.webp"
@@ -51,6 +54,8 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
   <ContentWithMedia
     centerText={true}
     imageFirst={false}
+    imageCellOrder={1}
+    contentCellOrder={2}
     imageCellWidth={4}
     contentCellWidth={8}
     contentImage="../../projects/bazinga/bazinga-brand1.webp"
@@ -68,6 +73,8 @@ Through a combination of thoughtful branding, sleek UI/UX, and performant web de
     centerText={true}
     imageFirst={true}
     imageCellWidth={8}
+    imageCellOrder={1}
+    contentCellOrder={2}
     contentCellWidth={4}
     contentImage="../../projects/bazinga/bazinga-brand3.webp"
     contentTitle="Color"
@@ -81,6 +88,8 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     imageFirst={true}
     imageCellWidth={8}
     contentCellWidth={4}
+    imageCellOrder={1}
+    contentCellOrder={2}
     contentImage="../../projects/bazinga/bazinga-brand4.webp"
     contentTitle="Tailwind CSS Palette"
     contentDescription=`From the initial shades, I derived a comprehensive Tailwind CSS color system, defining variations for backgrounds, text, buttons, and accents. This approach provided scalability and flexibility, allowing for a visually cohesive experience across the entire platform while maintaining accessibility and contrast.`
@@ -94,6 +103,18 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     cardOneDescription=""
     cardTwoDescription=""
   />
+
+  <!-- <ThreeCards
+    imageOne="../../projects/bazinga/bazinga_sparks.gif"
+    imageTwo="../../projects/bazinga/bazinga_sparks.gif"
+    imageThree="../../projects/bazinga/bazinga_sparks.gif"
+    titleOne="Animated elements"
+    titleTwo="Animated elements"
+    titleThree="Animated elements"
+    descriptionOne="Expanding the style guide to UI"
+    descriptionTwo="Expanding the style guide to UI"
+    descriptionThree="Expanding the style guide to UI"
+  /> -->
 
   <ContentWithMedia
     imageCellOrder={1}
