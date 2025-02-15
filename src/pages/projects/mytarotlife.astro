@@ -1,0 +1,119 @@
+---
+import "..//../styles/global.css";
+import ProjectHeader from "..//../components/ProjectHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+import ContentWithMedia from "../../components/ContentWithMedia.astro";
+import Conclusion from "../../components/Conclusion.astro";
+import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
+import TwoCards from "../../components/TwoCards.astro";
+import Heading from "../../components/Heading.astro";
+import FullWidthVideo from "../../components/FullWidthVideo.astro";
+import ContactMe from "../../components/ContactMe.astro";
+import ComparisonSlider from "../../components/ComparisonSlider.astro";
+import FullHeightImage from "../../components/FullHeightImage.astro";
+---
+
+<Layout title="OpenLM Landing page design by Valeri Ciutac">
+  <ProjectHeader
+    liveLink="https://tarot-reading3-f28e.vercel.app/"
+    projectName="My Tarot Life"
+    projectRole="3D Web Design / Web Development"
+    projectDate="01-2025"
+    projectImage="../../projects/mytarotlife/mtl-header.webp"
+    projectDescription="My Tarot Life brings personalized card readings and other spiritual practices right at your fingertips. An optimized mobile experience and a pleasant 3D design ensure a great user experience. Your spiritual journey starts here."
+  />
+
+  <FullHeightImage
+    backgroundColor="#111111"
+    image="../../projects/mytarotlife/mytarotlife-full.png"
+  />
+  <Heading
+    title="The Objective"
+    subtitle="The task was straightforward but complex - create a platform for the modern day spirituality focused business and make it look magical. The closest thing to magic on the web is 3D, so having prior experience with both 3D packages like Blender and libraries like threejs meant that I could leverage that to create a platform that would not only look beautiful, but also be incredibly intuitive and user-friendly."
+  />
+  <!-- <ContentWithMedia
+    centerText={true}
+    imageFirst={false}
+    backgroundColor="#ffffff"
+    imageCellWidth={6}
+    imageCellOrder={2}
+    contentCellWidth={6}
+    contentCellOrder={1}
+    contentImage="../../projects/openlm/mobile.webp"
+    contentTitle="Mobile ready? Mobile First!"
+    contentDescription="For this project, I prioritized responsive design from the start, ensuring a seamless experience across all screen sizes. Instead of just rearranging elements, I fine-tuned details for each viewport, adjusting spacing, typography, and interactions to maintain usability and aesthetics. I also designed custom assets specifically for mobile, optimizing visuals and layouts to enhance clarity and engagement on smaller screens. This meticulous approach ensured a polished, high-performing experience on both desktop and mobile."
+  />
+
+  <ContentWithMedia
+    centerText={true}
+    imageFirst={true}
+    backgroundColor="#C2D0EE"
+    imageCellWidth={6}
+    imageCellOrder={2}
+    contentCellWidth={6}
+    contentCellOrder={1}
+    contentImage="../../projects/openlm/openlm-wireframes1.webp"
+    contentTitle="First things first"
+    contentDescription="Wireframes lay the groundwork for a smooth and intuitive user experience. They help plan structure, navigation, and functionality before diving into visuals, making sure everything flows logically. By focusing on layout first, wireframes save time, prevent design mistakes, and keep the team aligned—leading to a better final product."
+  />
+
+  <ContentWithMedia
+    centerText={true}
+    imageFirst={true}
+    backgroundColor="#C2D0EE"
+    imageCellWidth={8}
+    contentCellWidth={4}
+    imageCellOrder={2}
+    contentCellOrder={1}
+    contentImage="../../projects/openlm/openlm-wireframes3.webp"
+    contentTitle="First things first"
+    contentDescription=``
+  >
+    <ul>
+      <li>
+        <p>
+          <strong>1.</strong> Custom illustrations to enhance brand recognition utilizing
+          matching color scheme and familiar imagery.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>2.</strong> A video element was replaced by before/after slider.
+          This provides a simple, hands-on explanation on what is the difference.(works
+          good on mobile too)
+        </p>
+      </li>
+    </ul></ContentWithMedia
+  >
+
+  <ComparisonSlider
+    lineColor="#FAC471"
+    imageBefore="../../projects/openlm/before.webp"
+    imageAfter="../../projects/openlm/after.webp"
+    description=`A simple and fasr Before/After slider to showcase the simplicity of the Cloud implementation`
+    `
+  />
+
+  <FullWidthVideo
+    videoLink=`https://player.vimeo.com/video/834361465?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media`
+    backgroundColor="#00499C"
+    color="#ffffff"
+    additionalText=`For the Hero image, I modeled a simple rocket and a stylized smoke trail that I can tweak and change based on feedback and how it looks on the actual web page. 
+        Having such a flexible approach allowed me to iterate quickly and have new versions of the image almost instantaneously.`
+    `
+  />
+ -->
+  <Conclusion
+    conclusionTitle="Conclusion"
+    conclusionText1="No matter what, keep pushing"
+    conclusionText2="No matter what, keep pushing"
+    conclusionText3="No matter what, keep pushing"
+  />
+  <ContactMe />
+  <SeeOtherProjects
+    previousProjectLink="./nemesysco"
+    nextProjectLink="./semrush"
+    previousProjectTitle="Nemesysco"
+    nextProjectTitle="Semrush"
+  />
+</Layout>
