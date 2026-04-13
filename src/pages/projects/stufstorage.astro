@@ -1,0 +1,63 @@
+---
+import "..//../styles/global.css";
+import ProjectHeader from "..//../components/ProjectHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+import LayoutProject from "./LayoutProject.astro";
+
+import ContentWithMedia from "../../components/ContentWithMedia.astro";
+import Conclusion from "../../components/Conclusion.astro";
+import ContactMe from "../../components/ContactMe.astro";
+import FullHeightImage from "../../components/FullHeightImage.astro";
+import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
+import Heading from "../../components/Heading.astro";
+---
+
+<Layout title="Web design by Valeri Ciutac">
+  <ProjectHeader
+    projectName="Stuf Storage"
+    projectRole="Designer Web Designer Motion Graphics Designer"
+    projectDate="04-2026"
+    projectImage="../../projects/semrush/semrush-header.webp"
+    projectDescription=`Stuf Storage is a self storage soutions company based in New York` />
+  <FullHeightImage
+    backgroundColor="#1742f0"
+    image="../../projects/semrush/semrush-full.webp"
+  />
+  <Heading
+    title="The Objective"
+    subtitle="The objective was to do Stuf" />
+  <ContentWithMedia
+    centerText={true}
+    imageCellOrder={1}
+    contentCellOrder={2}
+    imageFirst={true}
+    imageCellWidth={6}
+    contentCellWidth={6}
+    contentImage="../../projects/semrush/chats.webp"
+    imageBgColor="#000000"
+    contentTitle="Stylized chat bubbles"
+    contentDescription="Having proficient knowledge of 3D apps, I modeled a pack of 3D chat bubles to be used as both elements for the landing page, as well as the decorative element used in the Marketing kit."
+  />
+
+  <ContentWithMedia
+    centerText={true}
+    imageCellOrder={2}
+    contentCellOrder={1}
+    imageFirst={false}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/semrush/semrush-pages.webp"
+    imageBgColor="#ffffff"
+    contentTitle="Styling the pages"
+    contentDescription=`The guide was designed in a chat-style format, aligning with the "21 Questions" theme. Each page presents a question-answer exchange, enhanced with custom charts and visuals to create a clear, engaging experience that seamlessly guides the reader through the eBook.`
+  />
+
+  <Conclusion />
+  <ContactMe />
+  <SeeOtherProjects
+    previousProjectLink="./openlm"
+    nextProjectLink="./bazinga"
+    previousProjectTitle="OpenLM"
+    nextProjectTitle="Bazinga AI"
+  />
+</Layout>

@@ -3,3 +3,20 @@
 p {
   font-size: 18px;
 }
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --text: #1a1a1a;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #1a1a1a;
+  --text: #ffffff;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
