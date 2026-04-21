@@ -7,7 +7,7 @@ const {
   backgroundColor,
   title = "default",
   link,
-  projectRole,
+  projectFocus,
   projectDate,
 } = Astro.props;
 ---
@@ -21,7 +21,7 @@ const {
     <div class="flex flex-row justify-between p-4 w-full">
       <div class="flex flex-col gap-2 text-white">
         <h3 class="text-xl font-bold">{title}</h3>
-        <p class="text-pretty">{projectRole}</p>
+        <p class="text-pretty">{projectFocus}</p>
       </div>
       <div>
         <span class="text-xl font-bold text-white">{projectDate}</span>
