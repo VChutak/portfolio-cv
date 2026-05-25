@@ -12,6 +12,10 @@ interface Props {
   projectFocus?: string;
   projectDate?: string;
   projectTags?: string[];
+<<<<<<< HEAD
+=======
+  projectDescription?: string;
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
 }
 const {
   folioImage,
@@ -23,10 +27,15 @@ const {
   projectFocus,
   projectDate,
   projectTags = ["default", "default2", "default3"],
+<<<<<<< HEAD
+=======
+  projectDescription = `This is a test desciption of the project`,
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
 } = Astro.props;
 ---
 
 <div
+<<<<<<< HEAD
   class={`group relative flex flex-col rounded-lg min-w-0 h-full transition-transform duration-300" ${className}`}
   style={{ backgroundColor }}
 >
@@ -34,12 +43,35 @@ const {
   <a
     href={link}
     class="absolute inset-0 z-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+=======
+  class={`group relative flex flex-col rounded-lg min-w-0 h-full overflow-hidden transition-transform duration-300 ${className}`}
+  style={{ backgroundColor }}
+>
+  <!-- CLICKABLE OVERLAY (Highest z-index to always remain clickable) -->
+  <a
+    href={link}
+    class="absolute inset-0 z-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
   >
     <span class="sr-only">View {title}</span>
   </a>
 
+<<<<<<< HEAD
   <!-- HEADER -->
   <div class="flex flex-row justify-between p-4 w-full shrink-0">
+=======
+  <!-- SLIDING OVERLAY (Starts 100% down, slides to 0 on hover) -->
+  <div
+    class="flex flex-col items-center justify-center gap-4 p-4 absolute inset-0 z-40 dark:bg-black/80 bg-white/80 translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out pointer-events-none backdrop-blur-md"
+  >
+    <span>Open project view</span>
+    <p>{projectDescription}</p>
+    <!-- Optional: Add any text or icons you want to appear inside the hover state here -->
+  </div>
+
+  <!-- HEADER -->
+  <div class="flex flex-row justify-between p-4 w-full shrink-0 z-20 relative">
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
     <div class="flex flex-col gap-2 text-white">
       <h3 class="text-xl font-bold">{title}</h3>
       <p class="text-pretty">{projectFocus}</p>
@@ -53,6 +85,7 @@ const {
     </div>
   </div>
 
+<<<<<<< HEAD
   <div
     class="min-h-52 translate-y-[-100%] z-10 bg-amber-300 group:hover-translate-y-[100%] transition-transform duration-300"
   >
@@ -61,6 +94,11 @@ const {
   <!-- IMAGE WRAPPER (Container Query + Perf Trick) -->
   <div
     class="relative w-full flex-1 overflow-hidden [container-type:size] min-h-[250px]"
+=======
+  <!-- IMAGE WRAPPER -->
+  <div
+    class="relative w-full flex-1 overflow-hidden [container-type:size] min-h-[250px] z-10"
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
     style={`
       --img-tall: url('${title}-tall.webp');
       --img-square: url('${title}-square.webp');
@@ -69,7 +107,11 @@ const {
     `}
   >
     <div
+<<<<<<< HEAD
       class="responsive-card-bg absolute inset-0 h-full w-full bg-cover bg-center transition-all duration-300 group-hover:scale-105"
+=======
+      class="responsive-card-bg absolute inset-0 h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-95"
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
       role="img"
       aria-label={`${title} project preview`}
     >
@@ -78,7 +120,11 @@ const {
 
   <!-- FOOTER TAGS -->
   <div
+<<<<<<< HEAD
     class="flex gap-2 p-4 flex-wrap shrink-0 z-20 relative pointer-events-none rounded-b-lg"
+=======
+    class="flex gap-2 p-4 flex-wrap shrink-0 z-20 relative rounded-b-lg"
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
     style={{ backgroundColor: backgroundColorVariation }}
   >
     <span class="rounded-full text-sm md:text-md py-1 px-2 text-white">
@@ -97,7 +143,11 @@ const {
 <style>
   /* Base state: Tall Image */
   .responsive-card-bg {
+<<<<<<< HEAD
     kbackground-image: var(--img-tall);
+=======
+    background-image: var(--img-tall);
+>>>>>>> e19c9cc (Redesigned the layout and thumbnails)
   }
 
   /* Square Image */
