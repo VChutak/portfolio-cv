@@ -1,5 +1,7 @@
 ---
 import "..//../styles/global.css";
+import ProjectScopeSummary from "../../components/ProjectScopeSummary.astro";
+import ProjectMetricsGrid from "../../components/ProjectMetricsGrid.astro";
 import ProjectHeader from "..//../components/ProjectHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 import ContentWithMedia from "../../components/ContentWithMedia.astro";
@@ -15,6 +17,9 @@ import ThreeCards from "../../components/ThreeCards.astro";
 ---
 
 <Layout title="Bazinga AI Web design and UI/UX design project by Valeri Ciutac">
+
+<ProjectScopeSummary />
+
   <ProjectHeader
     projectName="Bazinga AI"
     projectFocus="Brand Systems and UX Adaptation"
@@ -139,10 +144,8 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     image="../../projects/bazinga/bazinga_loader.gif"
   />
 
-  <Conclusion
-    conclusionTitle="Conclusion"
-    conclusionText="No matter what, keep pushing"
-  />
+  <ProjectMetricsGrid />
+ 
   <!-- <VideoEmbedWithContent
         videoLink=`https://player.vimeo.com/video/1054267122?title=0&amp;controls=0&amp;badge=0&amp;autopause=0&amp;autoplay=1&loop=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; controls=0; sidedock=0; title=0` 
         videoFirst={true}
@@ -154,9 +157,9 @@ Starting with these core colors, I systematically expanded the palette, ensuring
 
   <ContactMe />
   <SeeOtherProjects
-    previousProjectLink="./semrush"
+    previousProjectLink="./stufstorage"
     nextProjectLink="./writetic"
-    previousProjectTitle="Semrush"
+    previousProjectTitle="Stuf Storage"
     nextProjectTitle="Writetic"
   />
 </Layout>

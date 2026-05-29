@@ -1,35 +1,93 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-const { title } = Astro.props;
+import { ClientRouter } from "astro:transitions";
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-<script is:inline>
+  <head>
+    <script is:inline>
       const getThemePreference = () => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
       };
-      const isDark = getThemePreference() === 'dark';
-      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      const isDark = getThemePreference() === "dark";
+      document.documentElement.setAttribute(
+        "data-theme",
+        isDark ? "dark" : "light",
+      );
     </script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body >
-		<div>
-			<Header />
-			<slot />
-			<Footer />
-		</div>
-	</body>
+
+    <script>
+      function handleSamePageLinks() {
+        document.addEventListener("click", (event) => {
+          // Find the closest anchor tag that was clicked
+          const link = event.target.closest("a");
+
+          // Ignore if it's not a link, opens in a new tab, or the user pressed a modifier key (like Ctrl+Click)
+          if (!link || link.target === "_blank") return;
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
+            return;
+
+          // Parse the URLs to easily compare them
+          const currentUrl = new URL(window.location.href);
+          const linkUrl = new URL(link.href);
+
+          // Check if the link points to the exact same origin and path
+          if (
+            currentUrl.origin === linkUrl.origin &&
+            currentUrl.pathname === linkUrl.pathname
+          ) {
+            // Prevent Astro/browser from reloading the page
+            event.preventDefault();
+
+            if (linkUrl.hash) {
+              // The link has a hash (e.g., /about#team) -> scroll to that specific header
+              const targetElement = document.querySelector(linkUrl.hash);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+
+                // Optional: Update the URL in the browser bar without reloading
+                history.pushState(null, "", linkUrl.href);
+              }
+            } else {
+              // The link has no hash -> scroll to the top of the current page
+              window.scrollTo({ top: 0, behavior: "smooth" });
+
+              // Optional: Clean up the URL in the browser bar
+              history.pushState(null, "", linkUrl.pathname);
+            }
+          }
+        });
+      }
+
+      // Run the function
+      handleSamePageLinks();
+    </script>
+
+    <meta name="description" content={description} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- <ClientRouter /> -->
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col justify-between items-start">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <!-- <style>

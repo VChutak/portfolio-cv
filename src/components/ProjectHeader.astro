@@ -2,7 +2,7 @@
 import "../styles/global.css";
 type Props = {
   projectName: string;
-  projectRole: string;
+  projectFocus: string;
   projectDate: string;
   projectImage: string;
   projectDescription: string;
@@ -48,7 +48,7 @@ const {
     <a
       href={liveLink}
       target="_blank"
-      class=`${liveLink  ? "inline-flex" : "hidden"} gap-2 max-w-[200px]`
+      class=`${liveLink  ? "inline-flex" : "hidden"} gap-2 max-w-50`
     >
       <p><strong>Link to live site</strong></p><svg
         width="25"

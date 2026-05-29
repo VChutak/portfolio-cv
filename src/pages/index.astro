@@ -10,147 +10,168 @@ import ContactMe from "../components/ContactMe.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Valeri Ciutac Web Designer UI Designer portfolio">
+<Layout
+  title="Valeri Ciutac | Design Engineer & Strategic Brand Partner"
+  description="Multi-disciplinary designer specializing in the intersection of motion, brand identity, and high-performance web systems. Providing full-cycle creative direction for companies that demand engineering precision and aesthetic excellence."
+>
   <div class="flex flex-col gap-2 max-w-7xl mx-auto">
     <div
       id="hero"
-      class="min-h-[50vh] flex flex-col gap-6 justify-center items-center"
+      class="lg:min-h-[35vh] min-h-[45vh] flex flex-col gap-6 justify-center items-center"
     >
       <h1
-        class="sm:text-5xl text-4xl font-bold text-center sm:px-0 px-10 max-w-[23ch]"
+        class="lg:text-5xl text-3xl font-bold text-center sm:px-0 px-10 max-w-[23ch]"
       >
-        High-fidelity design built for high-velocity growth.
+        Building the future of brand-led products.
       </h1>
-      <p class="text-center sm:text-2xl text-xl max-w-[70ch]">
-        I help established companies and ambitious teams scale through strategic
-        branding, immersive motion design, and performant web implementation. No
-        fluff—just systems that convert.
+      <p class="text-center lg:text-lg text-sm px-6 max-w-[70ch]">
+        A multi-disciplinary designer specializing in the intersection of
+        motion, identity, and code. I leverage AI-accelerated workflows to
+        deliver agency-grade creative at the speed of your product roadmap.
       </p>
     </div>
     <div
+      role="grid"
       id="foliocards-grid"
-      class="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 sm:gap-2 gap-4 px-4"
+      class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-6 md:grid-cols-2 gap-6 px-4"
     >
       <FolioCard
-        link="./projects/stuf-storage"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 1"
+        projectTags={[
+          "Marketing Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-2 lg:row-span-2 lg:col-end-3 lg:col-start-1"
+        link="./projects/stufstorage"
         title="Stuf Storage"
         projectFocus="Brand Systems and Marketing Optimization"
-        projectDate="2026"
-        backgroundColor="#1742f0"
-        folioImage="./projects/bazinga/bazinga-tmb.webp"
-      />
-      <FolioCard
-        link="./projects/bazinga"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 2"
-        title="Bazinga AI"
-        projectFocus="Brand Systems and UX Adaptation"
-        projectDate="2025"
-        backgroundColor="#c9371e"
-        folioImage="./projects/bazinga/bazinga-tmb.webp"
-      />
-      <FolioCard
-        link="./projects/writetic"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 3"
-        title="Writetic"
-        projectFocus="Marketing Design • Web Design"
-        projectDate="2024"
-        backgroundColor="#3d0083"
-        folioImage="./projects/writetic/writetic-tmb.webp"
-      />
-      <FolioCard
-        link="./projects/nemesysco"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 4"
-        title="Nemesysco"
-        projectFocus="UI UX Design"
-        projectDate="2023"
-        backgroundColor="#00132f"
-        folioImage="./projects/nemesysco/nemesysco-tmb.avif"
-      />
-      <FolioCard
-        link="./projects/openlm"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 5"
-        title="OpenLM"
-        projectFocus="Web Design"
-        projectDate="2021"
-        backgroundColor="#0029a5"
-        folioImage="./projects/openlm/openlm-tmb.webp"
-      />
-      <FolioCard
-        link="./projects/semrush"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 6"
-        title="Semrush"
-        projectFocus="Marketing Design • Web Design"
-        projectDate="2024"
-        backgroundColor="#701203"
-        folioImage="./projects/semrush/semrush-tmb.webp"
+        projectDate="2025 - Present"
+        backgroundColor="var(--color-stuf)"
+        backgroundColorVariation="var(--color-stuf2)"
       />
 
       <FolioCard
+        projectTags={[
+          "WebGL Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-1 lg:row-span-2 lg:col-start-3"
+        link="./projects/bazinga"
+        title="Bazinga AI"
+        projectFocus="Brand Systems and UX Adaptation"
+        projectDate="Q4 2025"
+        backgroundColor="var(--color-bazinga)"
+        backgroundColorVariation="var(--color-bazinga2)"
+      />
+
+      <FolioCard
+        projectTags={[
+          "WebGL Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-1 lg:row-span-2 lg:row-start-3 "
+        link="./projects/writetic"
+        title="Writetic"
+        projectFocus="Optimizing Landing page for SEO and Page Speed"
+        backgroundColor="var(--color-writetic)"
+        backgroundColorVariation="var(--color-writetic2)"
+      />
+
+      <FolioCard
+        projectTags={[
+          "WebGL Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-2 lg:row-span-1 lg:row-start-3 lg:col-end-4 lg:col-start-2"
+        link="./projects/nemesysco"
+        title="Nemesysco"
+        projectFocus="Adjusting UX and Optimizing App Design"
+        backgroundColor="var(--color-nemesysco)"
+        backgroundColorVariation="var(--color-nemesysco2)"
+      />
+
+      <FolioCard
+        projectTags={[
+          "WebGL Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-2 lg:row-span-2 lg:row-start-4 lg:col-end-4 lg:col-start-2"
+        link="./projects/semrush"
+        title="Semrush"
+        projectFocus="On Brand asset management and design"
+        backgroundColor="var(--color-semrush"
+        backgroundColorVariation="var(--color-semrush2)"
+      />
+
+      <FolioCard
+        projectTags={[
+          "WebGL Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-1 lg:row-span-1"
+        link="./projects/openlm"
+        title="OpenLM"
+        projectFocus="Informational Design and Landing Page optimization"
+        backgroundColor="var(--color-openlm)"
+        backgroundColorVariation="var(--color-openlm2)"
+      />
+
+      <FolioCard
+        projectTags={[
+          "WebGL Optimization",
+          "AI-Integrated WebGL",
+          "Web 3D Experiment",
+        ]}
+        className="lg:col-span-3 lg:grid-col-start-1 lg:row-start-6"
         link="./projects/mytarotlife"
-        role="gridcell"
-        tabindex="0"
-        aria-label="Grid item 7"
         title="My Tarot Life"
-        projectFocus="3D Web Design • Web Development"
-        projectDate="2025"
-        backgroundColor="#3c3c3c"
-        folioImage="./projects/mytarotlife/mtl-tmb.webp"
+        projectFocus="Engaging Landing Page"
+        backgroundColor="#0B0014"
       />
-      <!-- <FolioCard
-			link="./projects/automaton"
-			role="gridcell"
-			tabindex="0" aria-label="Grid item 6"
-			title="Automaton AI"
-			projectRole="Web Design • Web Development"
-			projectDate="2024"
-			backgroundColor="#460572"
-			folioImage="./projects/automaton/automaton-tmb.avif" /> -->
     </div>
-    <div
-      id="testimonial-grid"
-      class="py-30 px-4 grid sm:grid-cols-1 md:grid-cols-3 grid-cols-1 gap-4"
-    >
-      <Testimonial
-        personLink="https://www.linkedin.com/in/david-r-thompson/"
-        personImage="./persons/david.webp"
-        personName="David Thompson"
-        personRole="Acquisition Marketing Manager, Semrush"
-        personTestimonial=`Valery's design skills were exceptional. His attention to detail and creativity stood out and he elevated every project he touched.
+
+    <div class="flex flex-col gap-10 items-center py-30">
+      <h2 class="text-3xl">What my clients say</h2>
+
+      <div
+        role="list"
+        id="testimonial-grid"
+        class="px-4 grid sm:grid-cols-1 md:grid-cols-3 grid-cols-1 gap-4"
+      >
+        <Testimonial
+          personLink="https://www.linkedin.com/in/david-r-thompson/"
+          personImage="./persons/david.webp"
+          personName="David Thompson"
+          personRole="Acquisition Marketing Manager, Semrush"
+          personTestimonial=`Valery's design skills were exceptional. His attention to detail and creativity stood out and he elevated every project he touched.
 Valery is technically proficient and has great artistic vision which make him an invaluable asset for fast-paced marketing and design teams.`
-      />
-      <Testimonial
-        personLink="https://www.linkedin.com/in/barryvial/"
-        personImage="./persons/barry.webp"
-        personName="Barry Vial"
-        personRole="Co-Founder, Liquid Group Of Companies"
-        personTestimonial=`Valery is an excellent communicator which results in his quick uptake of complex concepts with very timely delivery that has always exceeded my expectations. I look forward to each project with him.
+        />
+        <Testimonial
+          personLink="https://www.linkedin.com/in/barryvial/"
+          personImage="./persons/barry.webp"
+          personName="Barry Vial"
+          personRole="Co-Founder, Liquid Group Of Companies"
+          personTestimonial=`Valery is an excellent communicator which results in his quick uptake of complex concepts with very timely delivery that has always exceeded my expectations. I look forward to each project with him.
 Across the board A+ experience.`
-      />
-      <Testimonial
-        personLink="https://www.linkedin.com/in/johnagaines/"
-        personImage="./persons/john.webp"
-        personName="John Gaines"
-        personRole="Chief of Problem Solving, Healthcare Search LLC"
-        personTestimonial=`Valery is a prince among men. His work is prompt and always precise. 
+        />
+        <Testimonial
+          personLink="https://www.linkedin.com/in/johnagaines/"
+          personImage="./persons/john.webp"
+          personName="John Gaines"
+          personRole="Chief of Problem Solving, Healthcare Search LLC"
+          personTestimonial=`Valery is a prince among men. His work is prompt and always precise. 
 
 Whenever I receive the finished product I always am stunned by what he has put together in such a short time.
 Valery ALWAYS over delivers.
 
 You cannot go wrong here!`
-      />
+        />
+      </div>
     </div>
     <ContactMe />
   </div>

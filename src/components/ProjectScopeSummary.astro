@@ -1,0 +1,24 @@
+---
+const { metrics } = Astro.props; 
+// e.g., { deliverables: '25+ unique assets', mediums: '4', timeframe: '6 weeks' }
+---
+
+<section class="scope-grid bg-neutral-900 p-12 w-full">
+  <div class="container grid md:grid-cols-3 gap-8 text-center max-w-7xl mx-auto">
+    <div class="scope-stat">
+      <span class="text-6xl font-bold text-accent">25+</span>
+        <h4 class="text-lg font-semibold mt-2">TOTAL DELIVERABLES</h4>
+        <p class="text-sm opacity-80">Banner Ads, Videos, Emails, Pages</p>
+    </div>
+    <div class="scope-stat">
+       <span class="text-6xl font-bold text-accent">4</span>
+        <h4 class="text-lg font-semibold mt-2">MEDIUMS MANAGED</h4>
+        <p class="text-sm opacity-80">Web, Social, Content, AdOps</p>
+    </div>
+    <div class="scope-stat">
+        <span class="text-6xl font-bold text-accent">30%</span>
+        <h4 class="text-lg font-semibold mt-2">FASTER TURNAROUND</h4>
+        <p class="text-sm opacity-80">Using Figma Design System</p>
+    </div>
+  </div>
+</section>

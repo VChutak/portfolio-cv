@@ -1,7 +1,17 @@
 ---
+import ContentWithMedia from "../components/ContentWithMedia.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <h1>ABOUT</h1>
+  <ContentWithMedia
+    className="rounded-lg"
+    imageFirst={true}
+    contentImage="valery-nature-photo.webp"
+    contentDescription=`Hi there! I’m a technical creative who lives at the intersection of design and code.
+
+I’m a big believer in the power of diverse teams and thrive on challenging projects that push me to learn something new every day. Whether I’m building out complex web experiences or integrating AI workflows to sharpen the process, I’m always chasing that next "aha!" moment.
+
+When I’m away from the screen, you’ll usually find me tinkering with electronics, hacking together hardware projects, or hitting the trails for a long hike.`
+  />
 </Layout>
