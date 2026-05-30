@@ -13,12 +13,14 @@ p {
   --color-writetic2: #380671;
   --color-nemesysco: #001a41;
   --color-nemesysco2: #00132f;
-  --color-openlm:#052586;
-  --color-openlm2:#052586;
+  --color-openlm: #052586;
+  --color-openlm2: #052586;
   --color-semrush: #701203;
-  --color-semrush2: #5B0F03;
-  --color-mytarotlife:#130022;
-  --color-mytarotlife2:#0B0014;
+  --color-semrush2: #5b0f03;
+  --color-mytarotlife: #130022;
+  --color-mytarotlife2: #0b0014;
+  --color-dimensio: #5A349D;
+  --color-dimensio2: #442580;
 }
 
 .wide-grid-cell {

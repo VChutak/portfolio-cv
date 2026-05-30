@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
+import InnerLaoyut from "./InnerLaoyut.astro";
 const { title, description } = Astro.props;
 ---
 
@@ -84,7 +85,7 @@ const { title, description } = Astro.props;
   <body>
     <div class="min-h-screen flex flex-col justify-between items-start">
       <Header />
-      <slot />
+      <slot /> 
       <Footer />
     </div>
   </body>

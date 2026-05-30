@@ -3,7 +3,7 @@ import "../styles/global.css";
 type Props = {
   projectName: string;
   projectFocus: string;
-  projectDate: string;
+  projectDate?: string;
   projectImage: string;
   projectDescription: string;
   liveLink?: string;
@@ -22,17 +22,17 @@ const {
 <div class="max-w-7xl flex flex-col gap-10 sm:px-4 px-4 mx-auto mt-16 mb-20">
   <div class="flex sm:flex-row flex-col justify-between gap-y-6">
     <div class="flex flex-col gap-2 items-left">
-      <h3>Project Name</h3>
+      <h2>Project Name</h2>
       <p class="font-bold">{projectName}</p>
     </div>
     <div class="flex flex-col gap-2 items-left">
-      <h3>Focus</h3>
+      <h2>Focus</h2>
       <p class="font-bold">{projectFocus}</p>
     </div>
-    <div class="flex flex-col gap-2 sm:items-right items-left">
+    <!-- <div class="flex flex-col gap-2 sm:items-right items-left">
       <h3 class="sm:text-right text-left">Date</h3>
       <p class="font-bold">{projectDate}</p>
-    </div>
+    </div> -->
   </div>
   <div class="flex flex-col gap-4">
     <img
@@ -42,7 +42,7 @@ const {
       height='800"'
       class="rounded-lg"
     />
-    <p class="text-lg text-pretty sm:columns-2 columns-1 gap-4">
+    <p class="text-lg text-pretty max-w-[70ch] gap-4">
       {projectDescription}
     </p>
     <a

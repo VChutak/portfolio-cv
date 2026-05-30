@@ -17,37 +17,72 @@ import ContactMe from "../components/ContactMe.astro";
   <div class="flex flex-col gap-2 max-w-7xl mx-auto">
     <div
       id="hero"
-      class="lg:min-h-[35vh] min-h-[45vh] flex flex-col gap-6 justify-center items-center"
+      class="lg:min-h-[30vh] min-h-[55vh] flex flex-col gap-6 justify-center items-center"
     >
       <h1
-        class="lg:text-5xl text-3xl font-bold text-center sm:px-0 px-10 max-w-[23ch]"
+        class="lg:text-5xl text-3xl font-bold text-center sm:px-0 px-10 max-w-[40ch]"
       >
-        Building the future of brand-led products.
+        Technical UI Designer
       </h1>
-      <p class="text-center lg:text-lg text-sm px-6 max-w-[70ch]">
-        A multi-disciplinary designer specializing in the intersection of
-        motion, identity, and code. I leverage AI-accelerated workflows to
-        deliver agency-grade creative at the speed of your product roadmap.
-      </p>
+      <span class="text-center lg:text-lg text-sm px-6 max-w-[70ch]">
+        Specializing in <strong>production-ready interfaces</strong> for companies
+        that balance aesthetics, usability, and technical feasibility. I use
+        <strong>AI-augmented workflows and frontend development skills</strong> to
+        create UI that speeds up product development and enhances user experience.
+      </span>
     </div>
+
+    <!-- <div
+      class="relative flex items-center justify-center lg:min-h-[30vh] min-h-[55vh] w-full bg-[#1a1a1a] overflow-hidden"
+    >
+      <div
+        class="absolute w-[80%] h-[60%] bg-[#8659D120] rounded-[4rem] blur-[80px]"
+      >
+      </div>
+      <div class="relative z-10 text-white text-center">
+        <h1 class="text-3xl font-bold">Technical UI Designer</h1>
+        <span class="text-center lg:text-lg text-sm px-6 max-w-[70ch]">
+          Specializing in <strong>production-ready interfaces</strong> for companies
+          that balance aesthetics, usability, and technical feasibility. I use
+          <strong>AI-augmented workflows and frontend development skills</strong
+          > to create UI that speeds up product development and enhances user experience.
+        </span>
+      </div>
+    </div> -->
+
     <div
       role="grid"
       id="foliocards-grid"
-      class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-6 md:grid-cols-2 gap-6 px-4"
+      class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-2 md:grid-cols-2 gap-6 px-4"
     >
       <FolioCard
         projectTags={[
-          "Marketing Optimization",
-          "AI-Integrated WebGL",
-          "Web 3D Experiment",
+          "End-to-End Design",
+          "User flow design",
+          "",
         ]}
-        className="lg:col-span-2 lg:row-span-2 lg:col-end-3 lg:col-start-1"
-        link="./projects/stufstorage"
-        title="Stuf Storage"
+        className="lg:col-span-12 lg:row-span-1 lg:col-start-1"
+        link="./projects/bazinga"
+        title="Bazinga AI"
+        projectFocus="Brand Systems and UX Adaptation"
+        projectDate=""
+        backgroundColor="var(--color-bazinga)"
+        backgroundColorVariation="var(--color-bazinga2)"
+      />
+
+      <FolioCard
+        projectTags={[
+          "Git integration",
+          "UI Design",
+          "Blazor Component Library",
+        ]}
+        className="lg:row-start-2 lg:col-span-6 lg:row-span-1 lg:col-end-7 lg:col-start-1"
+        link="./projects/dimensio"
+        title="Dimensio"
         projectFocus="Brand Systems and Marketing Optimization"
-        projectDate="2025 - Present"
-        backgroundColor="var(--color-stuf)"
-        backgroundColorVariation="var(--color-stuf2)"
+        projectDate=""
+        backgroundColor="var(--color-dimensio)"
+        backgroundColorVariation="var(--color-dimensio2)"
       />
 
       <FolioCard
@@ -56,16 +91,15 @@ import ContactMe from "../components/ContactMe.astro";
           "AI-Integrated WebGL",
           "Web 3D Experiment",
         ]}
-        className="lg:col-span-1 lg:row-span-2 lg:col-start-3"
-        link="./projects/bazinga"
-        title="Bazinga AI"
-        projectFocus="Brand Systems and UX Adaptation"
-        projectDate="Q4 2025"
-        backgroundColor="var(--color-bazinga)"
-        backgroundColorVariation="var(--color-bazinga2)"
+        className="lg:col-span-6 lg:grid-col-start-7 lg:row-start-2"
+        link="./projects/mytarotlife"
+        title="My Tarot Life"
+        projectFocus="Engaging Landing Page"
+        backgroundColor="var(--color-mytarotlife)"
+        backgroundColorVariation="var(--color-mytarotlife2)"
       />
 
-      <FolioCard
+      <!-- <FolioCard
         projectTags={[
           "WebGL Optimization",
           "AI-Integrated WebGL",
@@ -77,9 +111,9 @@ import ContactMe from "../components/ContactMe.astro";
         projectFocus="On Brand asset management and design"
         backgroundColor="var(--color-semrush"
         backgroundColorVariation="var(--color-semrush2)"
-      />
+      /> -->
 
-      <FolioCard
+      <!-- <FolioCard
         projectTags={[
           "WebGL Optimization",
           "AI-Integrated WebGL",
@@ -91,9 +125,9 @@ import ContactMe from "../components/ContactMe.astro";
         projectFocus="Optimizing Landing page for SEO and Page Speed"
         backgroundColor="var(--color-writetic)"
         backgroundColorVariation="var(--color-writetic2)"
-      />
+      /> -->
 
-      <FolioCard
+      <!-- <FolioCard
         projectTags={[
           "WebGL Optimization",
           "AI-Integrated WebGL",
@@ -105,9 +139,9 @@ import ContactMe from "../components/ContactMe.astro";
         projectFocus="Adjusting UX and Optimizing App Design"
         backgroundColor="var(--color-nemesysco)"
         backgroundColorVariation="var(--color-nemesysco2)"
-      />
+      /> -->
 
-      <FolioCard
+      <!-- <FolioCard
         projectTags={[
           "WebGL Optimization",
           "AI-Integrated WebGL",
@@ -119,21 +153,7 @@ import ContactMe from "../components/ContactMe.astro";
         projectFocus="Informational Design and Landing Page optimization"
         backgroundColor="var(--color-openlm)"
         backgroundColorVariation="var(--color-openlm2)"
-      />
-
-      <FolioCard
-        projectTags={[
-          "WebGL Optimization",
-          "AI-Integrated WebGL",
-          "Web 3D Experiment",
-        ]}
-        className="lg:col-span-3 lg:grid-col-start-1 lg:row-start-6"
-        link="./projects/mytarotlife"
-        title="My Tarot Life"
-        projectFocus="Engaging Landing Page"
-        backgroundColor="var(--color-mytarotlife)"
-        backgroundColorVariation="var(--color-mytarotlife2)"
-      />
+      /> -->
     </div>
 
     <div class="flex flex-col gap-10 items-center py-30">
