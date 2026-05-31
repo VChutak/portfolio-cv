@@ -8,34 +8,13 @@ const {
 } = Astro.props;
 ---
 
-<svg
-  width="17"
-  height="15"
-  viewBox="0 0 17 15"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M2.01562 7.59473H14.0156"
-    stroke="black"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"></path>
-  <path
-    d="M9.01562 2.59473L14.0156 7.59475L9.01562 12.5947"
-    stroke="black"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"></path>
-</svg>
-
 <div class="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-10">
   <div class="flex flex-col gap-4">
     <h4 class="text-2xl text-center">Explore some of my other Projects</h4>
     <div class="flex sm:flex-row flex-col gap-4 justify-between">
       <a
         href={previousProjectLink}
-        class="flex flex-col justify-center items-center sm:py-10 py-6 px-20 border rounded-lg group cursor"
+        class="flex flex-col justify-center items-center sm:py-10 py-4 px-10 border rounded-lg group cursor"
       >
         <div class="inline-flex items-center gap-2">
           <svg
@@ -65,7 +44,7 @@ const {
       </a>
       <a
         href={nextProjectLink}
-        class="flex flex-row justify-center items-center sm:py-10 py-6 px-20 border rounded-lg group"
+        class="flex flex-row justify-center items-center sm:py-10 py-4 px-10 border rounded-lg group"
       >
         <div class="inline-flex items-center gap-2">
           {nextProjectTitle}

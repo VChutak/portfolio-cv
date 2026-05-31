@@ -21,11 +21,12 @@ import ThreeCards from "../../components/ThreeCards.astro";
   <!-- <ProjectScopeSummary /> -->
 
   <ProjectHeader
-    projectName="Dimensio"
-    projectFocus="Architecting UX. Engineering UI."
+    projectName="Dimenso"
+    projectFocus="Technical UI Designer / Frontend Developer"
+    projectStack="Blazor, Git, Tailwind CSS Methodology, Figma"
     projectImage="../../projects/bazinga/Bazinga-header.webp"
-    projectDescription=`Designed and developed the Bazinga AI platform end-to-end. I built the foundational brand identity and marketing website, then leveraged that design system to architect the core web app—transforming a complex AI assistant configuration process into an intuitive, seamless user flow.`
-    liveLink="https://bazinga.ai/"
+    projectDescription=`Dimenso Central unifies accommodation and catering logistics into one platform. I designed and coded the frontend using customized Blazor component libraries, delivering a seamless, role-based dashboard for central administration, inventory purchasing, and meal management. `
+    projectLink="https://central.dimenso.cz/#central"
   />
   <!-- <FullHeightImage
     backgroundColor="#c9371e"
@@ -33,22 +34,29 @@ import ThreeCards from "../../components/ThreeCards.astro";
   /> -->
   <Heading
     title="The Problem"
-    subtitle="Building a custom AI assistant is often an overwhelming, highly technical process that alienates non-developer users. Furthermore, many AI startups suffer from fragmented user journeys where the marketing site looks completely disconnected from the actual software. Bazinga AI needed a unified, intuitive experience that guided users seamlessly from discovering the product to successfully configuring and deploying their own AI agents."
+    subtitle="The engineering team behind Dimenso Central-a Brno-based platform unifying catering and accommodation logistics—had built a powerful backend, but needed a frontend interface to match. The core UX challenge was translating highly complex data into a usable dashboard. Administrators required a streamlined tool to oversee central purchasing, nutritional registers, and multi-facility operations without suffering from cognitive overload."
   />
 
-  <!-- <ContentWithMedia
-    color="#1a1a1a"
+  <ContentWithMedia
     centerText={true}
     imageFirst={true}
-    backgroundColor="#fef3ee"
     imageCellOrder={1}
     contentCellOrder={2}
     imageCellWidth={6}
     contentCellWidth={6}
-    contentImage="../../projects/bazinga/bazinga-brand0.webp"
-    contentTitle="It all starts with a logo"
-    contentDescription="A strong logo is simple, memorable, and versatile, ensuring it resonates with the audience across various platforms and mediums. Bazinga's logo represents a stylized chat bubble and the instantly recognizable AI magic star"
-  /> -->
+    contentImage="../../projects/dimenso/dimenso-information-layout.webp"
+    contentTitle="A Crisis of Information Hierarchy"
+  >
+  <p>
+Before the redesign, the Dimenso frontend struggled to present dense catering and inventory data effectively. The legacy UI suffered from several critical usability issues:
+  </p>
+  <ul>
+    <li><strong> Absence of Visual Hierarchy:</strong> Every data point—from the primary product title to secondary internal codes-competes for the same attention. There is no clear typographic scale or visual weight to guide the user's eye to the most critical information first.</li>
+    <li><strong>Poor Spatial Grouping:</strong> The interface violates basic Gestalt principles. There is a massive, arbitrary gap between the data labels (e.g., "Měrná jednotka") and their corresponding values. This forces the administrator’s eyes to jump across vast whitespace just to read a single key-value pair, significantly increasing cognitive load.</li>
+    <li><strong>Unstructured Relational Data:</strong> Complex, nested data—such as Nutritional Values (Nutriční hodnoty) and Vendor Packaging (Balení a výrobky)-is dumped into flat text blocks and default, unstyled HTML hyperlinks. There are no tables, data grids, or cards to organize this multi-layered information.</li>
+  </ul>
+
+</ContentWithMedia>  
 
   <!-- <ContentWithMedia
     centerText={true}
@@ -97,8 +105,8 @@ Starting with these core colors, I systematically expanded the palette, ensuring
   <Heading title="The Process" subtitle="" />
 
   <Heading3
-    title="1. Visual Identity & Design System Foundation"
-    subtitle="Before touching the complex application logic, I established the core brand language. I developed the logo and brand book, but rather than treating them as static graphic assets, I immediately translated them into a scalable UI design system. By defining global design tokens (typography, color variables, spacing), I ensured visual consistency across every future touchpoint."
+    title="1. Structuring Complex Data (UX)"
+    subtitle="Before writing any code, I had to untangle the relational data. I designed dashboard layouts that prioritized critical daily tasks—allowing hostel staff to instantly cross-reference available products, track vendor stock, and manage meal allocations based on guest diet types. The goal was to reduce cognitive load and minimize clicks for high-frequency actions."
   />
 
   <!-- <TwoCards
@@ -135,13 +143,13 @@ Starting with these core colors, I systematically expanded the palette, ensuring
   /> -->
 
   <Heading3
-    title="2. Marketing UI & Conversion Flow"
-    subtitle="With the design system in place, I designed the top-of-funnel web experience. The goal here was not just visual appeal, but conversion architecture—crafting clear messaging, intuitive navigation, and strategic calls-to-action designed to funnel visitors smoothly into the application's onboarding flow."
+    title="2. Designing Within Technical Constraints (UI)"
+    subtitle="The client required the use of a specific, pre-made Blazor component library. Instead of fighting the framework, I embraced it. I established a custom design token system mapped perfectly to Tailwind CSS conventions (e.g., utilizing functional scales like primary-50 to primary-900). This approach allowed me to heavily customize the off-the-shelf Blazor components, transforming a generic library into a cohesive, branded interface that felt bespoke."
   />
 
   <Heading3
-    title="3. The Agent Creation Flow (Core UI/UX)"
-    subtitle="The heaviest lift was designing the application interface where users actually build their AI. I approached this by breaking down the technical complexity into digestible steps:"
+    title="3. Frontend Development & Collaboration (Engineering)"
+    subtitle="This was a highly collaborative, code-heavy engagement. I didn't just hand off Figma files; I actively coded the frontend UI representations using Blazor. By integrating directly into the client's engineering workflow, I pushed UI updates and component customizations through their Git repository, ensuring the frontend stayed perfectly in sync with their backend development cycles."
   />
 
   <!-- <FullHeightImage
@@ -160,8 +168,8 @@ Starting with these core colors, I systematically expanded the palette, ensuring
         contentCellWidth={6}
         /> -->
   <Heading
-    title="Conclusion"
-    subtitle="I delivered a fully interactive, end-to-end Figma prototype and a comprehensive component library. By owning the process from the foundational branding all the way through to the complex application logic, I eliminated the typical friction between marketing and product design. The result was a cohesive, dev-ready system that allowed the engineering team to begin frontend implementation immediately without needing to guess at interaction states or design rules."
+    title="The Outcome"
+    subtitle="I successfully bridged the gap between the client's raw backend data and the end-user experience. By delivering a customized, scalable Blazor frontend and collaborating seamlessly via Git with the local engineering team, I provided hostel administrators with a powerful, intuitive tool to manage their daily operations."
   />
 
   <FullHeightImage
@@ -172,8 +180,8 @@ Starting with these core colors, I systematically expanded the palette, ensuring
   <ContactMe />
   <SeeOtherProjects
     previousProjectLink="./mytarotlife"
-    nextProjectLink="./dimensio"
+    nextProjectLink="./bazinga"
     previousProjectTitle="My Tarot Life"
-    nextProjectTitle="Dimensio"
+    nextProjectTitle="Bazinga AI"
   />
 </Layout>

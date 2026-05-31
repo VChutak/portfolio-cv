@@ -3,7 +3,7 @@ import "../styles/global.css";
 type Props = {
   projectName: string;
   projectFocus: string;
-  projectDate?: string;
+  projectStack?: string;
   projectImage: string;
   projectDescription: string;
   liveLink?: string;
@@ -12,7 +12,7 @@ type Props = {
 const {
   projectName,
   projectFocus,
-  projectDate,
+  projectStack,
   projectImage,
   projectDescription,
   liveLink,
@@ -29,10 +29,10 @@ const {
       <h2>Focus</h2>
       <p class="font-bold">{projectFocus}</p>
     </div>
-    <!-- <div class="flex flex-col gap-2 sm:items-right items-left">
-      <h3 class="sm:text-right text-left">Date</h3>
-      <p class="font-bold">{projectDate}</p>
-    </div> -->
+    <div class="flex flex-col gap-2 sm:items-right items-left">
+      <h3 class="sm:text-right text-left">Tech STtack & Tools</h3>
+      <p class="font-bold">{projectStack}</p>
+    </div>
   </div>
   <div class="flex flex-col gap-4">
     <img
