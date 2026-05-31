@@ -19,8 +19,8 @@ p {
   --color-semrush2: #5b0f03;
   --color-mytarotlife: #130022;
   --color-mytarotlife2: #0b0014;
-  --color-dimensio: #5A349D;
-  --color-dimensio2: #442580;
+  --color-dimenso: #5A349D;
+  --color-dimenso2: #442580;
 }
 
 .wide-grid-cell {
@@ -47,4 +47,8 @@ p {
 body {
   background-color: var(--background);
   color: var(--text);
+}
+
+li {
+  margin-bottom: 0.5 rem;
 }

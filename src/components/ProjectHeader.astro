@@ -6,7 +6,8 @@ type Props = {
   projectStack?: string;
   projectImage: string;
   projectDescription: string;
-  liveLink?: string;
+  projectLink?: string;
+  linkDescription?: string;
 };
 
 const {
@@ -15,7 +16,8 @@ const {
   projectStack,
   projectImage,
   projectDescription,
-  liveLink,
+  projectLink,
+  linkDescription
 }: Props = Astro.props;
 ---
 
@@ -46,11 +48,11 @@ const {
       {projectDescription}
     </p>
     <a
-      href={liveLink}
+      href={projectLink}
       target="_blank"
-      class=`${liveLink  ? "inline-flex" : "hidden"} gap-2 max-w-50`
+      class=`${projectLink  ? "inline-flex" : "hidden"} gap-2 max-w-50`
     >
-      <p><strong>Link to live site</strong></p><svg
+      <p><strong>{linkDescription}</strong></p><svg
         width="25"
         height="25"
         viewBox="0 0 25 25"
@@ -59,19 +61,19 @@ const {
       >
         <path
           d="M18.1445 13.6621V19.6621C18.1445 20.1925 17.9338 20.7012 17.5587 21.0763C17.1837 21.4514 16.675 21.6621 16.1445 21.6621H5.14453C4.6141 21.6621 4.10539 21.4514 3.73032 21.0763C3.35524 20.7012 3.14453 20.1925 3.14453 19.6621V8.66211C3.14453 8.13168 3.35524 7.62297 3.73032 7.2479C4.10539 6.87282 4.6141 6.66211 5.14453 6.66211H11.1445"
-          stroke="black"
+          stroke="var(--text)"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"></path>
         <path
           d="M15.1445 3.66211H21.1445V9.66211"
-          stroke="black"
+          stroke="var(--text)"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"></path>
         <path
           d="M10.1445 14.6621L21.1445 3.66211"
-          stroke="black"
+          stroke="var(--text)"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"></path>

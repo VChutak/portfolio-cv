@@ -9,12 +9,14 @@ import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
 import FullHeightImage from "../../components/FullHeightImage.astro";
 import ContactMe from "../../components/ContactMe.astro";
-import FullWidthVideo from "../../components/FullWidthVideo.astro";
+import FullWidthImage from "../../components/FullWidthImage.astro";
+// import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import VideoEmbedWithContent from "../../components/VideoEmbedWithContent.astro";
 import Heading from "../../components/Heading.astro";
 import Heading3 from "../../components/Heading3.astro";
 import TwoCards from "../../components/TwoCards.astro";
 import ThreeCards from "../../components/ThreeCards.astro";
+import { ACTION_QUERY_PARAMS } from "astro:actions";
 ---
 
 <Layout title="Dimensio UI and UX design project by Valeri Ciutac">
@@ -27,6 +29,7 @@ import ThreeCards from "../../components/ThreeCards.astro";
     projectImage="../../projects/bazinga/Bazinga-header.webp"
     projectDescription=`Dimenso Central unifies accommodation and catering logistics into one platform. I designed and coded the frontend using customized Blazor component libraries, delivering a seamless, role-based dashboard for central administration, inventory purchasing, and meal management. `
     projectLink="https://central.dimenso.cz/#central"
+    linkDescription="Link to prototype"
   />
   <!-- <FullHeightImage
     backgroundColor="#c9371e"
@@ -47,28 +50,29 @@ import ThreeCards from "../../components/ThreeCards.astro";
     contentImage="../../projects/dimenso/dimenso-information-layout.webp"
     contentTitle="A Crisis of Information Hierarchy"
   >
-  <p>
-Before the redesign, the Dimenso frontend struggled to present dense catering and inventory data effectively. The legacy UI suffered from several critical usability issues:
-  </p>
-  <ul>
-    <li><strong> Absence of Visual Hierarchy:</strong> Every data point—from the primary product title to secondary internal codes-competes for the same attention. There is no clear typographic scale or visual weight to guide the user's eye to the most critical information first.</li>
-    <li><strong>Poor Spatial Grouping:</strong> The interface violates basic Gestalt principles. There is a massive, arbitrary gap between the data labels (e.g., "Měrná jednotka") and their corresponding values. This forces the administrator’s eyes to jump across vast whitespace just to read a single key-value pair, significantly increasing cognitive load.</li>
-    <li><strong>Unstructured Relational Data:</strong> Complex, nested data—such as Nutritional Values (Nutriční hodnoty) and Vendor Packaging (Balení a výrobky)-is dumped into flat text blocks and default, unstyled HTML hyperlinks. There are no tables, data grids, or cards to organize this multi-layered information.</li>
-  </ul>
-
-</ContentWithMedia>  
-
-  <!-- <ContentWithMedia
-    centerText={true}
-    imageFirst={false}
-    imageCellOrder={1}
-    contentCellOrder={2}
-    imageCellWidth={4}
-    contentCellWidth={8}
-    contentImage="../../projects/bazinga/bazinga-brand1.webp"
-    contentTitle="Base element for the brand identity"
-    contentDescription=`All graphic elements are derived from the logo’s shapes, creating a unified and recognizable design across all materials. This ensures that every visual detail—whether it’s icons, buttons, or backgrounds—feels intentional and aligned with the brand’s identity. By maintaining this consistency, the brand becomes more visually cohesive, reinforcing trust and recognition while making the user experience feel polished and seamless.`
-  /> -->
+    <p>
+      Before the redesign, the Dimenso frontend struggled to present dense
+      catering and inventory data effectively. The legacy UI suffered from
+      several critical usability issues:
+    </p>
+    <ul>
+      <li class="mb-2">
+        <strong> Flat Visual Hierarchy:</strong> Lacks a defined typographic scale.
+        Primary titles and secondary internal codes compete equally for the user's
+        attention..
+      </li>
+      <li class="mb-2">
+        <strong>Poor Spatial Grouping:</strong> Arbitrary whitespace between labels
+        and values violates Gestalt principles, forcing excessive eye movement and
+        increasing cognitive load.
+      </li>
+      <li>
+        <strong>Unstructured Relational Data:</strong> Complex, nested information
+        (e.g., nutritional values, vendor packaging) is dumped into flat text blocks
+        and unstyled links instead of structured tables or data cards.
+      </li>
+    </ul>
+  </ContentWithMedia>
 
   <!-- <FullHeightImage
     backgroundColor="#fef3ee"
@@ -109,6 +113,11 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     subtitle="Before writing any code, I had to untangle the relational data. I designed dashboard layouts that prioritized critical daily tasks—allowing hostel staff to instantly cross-reference available products, track vendor stock, and manage meal allocations based on guest diet types. The goal was to reduce cognitive load and minimize clicks for high-frequency actions."
   />
 
+  <FullWidthImage
+    backgroundColor=""
+    image="../../projects/dimenso/Dimenso-full.webp"
+  />
+
   <!-- <TwoCards
     imageOne="../../projects/bazinga/bazinga_sparks.gif"
     imageTwo="../../projects/bazinga/bazinga_chatbubbles.gif"
@@ -147,6 +156,20 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     subtitle="The client required the use of a specific, pre-made Blazor component library. Instead of fighting the framework, I embraced it. I established a custom design token system mapped perfectly to Tailwind CSS conventions (e.g., utilizing functional scales like primary-50 to primary-900). This approach allowed me to heavily customize the off-the-shelf Blazor components, transforming a generic library into a cohesive, branded interface that felt bespoke."
   />
 
+  <ContentWithMedia
+    centerText={true}
+    imageFirst={false}
+    imageCellOrder={1}
+    contentCellOrder={2}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/dimenso/Dimenso-devexpress.webp"
+    contentTitle="Constraints? Not a Problem!"
+    contentDescription=`I designed and customized the UI using the mandated DevExpress Blazor library. To future-proof the frontend against framework updates, I used a minimal-override strategy—mapping Tailwind CSS tokens to global theme variables, utilizing native SizeMode settings for density, and safely targeting wrappers via Blazor's CSS isolation. For any unavoidable deep overrides, I embedded explicit developer comments to ensure seamless maintenance during future version upgrades.`
+  >
+    <code> </code>
+  </ContentWithMedia>
+
   <Heading3
     title="3. Frontend Development & Collaboration (Engineering)"
     subtitle="This was a highly collaborative, code-heavy engagement. I didn't just hand off Figma files; I actively coded the frontend UI representations using Blazor. By integrating directly into the client's engineering workflow, I pushed UI updates and component customizations through their Git repository, ensuring the frontend stayed perfectly in sync with their backend development cycles."
@@ -172,9 +195,9 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     subtitle="I successfully bridged the gap between the client's raw backend data and the end-user experience. By delivering a customized, scalable Blazor frontend and collaborating seamlessly via Git with the local engineering team, I provided hostel administrators with a powerful, intuitive tool to manage their daily operations."
   />
 
-  <FullHeightImage
-    backgroundColor="#ffffff00"
-    image="../../projects/bazinga/bazinga_loader.gif"
+  <FullWidthImage
+    backgroundColor="var(--color-dimenso)"
+    image="../../projects/dimenso/Dimenso-outcome.webp"
   />
 
   <ContactMe />
