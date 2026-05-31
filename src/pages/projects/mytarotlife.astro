@@ -1,118 +1,209 @@
 ---
 import "..//../styles/global.css";
+import ProjectScopeSummary from "../../components/ProjectScopeSummary.astro";
+import ProjectMetricsGrid from "../../components/ProjectMetricsGrid.astro";
 import ProjectHeader from "..//../components/ProjectHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 import ContentWithMedia from "../../components/ContentWithMedia.astro";
 import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
-import TwoCards from "../../components/TwoCards.astro";
-import Heading from "../../components/Heading.astro";
-import FullWidthVideo from "../../components/FullWidthVideo.astro";
-import ContactMe from "../../components/ContactMe.astro";
-import ComparisonSlider from "../../components/ComparisonSlider.astro";
 import FullHeightImage from "../../components/FullHeightImage.astro";
+import ContactMe from "../../components/ContactMe.astro";
+import FullWidthImage from "../../components/FullWidthImage.astro";
+// import FullWidthVideo from "../../components/FullWidthVideo.astro";
+import VideoEmbedWithContent from "../../components/VideoEmbedWithContent.astro";
+import Heading from "../../components/Heading.astro";
+import Heading3 from "../../components/Heading3.astro";
+import TwoCards from "../../components/TwoCards.astro";
+import ThreeCards from "../../components/ThreeCards.astro";
+import { ACTION_QUERY_PARAMS } from "astro:actions";
 ---
 
-<Layout title="OpenLM Landing page design by Valeri Ciutac">
+<Layout title="My Tarot Life web design project by Valeri Ciutac">
+  <!-- <ProjectScopeSummary /> -->
+
   <ProjectHeader
-    liveLink="https://www.mytarot.life"
     projectName="My Tarot Life"
-    projectFocus="3D Web Design / Web Development"
-    projectDate="01-2025"
+    projectFocus="Technical UI Designer / Frontend Developer"
+    projectStack="Next.js, Three.js, OpenAI API, Figma, Vercel"
     projectImage="../../projects/mytarotlife/mtl-header.webp"
-    projectDescription="My Tarot Life brings personalized card readings and other spiritual practices right at your fingertips. An optimized mobile experience and a pleasant 3D design ensure a great user experience. Your spiritual journey starts here."
+    projectDescription=`https://central.dimenso.cz/#central "Dimenso Central unifies accommodation and catering logistics into one platform. I designed and coded the frontend using customized Blazor component libraries, delivering a seamless, role-based dashboard for central administration, inventory purchasing, and meal management. `
+    projectLink="https://www.figma.com/proto/ZoFayDN8A1udMDO3W7bMRR/Dimensio-Copy?node-id=4-3&t=vYjTgEJnybZeuOsH-0&scaling=min-zoom&content-scaling=fixed&page-id=4%3A2&starting-point-node-id=4%3A3&show-proto-sidebar=1&fuid=1002943826166432395"
+    linkDescription="Explore live site"
+  />
+  <!-- <FullHeightImage
+    backgroundColor="#c9371e"
+    image="../../projects/bazinga/bazinga-full-website.webp"
+  /> -->
+  <Heading
+    title="The Problem"
+    subtitle="To drive engagement and monetize a tarot reading platform, a static website was not enough. The project required two complex, interactive components: an engaging top-of-funnel lead magnet that generated personalized AI readings, and a robust e-commerce customizer where users could design and order physical card decks. The challenge was blending seamless 3D interactivity, real-time AI generation, and a multi-step customization flow into an intuitive, high-performing web application."
   />
 
-  <FullHeightImage
-    backgroundColor="#111111"
-    image="../../projects/mytarotlife/mytarotlife-full.webp"
-  />
-  <Heading
-    title="The Objective"
-    subtitle="The task was straightforward but complex - create a platform for the modern day spirituality focused business and make it look magical. The closest thing to magic on the web is 3D, so having prior experience with both 3D packages like Blender and libraries like threejs meant that I could leverage that to create a platform that would not only look beautiful, but also be incredibly intuitive and user-friendly."
-  />
+  <ContentWithMedia
+    centerText={true}
+    imageFirst={true}
+    imageCellOrder={1}
+    contentCellOrder={2}
+    imageCellWidth={6}
+    contentCellWidth={6}
+    contentImage="../../projects/dimenso/dimenso-information-layout.webp"
+    contentTitle="A Crisis of Information Hierarchy"
+  >
+    <p>
+      Before the redesign, the Dimenso frontend struggled to present dense
+      catering and inventory data effectively. The legacy UI suffered from
+      several critical usability issues:
+    </p>
+    <ul>
+      <li class="mb-2">
+        <strong> Flat Visual Hierarchy:</strong> Lacks a defined typographic scale.
+        Primary titles and secondary internal codes compete equally for the user's
+        attention..
+      </li>
+      <li class="mb-2">
+        <strong>Poor Spatial Grouping:</strong> Arbitrary whitespace between labels
+        and values violates Gestalt principles, forcing excessive eye movement and
+        increasing cognitive load.
+      </li>
+      <li>
+        <strong>Unstructured Relational Data:</strong> Complex, nested information
+        (e.g., nutritional values, vendor packaging) is dumped into flat text blocks
+        and unstyled links instead of structured tables or data cards.
+      </li>
+    </ul>
+  </ContentWithMedia>
+
+  <!-- <FullHeightImage
+    backgroundColor="#fef3ee"
+    text="Using the logo as the baseline, I derived a cohesive and memorable styleguide"
+    image="../../projects/bazinga/bazinga-brand99.webp"
+  /> -->
+
   <!-- <ContentWithMedia
     centerText={true}
-    imageFirst={false}
-    backgroundColor="#ffffff"
-    imageCellWidth={6}
-    imageCellOrder={2}
-    contentCellWidth={6}
-    contentCellOrder={1}
-    contentImage="../../projects/openlm/mobile.webp"
-    contentTitle="Mobile ready? Mobile First!"
-    contentDescription="For this project, I prioritized responsive design from the start, ensuring a seamless experience across all screen sizes. Instead of just rearranging elements, I fine-tuned details for each viewport, adjusting spacing, typography, and interactions to maintain usability and aesthetics. I also designed custom assets specifically for mobile, optimizing visuals and layouts to enhance clarity and engagement on smaller screens. This meticulous approach ensured a polished, high-performing experience on both desktop and mobile."
-  />
+    imageFirst={true}
+    imageCellWidth={8}
+    imageCellOrder={1}
+    contentCellOrder={2}
+    contentCellWidth={4}
+    contentImage="../../projects/bazinga/bazinga-brand3.webp"
+    contentTitle="Color"
+    contentDescription=`I carefully crafted a color palette centered around orange and blue to make the brand feel more approachable, especially for non-tech audiences. Orange conveys energy, warmth, and creativity, while blue adds a sense of trust and professionalism—striking a perfect balance between innovation and reliability.
 
-  <ContentWithMedia
+Starting with these core colors, I systematically expanded the palette, ensuring harmony and consistency. `
+  /> -->
+
+  <!-- <ContentWithMedia
     centerText={true}
     imageFirst={true}
-    backgroundColor="#C2D0EE"
-    imageCellWidth={6}
-    imageCellOrder={2}
-    contentCellWidth={6}
-    contentCellOrder={1}
-    contentImage="../../projects/openlm/openlm-wireframes1.webp"
-    contentTitle="First things first"
-    contentDescription="Wireframes lay the groundwork for a smooth and intuitive user experience. They help plan structure, navigation, and functionality before diving into visuals, making sure everything flows logically. By focusing on layout first, wireframes save time, prevent design mistakes, and keep the team aligned—leading to a better final product."
-  />
-
-  <ContentWithMedia
-    centerText={true}
-    imageFirst={true}
-    backgroundColor="#C2D0EE"
     imageCellWidth={8}
     contentCellWidth={4}
-    imageCellOrder={2}
-    contentCellOrder={1}
-    contentImage="../../projects/openlm/openlm-wireframes3.webp"
-    contentTitle="First things first"
-    contentDescription=``
+    imageCellOrder={1}
+    contentCellOrder={2}
+    contentImage="../../projects/bazinga/bazinga-brand4.webp"
+    contentTitle="Tailwind CSS Palette"
+    contentDescription=`From the initial shades, I derived a comprehensive Tailwind CSS color system, defining variations for backgrounds, text, buttons, and accents. This approach provided scalability and flexibility, allowing for a visually cohesive experience across the entire platform while maintaining accessibility and contrast.`
+  /> -->
+
+  <Heading title="The Process" subtitle="" />
+
+  <Heading3
+    title="1. Designing the Interactive Lead Magnet (Engagement UX)"
+    subtitle=`I designed and developed a highly interactive 3D web experience to capture user interest. Using Three.js, I built smooth card-flip mechanics that feel tactile and engaging. When a user interacts, the frontend hits an OpenAI endpoint to fetch a dynamically generated, personalized reading, converting a simple UI interaction into a high-value content delivery system.`
+  />
+
+  <FullWidthImage
+    backgroundColor=""
+    image="../../projects/dimenso/Dimenso-full.webp"
+  />
+
+  <!-- <TwoCards
+    imageOne="../../projects/bazinga/bazinga_sparks.gif"
+    imageTwo="../../projects/bazinga/bazinga_chatbubbles.gif"
+    cardOneTitle="Animated elements"
+    cardTwoTitle="Expanding the style guide to UI"
+    cardOneDescription=""
+    cardTwoDescription=""
+  /> -->
+
+  <!-- <ThreeCards
+    imageOne="../../projects/bazinga/bazinga_sparks.gif"
+    imageTwo="../../projects/bazinga/bazinga_sparks.gif"
+    imageThree="../../projects/bazinga/bazinga_sparks.gif"
+    titleOne="Animated elements"
+    titleTwo="Animated elements"
+    titleThree="Animated elements"
+    descriptionOne="Expanding the style guide to UI"
+    descriptionTwo="Expanding the style guide to UI"
+    descriptionThree="Expanding the style guide to UI"
+  /> -->
+
+  <!-- <ContentWithMedia
+    imageCellOrder={1}
+    contentCellOrder={2}
+    centerText={true}
+    imageFirst={false}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/bazinga/bazinga-pricing.webp"
+    contentTitle="Expanding the style to UI elements"
+    contentDescription="A major advantage of being both the brand designer and the UI/UX designer is the ability to create truly distinctive and cohesive user interfaces. This ensures that every element not only aligns seamlessly with the brand’s identity but also feels intentional, polished, and visually unique. By maintaining full creative control over both branding and UI/UX, I can design experiences that are not just functional, but also aesthetically compelling and instantly recognizable—giving the product a powerful competitive edge."
+  /> -->
+
+  <Heading3
+    title="2. Architecting the Deck Builder (Complex User Flows)"
+    subtitle=`  To monetize the engagement, I engineered a multi-step "Card Builder" flow. I mapped out the user journey from start to finish: Theme Selection -> Card Back Customization -> Real-Time 3D Preview -> Order Flow. I heavily prioritized UX principles like progress indicators, error prevention, and progressive disclosure to ensure users wouldn't abandon the complex funnel midway.`
+  />
+
+  <ContentWithMedia
+    centerText={true}
+    imageFirst={false}
+    imageCellOrder={1}
+    contentCellOrder={2}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/dimenso/Dimenso-devexpress.webp"
+    contentTitle="Constraints? Not a Problem!"
+    contentDescription=`I designed and customized the UI using the mandated DevExpress Blazor library. To future-proof the frontend against framework updates, I used a minimal-override strategy—mapping Tailwind CSS tokens to global theme variables, utilizing native SizeMode settings for density, and safely targeting wrappers via Blazor's CSS isolation. For any unavoidable deep overrides, I embedded explicit developer comments to ensure seamless maintenance during future version upgrades.`
   >
-    <ul>
-      <li>
-        <p>
-          <strong>1.</strong> Custom illustrations to enhance brand recognition utilizing
-          matching color scheme and familiar imagery.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong>2.</strong> A video element was replaced by before/after slider.
-          This provides a simple, hands-on explanation on what is the difference.(works
-          good on mobile too)
-        </p>
-      </li>
-    </ul></ContentWithMedia
-  >
+  </ContentWithMedia>
 
-  <ComparisonSlider
-    lineColor="#FAC471"
-    imageBefore="../../projects/openlm/before.webp"
-    imageAfter="../../projects/openlm/after.webp"
-    description=`A simple and fasr Before/After slider to showcase the simplicity of the Cloud implementation`
-    `
-  />
-  <div style="padding:50.52% 0 0 0;position:relative;"><iframe src= style="position:absolute;top:0;left:0;width:100%;height:100%;" title="My Tarot Life card"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
-   -->
-  <FullWidthVideo
-    videoLink=`https://player.vimeo.com/video/1057814121?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media`
-    backgroundColor="#111111"
-    color="#ffffff"
-    additionalText=`For the Hero image, I designed and animated a 3D tarot card with intricate details and smooth motion, ensuring it felt immersive and interactive. I also implemented the core mechanism that allows users to submit their name and birthday, triggering the system to accept the correct card and reveal a personalized prediction. This flexible approach let me fine-tune the animations and interactions quickly, ensuring a seamless and engaging experience on the final webpage.`
-    `
+  <Heading3
+    title="3. Full-Stack Frontend Execution (Engineering)"
+    subtitle="I brought the UX to life by coding the interface in Next.js. This required managing complex React state to ensure that as users tweaked their custom card borders, text, or AI-generated artwork, the Three.js 3D preview updated in real-time. I handled the API integrations and deployed the entire application to Vercel, ensuring fast, production-ready performance."
   />
 
-  <Conclusion
-    conclusionTitle="Conclusion"
-    conclusionText1="This project was a perfect fit for me, allowing me to combine my skills in 3D design, web design, and animation to create a magical and mystical landing page."
+  <!-- <FullHeightImage
+    backgroundColor="#111A38"
+    image="../../projects/bazinga/bazinga-brand2.webp"
+  /> -->
+
+  <!-- <ProjectMetricsGrid /> -->
+
+  <!-- <VideoEmbedWithContent
+        videoLink=`https://player.vimeo.com/video/1054267122?title=0&amp;controls=0&amp;badge=0&amp;autopause=0&amp;autoplay=1&loop=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; controls=0; sidedock=0; title=0` 
+        videoFirst={true}
+        contentDescription="TESSSSSST"
+        contentTitle="TESSSSSST"
+        imageCellWidth={6}
+        contentCellWidth={6}
+        /> -->
+  <Heading
+    title="The Outcome"
+    subtitle="The result is a fully functional, deployed web application that transforms a static concept into an end-to-end interactive product. It successfully demonstrates the ability to merge cutting-edge web technologies (3D and AI) with strict, conversion-focused UX/UI principles, proving I can independently design, code, and ship complex digital experiences."
   />
+
+  <FullWidthImage
+    backgroundColor="var(--color-dimenso)"
+    image="../../projects/dimenso/Dimenso-outcome.webp"
+  />
+
   <ContactMe />
   <SeeOtherProjects
-    previousProjectLink="./nemesysco"
-    nextProjectLink="./semrush"
-    previousProjectTitle="Nemesysco"
-    nextProjectTitle="Semrush"
+    previousProjectLink="./dimenso"
+    nextProjectLink="./bazinga"
+    previousProjectTitle="Dimenso"
+    nextProjectTitle="Bazinga AI"
   />
 </Layout>
