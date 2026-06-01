@@ -12,4 +12,5 @@ const { title, subtitle } = Astro.props;
 >
   <h4 class="text-2xl font-bold border-l-4 pl-4 text-left">{title}</h4>
   {subtitle && <p class="max-w-[70ch] text-[var(--text)]/90">{subtitle}</p>}
+  <slot class="max-w-[70ch] text-[var(--text)]/90" />
 </div>

@@ -7,6 +7,9 @@ import Conclusion from "../../components/Conclusion.astro";
 import SeeOtherProjects from "../../components/SeeOtherProjects.astro";
 import TwoCards from "../../components/TwoCards.astro";
 import Heading from "../../components/Heading.astro";
+import VideoEmbedWithContent from "../../components/VideoEmbedWithContent.astro";
+
+import Heading3 from "../../components/Heading3.astro";
 import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import BeforeAfterSlider from "../../components/BeforeAfterSlider.astro";
 import FullHeightImage from "../../components/FullHeightImage.astro";
@@ -26,7 +29,8 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     additionalText="Simone's interview used only for demonstration purposes"
     color="#ffffff"
   />
-  <ContentWithMedia
+
+  <!-- <ContentWithMedia
     imageFirst={false}
     backgroundColor="#ececec"
     imageCellWidth={6}
@@ -34,8 +38,64 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     contentImage="../../projects/nemesysco/EmotionLogic-diamond.png"
     contentTitle="What is The Emotional Diamond?"
     contentDescription="Nemesysco’s Emotional Diamond, developed in 2012, simplifies the visualization of complex emotional responses detected by the LVA. It consists of 8 key indicators: Energy, Stress, Logic & Confidence, Emotion, Passion, Uneasy, Mental Effort, and Concentration (out of 14 total emotional states). The core idea is that emotions are context-dependent, not inherently good or bad. By analyzing emotional patterns over time, the Emotional Diamond helps reveal deeper personality traits and reactions."
+  /> -->
+
+  <Heading
+    title="The Problem"
+    subtitle="Nemesysco required a desktop interface for their deep-tech voice and emotion analysis software. While the underlying machine learning engine analyzed only audio data, the interface needed to display a synchronized video feed alongside the real-time emotional telemetry. The primary UX challenges were twofold: managing severe cognitive load (ensuring analysts could monitor the subject without missing data updates) and enabling efficient retrospective review (allowing researchers to quickly find critical moments in hours of footage)."
   />
-  <Heading title="The Problem" />
+
+  <VideoEmbedWithContent
+    imageCellOrder={1}
+    contentCellOrder={2}
+    contentOrder={1}
+    imageCellWidth={6}
+    contentCellWidth={6}
+    videoLink=`https://www.youtube.com/embed/Ux33qb-UUyE?si=GI5cn1vyr3D4_u55 width="560" height="315"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+    `
+    contentTitle="Barebones UI lacking features"
+    contentDescription="THIS IS A TEST DESCRIPTION"
+  />
+
+  <Heading title="The Process" subtitle="" />
+
+  <Heading3
+    title="1. Synchronous Interface Architecture"
+    subtitle="I designed a specialized split-view desktop layout that paired the video player directly with an adjacent data visualization panel. The goal was to ensure that the emotional telemetry (graphs, timelines, and confidence scores) mapped perfectly to the audio-visual timeline, allowing researchers to contextualize the data in real-time."
+  />
+
+  <Heading3
+    title=`2. Diagnosing & Overcoming "Cognitive Tunneling"`
+   -->
+    <ul>
+      <li class="max-w-[70ch] text-[var(--text)]/90 mb-2">
+        <strong>The Insight:</strong> User testing revealed analysts fixated so heavily
+        on the video that they suffered from inattentional blindness, completely missing
+        critical data panel updates.Threshold-triggered micro-interactions
+      </li>
+      <li class="max-w-[70ch] text-[var(--text)]/90 mb-2">
+        <strong>The Solution </strong> Kept the UI "quiet" during baseline states,
+        but engineered threshold-triggered micro-interactions.
+      </li>
+      <li class="max-w-[70ch] text-[var(--text)]/90 mb-2">
+        <strong>Attention Hooks:</strong> When the AI hit a ≥89% confidence score,
+        the UI deployed high-contrast color shifts and intentional motion to pull
+        the user's eyes to the data exactly when it mattered.
+      </li>
+    </ul>
+  </Heading3>
+
+  <Heading3
+    title="3. Event-Driven Timeline Navigation"
+    subtitle="Because deep-tech analysis requires heavy retrospective review, I designed an intelligent playback timeline. Whenever the system detected a significant shift in the subject's mood, the UI automatically plotted an interactive visual marker directly onto the video scrubber. This allowed users to instantly navigate the subject's emotional journey and jump directly to key milestones, rather than manually scrubbing through hours of raw footage."
+  />
+
+  <Heading3
+    title="4. Designing for Fault Tolerance & Graceful Recovery"
+    subtitle="Deep-tech applications dealing with heavy, real-time data pipelines are inherently prone to occasional processing interruptions. To handle this, I designed a system-aware error state UI. Instead of letting the application crash or forcing the user into a frustrating hard reset that destroys active session data, I engineered an intuitive, localized reload mechanism directly within the UI. This provided a seamless way to execute a graceful recovery of the data stream, preserving the analyst's workflow and minimizing system downtime."
+  />
+
   <ContentWithMedia
     imageFirst={true}
     backgroundColor="#ffffff"
@@ -46,7 +106,6 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     contentDescription="The person's face dominated the app’s visuals, drawing attention away from key events. Since people instinctively focus on faces first, I used a color contrast shift in the diamond ray representing the strongest emotional response—similar to a heatmap effect. This subtle yet effective tweak instantly directed focus to the most important events."
   />
 
-  <Heading title="The Solution" />
   <FullHeightImage
     backgroundColor="#00142f"
     image="../../projects/nemesysco/nemesysco-anatomy.webp"
@@ -60,11 +119,12 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     cardOneDescription="During normal operation, the diamond is operating as ususal."
     cardTwoDescription="To indicate an error, the diamond rotates into a stop sign, instantly signaling that something went wrong and the app cannot proceed."
   />
-  <!-- <BeforeAfterSlider client:load/> -->
-  <Conclusion
-    conclusionTitle="Conclusion"
-    conclusionText="No matter what, keep pushing"
+
+  <Heading
+    title="The Outcome"
+    subtitle="I delivered a specialized, research-grade desktop interface that successfully synchronized video playback with complex, audio-derived data visualization. By utilizing research-driven motion design to manage cognitive load and implementing event-driven timeline markers for rapid navigation, the UI actively guides the analyst's attention and transforms raw audio telemetry into actionable, easily navigable insights."
   />
+
   <SeeOtherProjects
     previousProjectLink="./writetic"
     nextProjectLink="./openlm"

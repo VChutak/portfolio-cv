@@ -49,6 +49,6 @@ body {
   color: var(--text);
 }
 
-li {
+*li {
   margin-bottom: 0.5 rem;
 }
