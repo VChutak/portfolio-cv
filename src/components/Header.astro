@@ -1,66 +1,149 @@
+<!-- Changed "sticky" to "fixed left-0" -->
 <div
   role="navigation"
-  class="w-full border-b border-gray-100/50 sticky top-0 bg-(--background) z-50"
+  class="w-full border-b border-gray-100/50 fixed top-0 left-0 bg-(--background) z-50"
 >
-  <div class="max-w-7xl h-26 items-center mx-auto content-center">
+  <!-- ========================================== -->
+  <!-- DESKTOP HEADER (Visible on md and larger)  -->
+  <!-- ========================================== -->
+  <div
+    class="hidden md:flex max-w-7xl h-26 items-center mx-auto justify-between px-4"
+  >
+    <div>
+      <a href="/" class="text-xl font-bold">VALERI CIUTAC</a>
+    </div>
+    <ul class="flex flex-row gap-4 items-center">
+      <li class="hover:translate-y-1 transition duration-100 cursor-pointer">
+        <a class="text-(--text) px-4 py-2" href="/">Projects</a>
+      </li>
+      <li class="hover:translate-y-1 transition duration-100 cursor-pointer">
+        <a class="text-(--text) lg:text-lg text-sm px-4 py-2" href="/about"
+          >About</a
+        >
+      </li>
+      <li>
+        <a href="mailto:valerichutak@gmail.com">
+          <button
+            class="rounded-lg bg-(--text) text-sm text-(--background) lg:px-4 px-2 py-1 lg:py-2 hover:translate-y-1 transition duration-100 cursor-pointer"
+          >
+            Contact
+          </button>
+        </a>
+      </li>
+      <li class="transition duration-100 hover:translate-y-1">
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/valery-chutak"
+          aria-label="LinkedIn"
+        >
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.4414 8.94189C18.0327 8.94189 19.5588 9.57404 20.684 10.6993C21.8093 11.8245 22.4414 13.3506 22.4414 14.9419V21.9419H18.4414V14.9419C18.4414 14.4115 18.2307 13.9028 17.8556 13.5277C17.4805 13.1526 16.9718 12.9419 16.4414 12.9419C15.911 12.9419 15.4023 13.1526 15.0272 13.5277C14.6521 13.9028 14.4414 14.4115 14.4414 14.9419V21.9419H10.4414V14.9419C10.4414 13.3506 11.0735 11.8245 12.1988 10.6993C13.324 9.57404 14.8501 8.94189 16.4414 8.94189Z"
+              stroke="var(--text)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M6.44141 9.94189H2.44141V21.9419H6.44141V9.94189Z"
+              stroke="var(--text)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M4.44141 6.94189C5.54598 6.94189 6.44141 6.04646 6.44141 4.94189C6.44141 3.83732 5.54598 2.94189 4.44141 2.94189C3.33684 2.94189 2.44141 3.83732 2.44141 4.94189C2.44141 6.04646 3.33684 6.94189 4.44141 6.94189Z"
+              stroke="var(--text)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MOBILE HEADER (Visible only below md)      -->
+  <!-- ========================================== -->
+  <div class="md:hidden flex flex-col w-full">
+    <!-- Mobile Top Bar -->
+    <div class="flex items-center justify-between px-4 h-20">
+      <a href="/" class="text-md font-bold">VALERI CIUTAC</a>
+
+      <!-- Hamburger Button -->
+      <button
+        id="mobile-menu-btn"
+        class="text-(--text) p-2 focus:outline-none"
+        aria-label="Toggle Menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
     <div
-      class="flex sm:flex-row flex-col items-center gap-y-4 justify-between sm:px-4 px-4"
+      id="mobile-menu"
+      class="hidden flex-col px-4 pb-6 bg-(--background) border-t border-gray-100/50 shadow-lg"
     >
-      <div>
-        <a href="/" class="sm:text-xl text-md font-bold">VALERI CIUTAC</a>
-      </div>
-      <ul class="flex flex-row gap-4 items-center">
-        <li class="hover:translate-y-1 transition duration-100 cursor-pointer">
-          <a
-            class="text-(--text) px-4 py-2 hover:translate-y-1 transition duration-100 cursor-pointer"
-            href="/">Projects</a
+      <ul class="flex flex-col gap-4 mt-4">
+        <li>
+          <a class="block text-(--text) py-2 text-lg font-medium justify-center text-center" href="/"
+            >Projects</a
           >
         </li>
-        <li class="hover:translate-y-1 transition duration-100 cursor-pointer">
-          <a class="text-(--text) lg:text-lg text-sm px-4 py-2" href="/about"
+        <li>
+          <a class="block text-(--text) py-2 text-lg font-medium justify-center text-center" href="/about"
             >About</a
           >
+          <li class="pt-4 flex justify-center">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/valery-chutak"
+              aria-label="LinkedIn"
+            >
+              LinkedIn
+            </a>
+          </li>
         </li>
-
-        <li>
-          <a href="mailto:valerichutak@gmail.com">
+        <li class="pt-2">
+          <a href="mailto:valerichutak@gmail.com" class="block w-full">
             <button
-              class="rounded-lg bg-(--text) text-sm text-(--background) lg:px-4 px-2 py-1 lg:py-2 hover:translate-y-1 transition duration-100 cursor-pointer"
-              >Contact</button
+              class="w-full rounded-lg bg-(--text) text-(--background) py-3 font-medium transition duration-100"
             >
-          </a>
-        </li>
-        <li class="text-black transition duration-100 hover:translate-y-1">
-          <a target="_blank" href="https://www.linkedin.com/in/valery-chutak">
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 25 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16.4414 8.94189C18.0327 8.94189 19.5588 9.57404 20.684 10.6993C21.8093 11.8245 22.4414 13.3506 22.4414 14.9419V21.9419H18.4414V14.9419C18.4414 14.4115 18.2307 13.9028 17.8556 13.5277C17.4805 13.1526 16.9718 12.9419 16.4414 12.9419C15.911 12.9419 15.4023 13.1526 15.0272 13.5277C14.6521 13.9028 14.4414 14.4115 14.4414 14.9419V21.9419H10.4414V14.9419C10.4414 13.3506 11.0735 11.8245 12.1988 10.6993C13.324 9.57404 14.8501 8.94189 16.4414 8.94189Z"
-                stroke="var(--text)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path
-                d="M6.44141 9.94189H2.44141V21.9419H6.44141V9.94189Z"
-                stroke="var(--text)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path
-                d="M4.44141 6.94189C5.54598 6.94189 6.44141 6.04646 6.44141 4.94189C6.44141 3.83732 5.54598 2.94189 4.44141 2.94189C3.33684 2.94189 2.44141 3.83732 2.44141 4.94189C2.44141 6.04646 3.33684 6.94189 4.44141 6.94189Z"
-                stroke="var(--text)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
+              Contact
+            </button>
           </a>
         </li>
       </ul>
     </div>
   </div>
 </div>
+
+<script>
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+    });
+  }
+</script>
