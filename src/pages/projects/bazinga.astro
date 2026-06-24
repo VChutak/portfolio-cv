@@ -16,7 +16,6 @@ import Heading3 from "../../components/Heading3.astro";
 import TwoCards from "../../components/TwoCards.astro";
 import ThreeCards from "../../components/ThreeCards.astro";
 import ImageLightbox from "../../components/ImageLightbox.astro";
-
 ---
 
 <Layout title="Bazinga AI Web design and UI/UX design project by Valeri Ciutac">
@@ -475,19 +474,21 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     imageFirst={false}
     imageCellWidth={8}
     contentCellWidth={4}
-    contentImage="../../projects/bazinga/bazinga-pricing.webp"
     contentTitle="Expanding the style to UI elements"
     contentDescription="A major advantage of being both the brand designer and the UI/UX designer is the ability to create truly distinctive and cohesive user interfaces. This ensures that every element not only aligns seamlessly with the brand’s identity but also feels intentional, polished, and visually unique. By maintaining full creative control over both branding and UI/UX, I can design experiences that are not just functional, but also aesthetically compelling and instantly recognizable—giving the product a powerful competitive edge."
-  />
+  >
+    <div slot="media-slot">
+      <ImageLightbox src="../../projects/bazinga/bazinga-pricing.webp" alt="" />
+    </div>
+  </ContentWithMedia>
 
   <Heading3
     title="2. Marketing UI & Conversion Flow"
     subtitle="With the design system in place, I designed the top-of-funnel web experience. The goal here was not just visual appeal, but conversion architecture—crafting clear messaging, intuitive navigation, and strategic calls-to-action designed to funnel visitors smoothly into the application's onboarding flow."
   />
 
-  <FullHeightImage >
- <ImageLightbox src="../projects/bazinga/bazinga-full-website.webp"/> 
-  
+  <FullHeightImage>
+    <ImageLightbox src="../projects/bazinga/bazinga-full-website.webp" />
   </FullHeightImage>
   <Heading3
     title="3. The Agent Creation Flow (Core UI/UX)"
@@ -498,10 +499,13 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     imageFirst={false}
     imageCellWidth={8}
     contentCellWidth={4}
-    contentImage="../../projects/bazinga/bazinga-assistant-flow.webp"
     contentTitle="The Flow"
     contentDescription=`EDIT THIS NOW`
-  />
+  >
+    <div slot="media-slot">
+      <ImageLightbox src="../../projects/bazinga/bazinga-assistant-flow.webp" />
+    </div>
+  </ContentWithMedia>
 
   <!-- <FullHeightImage
     backgroundColor="#111A38"

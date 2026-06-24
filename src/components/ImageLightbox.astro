@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { src, alt, className = "" } = Astro.props;
-// Generate a unique ID in case you use multiple images on one page
 const dialogId = `dialog-${Math.random().toString(36).substring(2, 9)}`;
 ---
 
@@ -19,12 +18,14 @@ const dialogId = `dialog-${Math.random().toString(36).substring(2, 9)}`;
 
 <dialog
   id={dialogId}
-  class="backdrop:bg-[#00132F]/90 backdrop:backdrop-blur-sm fixed inset-0 m-auto p-0 border-none bg-transparent max-w-[90vw] max-h-[90vh] overflow-visible rounded-lg shadow-2xl focus:outline-none"
+  class="backdrop:bg-[#00132F]/95 backdrop:backdrop-blur-sm fixed inset-0 m-auto p-0 border-none bg-transparent w-full h-full max-w-[100vw] max-h-[100vh] overflow-hidden focus:outline-none z-[999]"
 >
-  <div class="relative flex items-center justify-center w-full h-full">
+  <div
+    class="relative flex justify-center items-start w-full h-full p-4 md:p-8 overflow-y-auto overflow-x-hidden"
+  >
     <button
       id={`close-${dialogId}`}
-      class="absolute -top-12 right-0 text-white hover:text-gray-300 p-2 cursor-pointer"
+      class="fixed top-4 right-4 md:top-8 md:right-8 text-white hover:text-gray-300 p-2 cursor-pointer z-50 bg-black/40 rounded-full transition-colors hover:bg-black/60 shadow-lg backdrop-blur-md"
       aria-label="Close fullscreen"
     >
       <svg
@@ -44,39 +45,34 @@ const dialogId = `dialog-${Math.random().toString(36).substring(2, 9)}`;
     <img
       src={src}
       alt={alt}
-      class="max-w-full max-h-[85vh] object-contain rounded-lg"
+      class="w-full max-w-5xl h-auto object-cover rounded-lg shadow-2xl mt-14 md:mt-0"
     />
   </div>
 </dialog>
 
 <script define:vars={{ dialogId }}>
-  const dialog = document.getElementById(dialogId);
-  const trigger = document.getElementById(`trigger-${dialogId}`);
-  const closeBtn = document.getElementById(`close-${dialogId}`);
+  {
+    const dialog = document.getElementById(dialogId);
+    const trigger = document.getElementById(`trigger-${dialogId}`);
+    const closeBtn = document.getElementById(`close-${dialogId}`);
 
-  // Open modal
-  trigger?.addEventListener("click", () => {
-    dialog?.showModal();
-    document.body.style.overflow = "hidden"; // Prevent background scrolling
-  });
+    trigger?.addEventListener("click", () => {
+      dialog?.showModal();
+      document.body.style.overflow = "hidden";
+    });
 
-  // Close modal via button
-  closeBtn?.addEventListener("click", () => {
-    dialog?.close();
-    document.body.style.overflow = "";
-  });
+    closeBtn?.addEventListener("click", () => {
+      dialog?.close();
+      document.body.style.overflow = "";
+    });
 
-  // Close modal when clicking the backdrop
-  dialog?.addEventListener("click", (e) => {
-    const dialogDimensions = dialog.getBoundingClientRect();
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
+    // Close modal when clicking the empty background space
+    dialog?.addEventListener("click", (e) => {
+      // If the user clicked directly on the image, do nothing
+      if (e.target.tagName.toLowerCase() === "img") return;
+
       dialog.close();
       document.body.style.overflow = "";
-    }
-  });
+    });
+  }
 </script>
