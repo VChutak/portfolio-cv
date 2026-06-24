@@ -16,6 +16,7 @@ const { image, backgroundColor, text, alt }: Props = Astro.props;
 >
   <div class="sm:max-w-3xl max-w-lg mx-auto px-4">
     <img src={image} alt="" class="rounded-lg" />
+    <slot />
   </div>
   <p class="mx-auto text-center">{text}</p>
 </div>

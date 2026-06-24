@@ -1,0 +1,82 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+const { src, alt, className = "" } = Astro.props;
+// Generate a unique ID in case you use multiple images on one page
+const dialogId = `dialog-${Math.random().toString(36).substring(2, 9)}`;
+---
+
+<img
+  src={src}
+  alt={alt}
+  id={`trigger-${dialogId}`}
+  class={`rounded-xl cursor-zoom-in transition-transform hover:scale-[1.02] ${className}`}
+/>
+
+<dialog
+  id={dialogId}
+  class="backdrop:bg-[#00132F]/90 backdrop:backdrop-blur-sm fixed inset-0 m-auto p-0 border-none bg-transparent max-w-[90vw] max-h-[90vh] overflow-visible rounded-lg shadow-2xl focus:outline-none"
+>
+  <div class="relative flex items-center justify-center w-full h-full">
+    <button
+      id={`close-${dialogId}`}
+      class="absolute -top-12 right-0 text-white hover:text-gray-300 p-2 cursor-pointer"
+      aria-label="Close fullscreen"
+    >
+      <svg
+        class="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <img
+      src={src}
+      alt={alt}
+      class="max-w-full max-h-[85vh] object-contain rounded-lg"
+    />
+  </div>
+</dialog>
+
+<script define:vars={{ dialogId }}>
+  const dialog = document.getElementById(dialogId);
+  const trigger = document.getElementById(`trigger-${dialogId}`);
+  const closeBtn = document.getElementById(`close-${dialogId}`);
+
+  // Open modal
+  trigger?.addEventListener("click", () => {
+    dialog?.showModal();
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  });
+
+  // Close modal via button
+  closeBtn?.addEventListener("click", () => {
+    dialog?.close();
+    document.body.style.overflow = "";
+  });
+
+  // Close modal when clicking the backdrop
+  dialog?.addEventListener("click", (e) => {
+    const dialogDimensions = dialog.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      dialog.close();
+      document.body.style.overflow = "";
+    }
+  });
+</script>

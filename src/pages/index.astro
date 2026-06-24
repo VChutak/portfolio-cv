@@ -32,32 +32,14 @@ import ContactMe from "../components/ContactMe.astro";
       </span>
     </div>
 
-    <!-- <div
-      class="relative flex items-center justify-center lg:min-h-[30vh] min-h-[55vh] w-full bg-[#1a1a1a] overflow-hidden"
-    >
-      <div
-        class="absolute w-[80%] h-[60%] bg-[#8659D120] rounded-[4rem] blur-[80px]"
-      >
-      </div>
-      <div class="relative z-10 text-white text-center">
-        <h1 class="text-3xl font-bold">Technical UI Designer</h1>
-        <span class="text-center lg:text-lg text-sm px-6 max-w-[70ch]">
-          Specializing in <strong>production-ready interfaces</strong> for companies
-          that balance aesthetics, usability, and technical feasibility. I use
-          <strong>AI-augmented workflows and frontend development skills</strong
-          > to create UI that speeds up product development and enhances user experience.
-        </span>
-      </div>
-    </div> -->
-
     <div
       role="grid"
       id="foliocards-grid"
-      class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-2 md:grid-cols-2 gap-6 px-4"
+      class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-3 md:grid-cols-2 gap-6 px-4"
     >
       <FolioCard
         projectTags={["End-to-End Design", "User flow design", ""]}
-        className="lg:col-span-12 lg:row-span-1 lg:col-start-1"
+        className="lg:col-span-12 lg:row-span-2 lg:col-start-1 lg:row-start-1"
         link="./projects/bazinga"
         title="Bazinga AI"
         projectFocus="Architecting UX. Engineering UI."
@@ -72,7 +54,7 @@ import ContactMe from "../components/ContactMe.astro";
           "UI Design",
           "Blazor Component Library",
         ]}
-        className="lg:row-start-2 lg:col-span-6 lg:row-span-1 lg:col-end-7 lg:col-start-1"
+        className="lg:row-start-3 lg:col-span-6  lg:row-span-1 lg:col-end-7 lg:col-start-1"
         link="./projects/dimenso"
         title="Dimenso"
         projectFocus="Technical UI Designer / Frontend Developer"
@@ -80,7 +62,21 @@ import ContactMe from "../components/ContactMe.astro";
         backgroundColor="var(--color-dimenso)"
         backgroundColorVariation="var(--color-dimenso2)"
       />
-<!-- 
+
+      <FolioCard
+        projectTags={[
+          "UI Redesign",
+          "UX Design and Optimization",
+          "Developer Handoff",
+        ]}
+        className="lg:col-span-3 lg:row-span-1 lg:row-start-3 lg:col-end-13 lg:col-start-7"
+        link="./projects/nemesysco"
+        title="Nemesysco"
+        projectFocus="Adjusting UX and Optimizing App Design"
+        backgroundColor="var(--color-nemesysco)"
+        backgroundColorVariation="var(--color-nemesysco2)"
+      />
+      <!-- 
       <FolioCard
         projectTags={[
           "WebGL Optimization",
@@ -95,19 +91,6 @@ import ContactMe from "../components/ContactMe.astro";
         backgroundColorVariation="var(--color-mytarotlife2)"
       /> -->
 
-      <FolioCard
-        projectTags={[
-          "UI Redesign",
-          "UX Design and Optimization",
-          "Developer Handoff",
-        ]}
-        className="lg:col-span-2 lg:row-span-1 lg:row-start-2 lg:col-end-13 lg:col-start-7"
-        link="./projects/nemesysco"
-        title="Nemesysco"
-        projectFocus="Adjusting UX and Optimizing App Design"
-        backgroundColor="var(--color-nemesysco)"
-        backgroundColorVariation="var(--color-nemesysco2)"
-      />
       <!-- <FolioCard
         projectTags={[
           "WebGL Optimization",

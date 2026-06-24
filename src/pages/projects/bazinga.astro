@@ -15,6 +15,8 @@ import Heading from "../../components/Heading.astro";
 import Heading3 from "../../components/Heading3.astro";
 import TwoCards from "../../components/TwoCards.astro";
 import ThreeCards from "../../components/ThreeCards.astro";
+import ImageLightbox from "../../components/ImageLightbox.astro";
+
 ---
 
 <Layout title="Bazinga AI Web design and UI/UX design project by Valeri Ciutac">
@@ -48,6 +50,7 @@ import ThreeCards from "../../components/ThreeCards.astro";
     color="#1a1a1a"
     centerText={true}
     imageFirst={true}
+    imageBgColor="#ffffff"
     backgroundColor="#fef3ee"
     imageCellOrder={1}
     contentCellOrder={2}
@@ -73,8 +76,9 @@ import ThreeCards from "../../components/ThreeCards.astro";
   <FullHeightImage
     backgroundColor="#fef3ee"
     text="Using the logo as the baseline, I derived a cohesive and memorable styleguide"
-    image="../../projects/bazinga/bazinga-brand99.webp"
-  />
+  >
+    <ImageLightbox src="../../projects/bazinga/bazinga-brand99.webp" />i
+  </FullHeightImage>
 
   <ContentWithMedia
     centerText={true}
@@ -481,7 +485,10 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     subtitle="With the design system in place, I designed the top-of-funnel web experience. The goal here was not just visual appeal, but conversion architecture—crafting clear messaging, intuitive navigation, and strategic calls-to-action designed to funnel visitors smoothly into the application's onboarding flow."
   />
 
-  <FullHeightImage image="../projects/bazinga/bazinga-full-website.webp" />
+  <FullHeightImage >
+ <ImageLightbox src="../projects/bazinga/bazinga-full-website.webp"/> 
+  
+  </FullHeightImage>
   <Heading3
     title="3. The Agent Creation Flow (Core UI/UX)"
     subtitle="Restructured the application's information hierarchy to create an intuitive AI builder, translating deep technical compjjjlexity into a clear, user-centric interface"
