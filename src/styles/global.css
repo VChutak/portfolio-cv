@@ -19,7 +19,7 @@ p {
   --color-semrush2: #5b0f03;
   --color-mytarotlife: #130022;
   --color-mytarotlife2: #0b0014;
-  --color-dimenso: #5A349D;
+  --color-dimenso: #5a349d;
   --color-dimenso2: #442580;
 }
 
@@ -52,3 +52,104 @@ body {
 *li {
   margin-bottom: 0.5 rem;
 }
+
+/* --- BASE & DESKTOP LAYOUT --- */
+  .split-gallery {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two equal columns */
+    align-items: start;
+    column-gap:1rem; /* Aligns text to the top of its corresponding image */
+  }
+
+  .hidden-radio {
+    display: none; /* Hiding these removes them from the grid flow entirely */
+  }
+
+  /* --- REACTIVE IMAGES --- */
+  .img-wrapper {
+    opacity: 0.6;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .img-wrapper img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* --- INTERACTIVE TEXT CARDS --- */
+  .desc-card {
+    display: block; 
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  /* Expandable Grid Trick */
+  .expandable-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .expandable-inner {
+    overflow: hidden; 
+  }
+
+  /* --- STATE LOGIC --- */
+  /* Target the elements directly as siblings now that the column wrappers are gone */
+  
+  #sec-1:checked ~ .desc-1 .expandable-wrapper,
+  #sec-2:checked ~ .desc-2 .expandable-wrapper,
+  #sec-3:checked ~ .desc-3 .expandable-wrapper {
+    grid-template-rows: 1fr;
+  }
+
+ 
+
+  #sec-1:checked ~ .img-wrap-1,
+  #sec-2:checked ~ .img-wrap-2,
+  #sec-3:checked ~ .img-wrap-3 {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  /* --- MOBILE LAYOUT --- */
+  @media (max-width: 768px) {
+    .split-gallery {
+      grid-template-columns: 1fr; /* Stack into a single column */
+      gap: 0;
+    }
+
+    /* Because the HTML is flat, Grid auto-placement naturally puts Image 1, then Desc 1, then Image 2... */
+    
+    .img-wrapper {
+      margin-top: 2rem; /* Add spacing between sections */
+    }
+
+    .desc-card {
+      padding: 1rem 0 1rem 1rem; 
+      margin-top: 1rem;
+    }
+
+    /* Disable scale transform on mobile to prevent layout shifts */
+    #sec-1:checked ~ .img-wrap-1,
+    #sec-2:checked ~ .img-wrap-2,
+    #sec-3:checked ~ .img-wrap-3 {/.split-gallery
+      transform: none;
+    }
+  }
+/* --- ICON ANIMATION --- */
+  .chevron-icon {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #9ca3af; /* A subtle gray, adjust to match your design */
+  }
+
+  /* Rotate the chevron 180 degrees when its section is active */
+  #sec-1:checked ~ .desc-1 .chevron-icon,
+  #sec-2:checked ~ .desc-2 .chevron-icon,
+  #sec-3:checked ~ .desc-3 .chevron-icon {
+    transform: rotate(180deg);
+  }

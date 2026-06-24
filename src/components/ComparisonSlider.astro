@@ -4,41 +4,40 @@ import "../styles/global.css";
 type Props = {
   imageBefore: string;
   imageAfter: string;
-  // imageBeforeMobile: string;
-  // imageAfterMobile: string;
   lineColor?: string;
+  iconColor?: string;
   description?: string;
+  startPosition?: number | string;
 };
 
 const {
   imageBefore,
   imageAfter,
-  // imageBeforeMobile,
-  // imageAfterMobile,
-  lineColor,
+  lineColor = "#442580",
+  iconColor = "#000000",
   description,
-}: Props = Astro.props;
-
-const lineColorString = `bg-[${lineColor}]`;
-const borderColorString = `border-[${lineColor}]`;
-console.log(lineColorString);
+  startPosition = 50,
+} = Astro.props;
 ---
 
-<div class=`max-w-7xl px-10 flex flex-col gap-6 py-10 px-6 mx-auto `>
+<div class="max-w-7xl flex flex-col gap-6 py-10 mx-auto">
   <div
-    class=`container mx-auto border-2 ${borderColorString} rounded-lg w-full`
+    class="container border-2 rounded-lg w-full min-h-75"
+    style={`--position: ${startPosition}%;`}
   >
     <div class="image-container">
       <img
         class="image-before slider-image sm:visible hidden"
         src={imageBefore}
         alt="before image"
+        decoding="async"
       />
 
       <img
         class="image-after slider-image sm:visible hidden"
         src={imageAfter}
         alt="after image"
+        decoding="async"
       />
     </div>
 
@@ -46,17 +45,17 @@ console.log(lineColorString);
       type="range"
       min="0"
       max="100"
-      value="50"
+      value={startPosition}
       aria-label="Percentage of before photo shown"
       class="slider absolute inset-0 cursor-grab h-full w-full"
     />
-    <div class=`slider-line ${lineColorString}` aria-hidden="true"></div>
+
+    <div class="slider-line" aria-hidden="true"></div>
     <div class="slider-button" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"
         height="30"
-        fill="currentColor"
         viewBox="0 0 256 256"
       >
         <rect width="256" height="256" fill="none"></rect>
@@ -112,31 +111,22 @@ console.log(lineColorString);
   </div>
 </div>
 
-<style>
+<style define:vars={{ dynamicColor: lineColor, dynamicIconColor: iconColor }}>
   img {
     display: block;
     max-width: 100%;
   }
-
-  /* main {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-  } */
 
   .container {
     display: grid;
     place-content: center;
     position: relative;
     overflow: hidden;
-
-    --position: 50%;
+    border-color: var(--dynamicColor);
   }
 
   .image-container {
-    /* max-width: 800px; */
     max-height: 90vh;
-    /* aspect-ratio: 2/1.5; */
   }
 
   .slider-image {
@@ -149,17 +139,18 @@ console.log(lineColorString);
   .image-before {
     position: absolute;
     inset: 0;
-    width: var(--position);
-    /* filter: grayscale(100%); */
+    /* OPTIMIZATION 1: Use clip-path instead of width */
+    width: 100%;
+    clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+    will-change: clip-path; /* Tells the browser to prep the GPU for this */
   }
 
   .slider {
     opacity: 0;
-    /* for Firefox */
   }
 
   .slider:focus-visible ~ .slider-button {
-    outline: 2px solid black;
+    outline: 2px solid white;
     outline-offset: 4px;
   }
 
@@ -168,17 +159,17 @@ console.log(lineColorString);
     inset: 0;
     width: 0.15rem;
     height: 100%;
-
-    /* z-index: 10; */
+    background-color: var(--dynamicColor);
     left: var(--position);
     transform: translateX(-50%);
     pointer-events: none;
+    will-change: left;
   }
 
   .slider-button {
     position: absolute;
-    background-color: #fac471;
-    color: black;
+    background-color: var(--dynamicColor);
+    color: var(--dynamicIconColor);
     padding: 0.5rem;
     border-radius: 100vw;
     display: grid;
@@ -187,14 +178,33 @@ console.log(lineColorString);
     left: var(--position);
     transform: translate(-50%, -50%);
     pointer-events: none;
-    /* z-index: 100; */
     box-shadow: 1px 1px 1px hsl(0, 50%, 2%, 0.5);
+    will-change: left;
   }
 </style>
 
 <script>
-  const container = document.querySelector(".container");
-  document.querySelector(".slider").addEventListener("input", (e) => {
-    container.style.setProperty("--position", `${e.target.value}%`);
+  const sliders = document.querySelectorAll(".container");
+
+  sliders.forEach((container) => {
+    const sliderInput = container.querySelector(".slider");
+    let isUpdating = false;
+
+    if (sliderInput) {
+      sliderInput.addEventListener("input", (e) => {
+        // OPTIMIZATION 2: requestAnimationFrame
+        if (!isUpdating) {
+          window.requestAnimationFrame(() => {
+            const target = e.target as HTMLInputElement;
+            (container as HTMLElement).style.setProperty(
+              "--position",
+              `${target.value}%`,
+            );
+            isUpdating = false;
+          });
+          isUpdating = true;
+        }
+      });
+    }
   });
 </script>

@@ -1,0 +1,112 @@
+---
+import "../styles/global.css";
+---
+
+<div class="split-gallery max-w-7xl">
+  <input
+    type="radio"
+    name="gallery-state"
+    id="sec-1"
+    class="hidden-radio"
+    checked
+  />
+  <input type="radio" name="gallery-state" id="sec-2" class="hidden-radio" />
+  <input type="radio" name="gallery-state" id="sec-3" class="hidden-radio" />
+
+  <div class="img-wrapper img-wrap-1">
+    <img src="../projects/nemesysco/app-diagram-1.webp" alt="Thumbnail 1" />
+  </div>
+  <label for="sec-1" class="desc-card desc-1 p-10">
+    <div class="flex items-center justify-between">
+      <h6 class="text-2xl font-bold">Current Emotional Style (CES)</h6>
+      <svg
+        class="chevron-icon w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <div class="expandable-wrapper">
+      <div class="expandable-inner">
+        <p class="pt-4 max-w-[60ch]">
+          To ground the dynamic data, this element provides a high-level summary
+          of the subject's emotional baseline. I used a subtle typewriter
+          animation for state changes - just enough motion to be noticed without
+          stealing focus from the Diamond.
+        </p>
+      </div>
+    </div>
+  </label>
+
+  <div class="img-wrapper img-wrap-2">
+    <img src="../projects/nemesysco/app-diagram-2.webp" alt="Thumbnail 2" />
+  </div>
+  <label for="sec-2" class="desc-card desc-2 p-10">
+    <div class="flex items-center justify-between">
+      <h6 class="text-2xl font-bold">Emotional Diamond</h6>
+      <svg
+        class="chevron-icon w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <div class="expandable-wrapper">
+      <div class="expandable-inner">
+        <p class="pt-4 max-w-[60ch]">
+          I redesigned the ED to anchor the screen's visual hierarchy. Its
+          contrast dynamically spikes when an emotion peaks, effortlessly
+          drawing the eye. Always in motion, it acts as the living core of the
+          interface, turning invisible vocal data into a real-time emotional
+          map.
+        </p>
+      </div>
+    </div>
+  </label>
+
+  <div class="img-wrapper img-wrap-3">
+    <img src="../projects/nemesysco/app-diagram-3.webp" alt="Thumbnail 3" />
+  </div>
+  <label for="sec-3" class="desc-card desc-3 p-10">
+    <div class="flex items-center justify-between">
+      <h6 class="text-2xl font-bold">Emotional Snapshots</h6>
+      <svg
+        class="chevron-icon w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <div class="expandable-wrapper">
+      <div class="expandable-inner">
+        <p class="pt-4 max-w-[60ch]">
+          To map historical data, these timeline markers track past emotional
+          states. Their visual weight sits exactly between the Diamond and the
+          CES, making past emotional spikes easy to scan without distracting
+          from the real-time Diamond.
+        </p>
+      </div>
+    </div>
+  </label>
+</div>

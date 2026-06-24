@@ -17,6 +17,7 @@ import Heading3 from "../../components/Heading3.astro";
 import TwoCards from "../../components/TwoCards.astro";
 import ThreeCards from "../../components/ThreeCards.astro";
 import { ACTION_QUERY_PARAMS } from "astro:actions";
+import ComparisonSlider from "../../components/ComparisonSlider.astro";
 ---
 
 <Layout title="Dimensio UI and UX design project by Valeri Ciutac">
@@ -161,13 +162,22 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     imageFirst={false}
     imageCellOrder={1}
     contentCellOrder={2}
-    imageCellWidth={8}
-    contentCellWidth={4}
-    contentImage="../../projects/dimenso/Dimenso-devexpress.webp"
+    imageCellWidth={6}
+    contentCellWidth={6}
     contentTitle="Constraints? Not a Problem!"
     contentDescription=`I designed and customized the UI using the mandated DevExpress Blazor library. To future-proof the frontend against framework updates, I used a minimal-override strategy—mapping Tailwind CSS tokens to global theme variables, utilizing native SizeMode settings for density, and safely targeting wrappers via Blazor's CSS isolation. For any unavoidable deep overrides, I embedded explicit developer comments to ensure seamless maintenance during future version upgrades.`
   >
-    <code> </code>
+    <div slot="media-slot">
+      <ComparisonSlider
+        startPosition={25}
+        lineColor="#8659D1"
+        iconColor="#ffffff"
+        imageBefore="../../projects/dimenso/dimenso-before.webp"
+        imageAfter="../../projects/dimenso/dimenso-after.webp"
+        description=`An example of how I customized the default DevExpress component and futureproofing by changing the global theme variables`
+        `
+      />
+    </div>
   </ContentWithMedia>
 
   <Heading3

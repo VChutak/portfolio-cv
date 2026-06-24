@@ -13,21 +13,19 @@ import Heading3 from "../../components/Heading3.astro";
 import FullWidthVideo from "../../components/FullWidthVideo.astro";
 import BeforeAfterSlider from "../../components/BeforeAfterSlider.astro";
 import FullHeightImage from "../../components/FullHeightImage.astro";
+import ContentWithEmbeds from "../../components/ContentWithEmbeds.astro";
+import SplitGallery from "../../components/SplitGallery.astro";
+import SplitGalleryLottie from "../../components/SplitGalleryLottie..astro";
 ---
 
 <Layout title="Nemesysco UI/UX design project by Valeri Ciutac">
   <ProjectHeader
     projectName="Nemesysco"
-    projectFocus="Enterprise & Trust"
+    projectStack="Figma, JavaScript, After Effects"
+    projectFocus="Adjusting UX and Optimizing App Design"
     projectDate="05-2023"
     projectImage="../../projects/nemesysco/Nemesysco-header.webp"
     projectDescription="Nemesysco's app is a unique blend of technology and implementation. The app design needed to be simple and present a ton of information in real time, all while focusing the viewer on the important parts of the app.The challenge was to come up with a progressive disclosure of information and emphasizing different parts of the app at varying intervals."
-  />
-  <FullWidthVideo
-    videoLink=`https://player.vimeo.com/video/840047836?badge=0&autopause=0&player_id=0&app_id=58479"    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media`
-    backgroundColor="#3c3c3c"
-    additionalText="Simone's interview used only for demonstration purposes"
-    color="#ffffff"
   />
 
   <!-- <ContentWithMedia
@@ -65,9 +63,7 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     subtitle="I designed a specialized split-view desktop layout that paired the video player directly with an adjacent data visualization panel. The goal was to ensure that the emotional telemetry (graphs, timelines, and confidence scores) mapped perfectly to the audio-visual timeline, allowing researchers to contextualize the data in real-time."
   />
 
-  <Heading3
-    title=`2. Diagnosing & Overcoming "Cognitive Tunneling"`
-   -->
+  <Heading3 title=`2. Diagnosing & Overcoming "Cognitive Tunneling"` -->
     <ul>
       <li class="max-w-[70ch] text-[var(--text)]/90 mb-2">
         <strong>The Insight:</strong> User testing revealed analysts fixated so heavily
@@ -86,39 +82,313 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
     </ul>
   </Heading3>
 
+  <FullWidthVideo
+    videoLink=`https://player.vimeo.com/video/840047836?badge=0&autopause=0&player_id=0&app_id=58479"    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media`
+    backgroundColor="#3c3c3c"
+    additionalText="Simone's interview used only for demonstration purposes"
+    color="#ffffff"
+  />
+
+  <ContentWithMedia
+    imageFirst={false}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/nemesysco/wireframe-1.webp"
+    contentTitle="The Idea"
+    contentDescription=`TEST DESCRIPTION`
+  />
+
+  <!-- <SplitGallery /> -->
+
+  <SplitGalleryLottie />
+
   <Heading3
+    centerText={true}
     title="3. Event-Driven Timeline Navigation"
     subtitle="Because deep-tech analysis requires heavy retrospective review, I designed an intelligent playback timeline. Whenever the system detected a significant shift in the subject's mood, the UI automatically plotted an interactive visual marker directly onto the video scrubber. This allowed users to instantly navigate the subject's emotional journey and jump directly to key milestones, rather than manually scrubbing through hours of raw footage."
-  />
+  >
+    <div slot="media-slot" class="w-full col-span-6">
+      <div
+        class="flex flex-col w-full max-w-[800px] mx-auto mt-12 gap-6 font-sans"
+      >
+        <div
+          class="bg-[#01112B] rounded-lg overflow-y-auto max-h-[220px] flex flex-col custom-scrollbar shadow-xl md:min-h-[300px] min-h-[350px]"
+        >
+          <button
+            id="list-item-1"
+            popovertarget="popover-1"
+            class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
+          >
+            <div class="h-7 w-2 bg-[#f68c24]"></div>
+            <div class="font-bold text-white text-lg w-12 text-left">0:11</div>
+            <div class="text-slate-300 text-left text-[17px]">
+              Subject is quite <strong class="font-bold text-white"
+                >EMOTIONAL</strong
+              > about this
+            </div>
+          </button>
+
+          <button
+            id="list-item-2"
+            popovertarget="popover-2"
+            class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
+          >
+            <div class="h-7 w-2 bg-[#f68c24]"></div>
+            <div class="font-bold text-white text-lg w-12 text-left">0:18</div>
+            <div class="text-slate-300 text-left text-[17px]">
+              Subject seems to be mostly <strong class="font-bold text-white"
+                >ENERGETIC</strong
+              >
+            </div>
+          </button>
+
+          <button
+            id="list-item-3"
+            popovertarget="popover-3"
+            class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
+          >
+            <div class="h-7 w-2 bg-[#f68c24]"></div>
+            <div class="font-bold text-white text-lg w-12 text-left">0:29</div>
+            <div class="text-slate-300 text-left text-[17px]">
+              Low levels of <strong class="font-bold text-white">STRESS</strong>
+            </div>
+          </button>
+        </div>
+
+        <div
+          class="bg-[#01112B] flex items-center pl-8 py-6 gap-4 w-full box-border rounded-xl shadow-xl"
+        >
+          <button
+            class="bg-white text-[#0b1527] border-none rounded-full w-9 h-9 flex items-center justify-center cursor-pointer shrink-0 hover:scale-105 transition-transform"
+            aria-label="Play"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+
+          <div
+            class="relative grow h-2.5 flex items-center timeline-track-container"
+          >
+            <div class="absolute w-full h-full bg-[#8a93a0]"></div>
+            <div class="absolute h-full bg-white z-[1]" style="width: 95%;">
+            </div>
+
+            <button
+              id="btn-1"
+              popovertarget="popover-1"
+              class="absolute h-3.5 w-1.5 bg-[#f68c24] border-none p-0 cursor-pointer z-[2] transition-all duration-200 hover:scale-y-125 origin-center after:content-[''] after:absolute after:-inset-4"
+              style="left: 35%;"></button>
+            <button
+              id="btn-2"
+              popovertarget="popover-2"
+              class="absolute h-3.5 w-1.5 bg-[#f68c24] border-none p-0 cursor-pointer z-[2] transition-all duration-200 hover:scale-y-125 origin-center after:content-[''] after:absolute after:-inset-4"
+              style="left: 50%;"></button>
+            <button
+              id="btn-3"
+              popovertarget="popover-3"
+              class="absolute h-3.5 w-1.5 bg-[#f68c24] border-none p-0 cursor-pointer z-[2] transition-all duration-200 hover:scale-y-125 origin-center after:content-[''] after:absolute after:-inset-4"
+              style="left: 79%;"></button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="popover-1"
+        popover
+        class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
+      >
+        <span>
+          0:11 | Subject is quite <strong>EMOTIONAL</strong> about this
+        </span>
+      </div>
+
+      <div
+        id="popover-2"
+        popover
+        class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
+      >
+        <span>
+          0:18 | Subject seems to be mostly <strong>ENERGETIC</strong>
+        </span>
+      </div>
+
+      <div
+        id="popover-3"
+        popover
+        class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
+      >
+        <span>
+          0:29 | Low levels of <strong>STRESS</strong>
+        </span>
+      </div>
+
+      <style is:global>
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #01112b;
+          border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #1a2639;
+          border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #2a3a52;
+        }
+      </style>
+
+      <script>
+        function setupPopovers() {
+          document.querySelectorAll("[popover]").forEach((popover) => {
+            popover.addEventListener("toggle", (e) => {
+              const idNumber = popover.id.replace("popover-", "");
+              const timelineMarker = document.getElementById(`btn-${idNumber}`);
+              const listItem = document.getElementById(`list-item-${idNumber}`);
+
+              if (e.newState === "open") {
+                // Position over timeline marker & highlight marker
+                if (timelineMarker) {
+                  const markerRect = timelineMarker.getBoundingClientRect();
+                  const popoverRect = popover.getBoundingClientRect();
+
+                  const top = markerRect.top - popoverRect.height - 12;
+                  const left =
+                    markerRect.left +
+                    markerRect.width / 2 -
+                    popoverRect.width / 2;
+
+                  const el = popover as HTMLElement;
+                  el.style.top = `${top}px`;
+                  el.style.left = `${left}px`;
+
+                  timelineMarker.classList.add("scale-y-[2]", "bg-white");
+                }
+
+                // Highlight list item and scroll it into view
+                if (listItem) {
+                  listItem.classList.add("bg-[#152033]");
+                  listItem.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                  });
+                }
+              } else {
+                // Remove highlights when the popover closes
+                if (timelineMarker) {
+                  timelineMarker.classList.remove("scale-y-[2]", "bg-white");
+                }
+                if (listItem) {
+                  listItem.classList.remove(
+                    "bg-[#152033]",
+                    "border-l-[#f68c24]",
+                  );
+                }
+              }
+            });
+          });
+
+          // Force middle popover open on load
+          const defaultPopover = document.getElementById("popover-2");
+          if (defaultPopover) {
+            defaultPopover.showPopover();
+          }
+        }
+
+        // --- NEW ADDITION: Hide popovers on scroll ---
+        function hidePopoversOnScroll() {
+          document.querySelectorAll("[popover]").forEach((popover) => {
+            // Check if it is currently open before trying to hide it
+            // Calling hidePopover() on a closed popover throws an error
+            if (popover.matches(":popover-open")) {
+              popover.hidePopover();
+            }
+          });
+        }
+
+        // Use capture: true to catch scrolls from the window AND the inner list container
+        // Use passive: true to ensure scrolling remains buttery smooth
+        window.addEventListener("scroll", hidePopoversOnScroll, {
+          capture: true,
+          passive: true,
+        });
+
+        // Run on load
+        setupPopovers();
+
+        // Re-run if Astro uses View Transitions
+        document.addEventListener("astro:page-load", setupPopovers);
+      </script>
+    </div>
+  </Heading3>
 
   <Heading3
     title="4. Designing for Fault Tolerance & Graceful Recovery"
-    subtitle="Deep-tech applications dealing with heavy, real-time data pipelines are inherently prone to occasional processing interruptions. To handle this, I designed a system-aware error state UI. Instead of letting the application crash or forcing the user into a frustrating hard reset that destroys active session data, I engineered an intuitive, localized reload mechanism directly within the UI. This provided a seamless way to execute a graceful recovery of the data stream, preserving the analyst's workflow and minimizing system downtime."
+    subtitle="Instead of frustrating hard resets that destroy session data, I engineered a localized error state UI. It features an intuitive reload mechanism to gracefully recover the real-time data stream and keep the analyst's workflow intact."
   />
 
   <ContentWithMedia
     imageFirst={true}
-    backgroundColor="#ffffff"
     imageCellWidth={8}
     contentCellWidth={4}
-    contentImage="../../projects/nemesysco/heatmap-webp"
-    contentTitle="The eyes of the beholder"
-    contentDescription="The person's face dominated the app’s visuals, drawing attention away from key events. Since people instinctively focus on faces first, I used a color contrast shift in the diamond ray representing the strongest emotional response—similar to a heatmap effect. This subtle yet effective tweak instantly directed focus to the most important events."
+    imageBgColor="#01112B"
+    contentImage="../../projects/nemesysco/DIamond error messages.gif"
+    contentTitle="Beyond the Happy Path"
+    contentDescription=`To instantly signal a critical error, the standard diamond UI rotates into a universally recognized stop sign. A "Reload" button is embedded directly inside this focal point, placing the recovery action exactly where the user's attention is inherently drawn.`
   />
 
-  <FullHeightImage
-    backgroundColor="#00142f"
-    image="../../projects/nemesysco/nemesysco-anatomy.webp"
-  />
-  <TwoCards
-    backgroundColor="#ffffff"
-    imageOne="../../projects/nemesysco/diamond-ok.webp"
-    imageTwo="../../projects/nemesysco/diamond-error.webp"
-    cardOneTitle="Normal state"
-    cardTwoTitle="Error state"
-    cardOneDescription="During normal operation, the diamond is operating as ususal."
-    cardTwoDescription="To indicate an error, the diamond rotates into a stop sign, instantly signaling that something went wrong and the app cannot proceed."
-  />
+  <ContentWithEmbeds
+    contentDescription="Instead of relying on static mockups, I coded the UI animations directly in JavaScript and CSS so developers could instantly see how things worked under the hood. By contributing straight to our shared codebase, we skipped the traditional handoff and collaborated much more closely to get the feel exactly right."
+    contentTitle="Handoff? No, Hands-on!"
+    contentCellWidth={6}
+    imageCellWidth={6}
+  >
+    <div class="flex flex-col gap-2 w-full">
+      <div>
+        <p
+          class="codepen"
+          data-theme-id="dark"
+          data-height="280"
+          data-pen-title="Nemesysco timeline bars"
+          data-default-tab="result"
+          data-slug-hash="JjzZQEz"
+          data-user="ValeryChe3000"
+        >
+          <span
+            >See the Pen <a href="https://codepen.io/ValeryChe3000/pen/JjzZQEz">
+              Nemesysco timeline bars</a
+            > by Valery (<a href="https://codepen.io/ValeryChe3000"
+              >@ValeryChe3000</a
+            >) on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script async src="https://public.codepenassets.com/embed/index.js"
+        ></script>
+      </div>
+      <p
+        class="codepen"
+        data-theme-id="dark"
+        data-height="280"
+        data-pen-title="Nemesysco Diamond"
+        data-default-tab="result"
+        data-slug-hash="xxBzNrp"
+        data-user="ValeryChe3000"
+      >
+        <span
+          >See the Pen <a href="https://codepen.io/ValeryChe3000/pen/xxBzNrp">
+            Nemesysco Diamond</a
+          > by Valery (<a href="https://codepen.io/ValeryChe3000"
+            >@ValeryChe3000</a
+          >) on <a href="https://codepen.io">CodePen</a>.</span
+        >
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"
+      ></script>
+      <div></div>
+    </div>
+  </ContentWithEmbeds>
 
   <Heading
     title="The Outcome"

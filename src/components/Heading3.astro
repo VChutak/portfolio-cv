@@ -1,16 +1,26 @@
 ---
 import "../styles/global.css";
+
 type Props = {
+  centerText?: boolean;
   title: string;
   subtitle?: string;
 };
-const { title, subtitle } = Astro.props;
+const { title, subtitle, centerText } = Astro.props;
 ---
 
 <div
-  class="max-w-7xl w-full flex flex-col content-start gap-4 px-4 sm:py-10 py-6"
+  class="max-w-7xl grid grid-cols-1 md:grid-cols-12 w-full content-start gap-4 px-4 sm:py-10 py-6"
 >
-  <h4 class="text-2xl font-bold border-l-4 pl-4 text-left">{title}</h4>
-  {subtitle && <p class="max-w-[70ch] text-[var(--text)]/90">{subtitle}</p>}
-  <slot class="max-w-[70ch] text-[var(--text)]/90" />
+  <div
+    class=`cols-span-1 md:col-span-6 flex flex-col h-full ${centerText ? "justify-center" : "justify-start"}`
+  >
+    <div class=``>
+      <h4 class="text-2xl font-bold border-l-4 pl-4 text-left">{title}</h4>
+      {subtitle && <p class="max-w-[70ch] text-[var(--text)]/90">{subtitle}</p>}
+      <slot class="max-w-[70ch] text-[var(--text)]/90" />
+    </div>
+  </div>
+
+  <slot name="media-slot" />
 </div>

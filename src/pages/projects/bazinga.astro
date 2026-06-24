@@ -37,7 +37,14 @@ import ThreeCards from "../../components/ThreeCards.astro";
     subtitle="Building a custom AI assistant is often an overwhelming, highly technical process that alienates non-developer users. Furthermore, many AI startups suffer from fragmented user journeys where the marketing site looks completely disconnected from the actual software. Bazinga AI needed a unified, intuitive experience that guided users seamlessly from discovering the product to successfully configuring and deploying their own AI agents."
   />
 
-  <!-- <ContentWithMedia
+  <Heading title="The Process" subtitle="" />
+
+  <Heading3
+    title="1. Visual Identity & Design System Foundation"
+    subtitle="Before touching the complex application logic, I established the core brand language. I developed the logo and brand book, but rather than treating them as static graphic assets, I immediately translated them into a scalable UI design system. By defining global design tokens (typography, color variables, spacing), I ensured visual consistency across every future touchpoint."
+  />
+
+  <ContentWithMedia
     color="#1a1a1a"
     centerText={true}
     imageFirst={true}
@@ -49,9 +56,9 @@ import ThreeCards from "../../components/ThreeCards.astro";
     contentImage="../../projects/bazinga/bazinga-brand0.webp"
     contentTitle="It all starts with a logo"
     contentDescription="A strong logo is simple, memorable, and versatile, ensuring it resonates with the audience across various platforms and mediums. Bazinga's logo represents a stylized chat bubble and the instantly recognizable AI magic star"
-  /> -->
+  />
 
-  <!-- <ContentWithMedia
+  <ContentWithMedia
     centerText={true}
     imageFirst={false}
     imageCellOrder={1}
@@ -61,46 +68,380 @@ import ThreeCards from "../../components/ThreeCards.astro";
     contentImage="../../projects/bazinga/bazinga-brand1.webp"
     contentTitle="Base element for the brand identity"
     contentDescription=`All graphic elements are derived from the logo’s shapes, creating a unified and recognizable design across all materials. This ensures that every visual detail—whether it’s icons, buttons, or backgrounds—feels intentional and aligned with the brand’s identity. By maintaining this consistency, the brand becomes more visually cohesive, reinforcing trust and recognition while making the user experience feel polished and seamless.`
-  /> -->
+  />
 
-  <!-- <FullHeightImage
+  <FullHeightImage
     backgroundColor="#fef3ee"
     text="Using the logo as the baseline, I derived a cohesive and memorable styleguide"
     image="../../projects/bazinga/bazinga-brand99.webp"
-  /> -->
+  />
 
-  <!-- <ContentWithMedia
+  <ContentWithMedia
     centerText={true}
     imageFirst={true}
     imageCellWidth={8}
     imageCellOrder={1}
     contentCellOrder={2}
     contentCellWidth={4}
-    contentImage="../../projects/bazinga/bazinga-brand3.webp"
     contentTitle="Color"
     contentDescription=`I carefully crafted a color palette centered around orange and blue to make the brand feel more approachable, especially for non-tech audiences. Orange conveys energy, warmth, and creativity, while blue adds a sense of trust and professionalism—striking a perfect balance between innovation and reliability.
 
 Starting with these core colors, I systematically expanded the palette, ensuring harmony and consistency. `
-  /> -->
+  >
+    <div slot="media-slot">
+      <div
+        class="md:min-w-[700px] sm:min-w-[600px] min-w-[360px] w-full h-full min-h-[600px] flex flex-col md:flex-row items-stretch overflow-hidden relative md:pt-10 px-4 md:px-6 pt-10 pb-10"
+      >
+        <input
+          type="radio"
+          id="bazinga-orange"
+          name="bazinga-group"
+          class="peer/orange hidden"
+          checked
+        />
+        <input
+          type="radio"
+          id="bazinga-blue"
+          name="bazinga-group"
+          class="peer/blue hidden"
+        />
 
-  <!-- <ContentWithMedia
+        <!-- ========================================== -->
+        <!-- ORANGE CARD                                -->
+        <!-- ========================================== -->
+        <label
+          for="bazinga-orange"
+          class="relative cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0
+      w-full h-[400px] md:h-[500px] md:w-[calc(72%+3rem)] z-10
+      rounded-[2.5rem] rounded-tl-none md:rounded-[3rem] md:rounded-tl-none md:rounded-r-none
+      bg-[#d44529] text-white overflow-visible
+      
+      peer-checked/blue:h-[130px] peer-checked/blue:md:h-[500px] peer-checked/blue:md:w-[28%]
+      peer-checked/blue:z-10 peer-checked/blue:md:z-30
+      peer-checked/blue:md:rounded-r-[4rem] peer-checked/blue:md:rounded-bl-[3rem]
+      peer-checked/blue:hover:bg-[#e05437]
+      
+      [&_.orange-img-box]:opacity-100 [&_.orange-img-box]:scale-100 [&_.orange-img-box]:pointer-events-auto
+      peer-checked/blue:[&_.orange-img-box]:opacity-0 peer-checked/blue:[&_.orange-img-box]:scale-90 peer-checked/blue:[&_.orange-img-box]:pointer-events-none"
+        >
+          <svg
+            class="absolute bottom-[calc(100%-1px)] left-0 w-10 h-10 md:w-16 md:h-16 pointer-events-none transition-colors duration-700"
+            viewBox="0 0 64 64"
+          >
+            <path
+              d="M 0,64 L 0,0 C 5,50 20,64 64,64 Z"
+              fill="currentColor"
+              class="text-[#d44529] peer-checked/blue:text-[#e05437] transition-colors"
+              style="fill: currentcolor;"></path>
+          </svg>
+
+          <!-- Orange Text Content (Responsive Flex Row on Mobile, Stacked on Desktop) -->
+          <div
+            class="absolute top-6 left-6 right-6 md:top-16 md:left-12 md:right-auto z-40 transition-transform duration-700 flex justify-between items-start md:block"
+          >
+            <h2
+              class="text-sm md:text-3xl font-bold leading-tight mb-0 md:mb-12"
+            >
+              Bazinga<br />Orange
+            </h2>
+
+            <div
+              class="flex gap-4 md:block transition-opacity duration-700 peer-checked/blue:md:opacity-0 peer-checked/blue:md:pointer-events-none text-right md:text-left"
+            >
+              <div class="md:mb-6">
+                <div
+                  class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+                >
+                  RGB
+                </div>
+                <div class="text-[10px] md:text-base font-medium">
+                  212 69 41
+                </div>
+              </div>
+              <div class="md:mb-6">
+                <div
+                  class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+                >
+                  CMYK
+                </div>
+                <div class="text-[10px] md:text-base font-medium">
+                  0 67 81 17
+                </div>
+              </div>
+              <div>
+                <div
+                  class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+                >
+                  HEX
+                </div>
+                <div class="text-[10px] md:text-base font-medium">#d44529</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orange Image Box -->
+          <div
+            class="orange-img-box absolute top-[85px] left-[50%] md:top-[50%] md:left-[240px] -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 w-[calc(100%-48px)] md:w-[calc(100%-300px)] max-w-[480px] h-[260px] md:h-[360px] bg-white rounded-[1.5rem] md:rounded-[2.5rem] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-2 z-30 origin-top md:origin-right"
+          >
+            <div
+              class="w-full h-full rounded-[1rem] md:rounded-[2rem] overflow-hidden relative"
+            >
+              <!-- MOBILE IMAGE -->
+              <img
+                src="../../projects/bazinga/bazinga-color-desktop.webp"
+                alt="Orange visual component mobile"
+                class="w-full h-full object-cover block md:hidden"
+                onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop'"
+              />
+              <!-- DESKTOP IMAGE -->
+              <img
+                src="../../projects/bazinga/bazinga-color-mobile.webp"
+                alt="Orange visual component"
+                class="w-full h-full object-cover hidden md:block"
+                onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop'"
+              />
+              <div
+                class="absolute inset-0 border-[4px] border-white/20 rounded-[1rem] md:rounded-[2rem] pointer-events-none"
+              >
+              </div>
+            </div>
+          </div>
+        </label>
+
+        <!-- ========================================== -->
+        <!-- BLUE CARD                                  -->
+        <!-- ========================================== -->
+        <label
+          for="bazinga-blue"
+          class="relative cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0
+      w-full h-[400px] -mt-10 md:h-[500px] md:w-[calc(72%+3rem)] md:mt-0 md:-ml-12 z-20 md:z-10
+      rounded-[2.5rem] rounded-tr-none rounded-br-none md:rounded-[3rem] md:rounded-l-none md:rounded-br-none
+      bg-[#5076f6] text-white overflow-visible
+      
+      peer-checked/orange:h-[130px] peer-checked/orange:md:h-[500px] peer-checked/orange:md:w-[28%]
+      peer-checked/orange:z-20
+      peer-checked/orange:md:rounded-l-[4rem]
+      peer-checked/orange:hover:bg-[#5f81f7]
+      
+      [&_.blue-img-box]:opacity-100 [&_.blue-img-box]:scale-100 [&_.blue-img-box]:pointer-events-auto
+      peer-checked/orange:[&_.blue-img-box]:opacity-0 peer-checked/orange:[&_.blue-img-box]:scale-90 peer-checked/orange:[&_.blue-img-box]:pointer-events-none"
+        >
+          <svg
+            class="absolute top-[calc(100%-1px)] right-0 w-10 h-10 md:w-16 md:h-16 pointer-events-none transition-colors duration-700"
+            viewBox="0 0 64 64"
+          >
+            <path
+              d="M 64,0 L 64,64 C 64,20 50,0 0,0 Z"
+              fill="currentColor"
+              class="text-[#5076f6] peer-checked/orange:text-[#5f81f7] transition-colors"
+              style="fill: currentcolor;"></path>
+          </svg>
+
+          <!-- Blue Text Content (Responsive Flex Row on Mobile, Stacked on Desktop) -->
+          <div
+            class="absolute bottom-6 left-6 right-6 md:top-16 md:bottom-auto md:right-12 md:left-auto z-40 transition-transform duration-700 flex justify-between items-end md:block text-left md:text-right"
+          >
+            <h2
+              class="text-sm md:text-3xl font-bold leading-tight mb-0 md:mb-12 order-2 md:order-none text-right"
+            >
+              Bazinga<br />Blue
+            </h2>
+
+            <div
+              class="flex gap-4 md:block transition-opacity duration-700 peer-checked/orange:md:opacity-0 peer-checked/orange:md:pointer-events-none order-1 md:order-none"
+            >
+              <div class="md:mb-6">
+                <div
+                  class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+                >
+                  RGB
+                </div>
+                <div class="text-[10px] md:text-base font-medium">17 26 56</div>
+              </div>
+              <div class="md:mb-6">
+                <div
+                  class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+                >
+                  CMYK
+                </div>
+                <div class="text-[10px] md:text-base font-medium">
+                  70 54 0 78
+                </div>
+              </div>
+              <div>
+                <div
+                  class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+                >
+                  HEX
+                </div>
+                <div class="text-[10px] md:text-base font-medium">#111a38</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blue Image Box -->
+          <div
+            class="blue-img-box absolute bottom-[85px] left-[50%] md:bottom-auto md:top-[50%] md:left-auto md:right-[240px] -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 w-[calc(100%-48px)] md:w-[calc(100%-300px)] max-w-[480px] h-[260px] md:h-[360px] bg-white rounded-[1.5rem] md:rounded-[2.5rem] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-2 z-30 origin-bottom md:origin-left"
+          >
+            <div
+              class="w-full h-full rounded-[1rem] md:rounded-[2rem] overflow-hidden relative"
+            >
+              <!-- MOBILE IMAGE -->
+              <img
+                src="../../projects/bazinga/bazinga-color-desktop.webp"
+                alt="Blue visual component mobile"
+                class="w-full h-full object-cover block md:hidden"
+                onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400&auto=format&fit=crop'"
+              />
+              <!-- DESKTOP IMAGE -->
+              <img
+                src="../../projects/bazinga/bazinga-color-mobile.webp"
+                alt="Blue visual component"
+                class="w-full h-full object-cover hidden md:block"
+                onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop'"
+              />
+              <div
+                class="absolute inset-0 border-[4px] border-white/20 rounded-[1rem] md:rounded-[2rem] pointer-events-none"
+              >
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </ContentWithMedia>
+
+  <ContentWithMedia
     centerText={true}
     imageFirst={true}
     imageCellWidth={8}
     contentCellWidth={4}
     imageCellOrder={1}
     contentCellOrder={2}
-    contentImage="../../projects/bazinga/bazinga-brand4.webp"
     contentTitle="Tailwind CSS Palette"
     contentDescription=`From the initial shades, I derived a comprehensive Tailwind CSS color system, defining variations for backgrounds, text, buttons, and accents. This approach provided scalability and flexibility, allowing for a visually cohesive experience across the entire platform while maintaining accessibility and contrast.`
-  /> -->
+  >
+    <div slot="media-slot">
+      <div class="flex gap-4 flex-col w-full">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-sans">
+          <div
+            class="col-span-2 md:col-span-1 md:row-span-2 bg-[#f56241] text-white p-5 rounded-2xl flex gap-3 items-start"
+          >
+            <span class="font-bold">.400</span>
+            <span>#f56241</span>
+          </div>
 
-  <Heading title="The Process" subtitle="" />
+          <div class="bg-[#fef3ee] text-gray-900 p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.50</span>
+            <span>#fef3ee</span>
+          </div>
 
-  <Heading3
-    title="1. Visual Identity & Design System Foundation"
-    subtitle="Before touching the complex application logic, I established the core brand language. I developed the logo and brand book, but rather than treating them as static graphic assets, I immediately translated them into a scalable UI design system. By defining global design tokens (typography, color variables, spacing), I ensured visual consistency across every future touchpoint."
-  />
+          <div class="bg-[#fee2d6] text-gray-900 p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.100</span>
+            <span>#fee2d6</span>
+          </div>
+
+          <div class="bg-[#fbc2ad] text-gray-900 p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.200</span>
+            <span>#fbc2ad</span>
+          </div>
+
+          <div class="bg-[#f99878] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.300</span>
+            <span>#f99878</span>
+          </div>
+
+          <div class="bg-[#f23b1d] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.500</span>
+            <span>#f23b1d</span>
+          </div>
+
+          <div class="bg-[#e32213] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.600</span>
+            <span>#e32213</span>
+          </div>
+
+          <div class="bg-[#bc1612] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.700</span>
+            <span>#bc1612</span>
+          </div>
+
+          <div class="bg-[#961618] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.800</span>
+            <span>#961618</span>
+          </div>
+
+          <div class="bg-[#791516] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.900</span>
+            <span>#791516</span>
+          </div>
+
+          <div class="bg-[#41090c] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.950</span>
+            <span>#41090c</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-sans">
+          <div
+            class="col-span-2 md:col-span-1 md:row-span-2 bg-[#5076f6] text-white p-5 rounded-2xl flex gap-3 items-start"
+          >
+            <span class="font-bold">.400</span>
+            <span>#5076f6</span>
+          </div>
+
+          <div class="bg-[#eff2ff] text-[#5076f6] p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.50</span>
+            <span>#eff2ff</span>
+          </div>
+
+          <div class="bg-[#dce3fd] text-[#5076f6] p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.100</span>
+            <span>#dce3fd</span>
+          </div>
+
+          <div class="bg-[#c0cefd] text-[#5076f6] p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.200</span>
+            <span>#c0cefd</span>
+          </div>
+
+          <div class="bg-[#95affb] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.300</span>
+            <span>#95affb</span>
+          </div>
+
+          <div class="bg-[#3f5cf2] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.500</span>
+            <span>#3f5cf2</span>
+          </div>
+
+          <div class="bg-[#293ae7] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.600</span>
+            <span>#293ae7</span>
+          </div>
+
+          <div class="bg-[#2129d4] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.700</span>
+            <span>#2129d4</span>
+          </div>
+
+          <div class="bg-[#2124ac] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.800</span>
+            <span>#2124ac</span>
+          </div>
+
+          <div class="bg-[#202488] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.900</span>
+            <span>#202488</span>
+          </div>
+
+          <div class="bg-[#181953] text-white p-5 rounded-2xl flex gap-3">
+            <span class="font-bold">.950</span>
+            <span>#181953</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ContentWithMedia>
 
   <!-- <TwoCards
     imageOne="../../projects/bazinga/bazinga_sparks.gif"
@@ -123,7 +464,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     descriptionThree="Expanding the style guide to UI"
   /> -->
 
-  <!-- <ContentWithMedia
+  <ContentWithMedia
     imageCellOrder={1}
     contentCellOrder={2}
     centerText={true}
@@ -133,16 +474,26 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     contentImage="../../projects/bazinga/bazinga-pricing.webp"
     contentTitle="Expanding the style to UI elements"
     contentDescription="A major advantage of being both the brand designer and the UI/UX designer is the ability to create truly distinctive and cohesive user interfaces. This ensures that every element not only aligns seamlessly with the brand’s identity but also feels intentional, polished, and visually unique. By maintaining full creative control over both branding and UI/UX, I can design experiences that are not just functional, but also aesthetically compelling and instantly recognizable—giving the product a powerful competitive edge."
-  /> -->
+  />
 
   <Heading3
     title="2. Marketing UI & Conversion Flow"
     subtitle="With the design system in place, I designed the top-of-funnel web experience. The goal here was not just visual appeal, but conversion architecture—crafting clear messaging, intuitive navigation, and strategic calls-to-action designed to funnel visitors smoothly into the application's onboarding flow."
   />
 
+  <FullHeightImage image="../projects/bazinga/bazinga-full-website.webp" />
   <Heading3
     title="3. The Agent Creation Flow (Core UI/UX)"
-    subtitle="The heaviest lift was designing the application interface where users actually build their AI. I approached this by breaking down the technical complexity into digestible steps:"
+    subtitle="Restructured the application's information hierarchy to create an intuitive AI builder, translating deep technical compjjjlexity into a clear, user-centric interface"
+  />
+
+  <ContentWithMedia
+    imageFirst={false}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/bazinga/bazinga-assistant-flow.webp"
+    contentTitle="The Flow"
+    contentDescription=`EDIT THIS NOW`
   />
 
   <!-- <FullHeightImage
