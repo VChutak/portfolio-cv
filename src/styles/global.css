@@ -24,7 +24,7 @@ p {
   --color-mytarotlife: #130022;
   --color-mytarotlife2: #0b0014;
   --color-dimenso: #5a349d;
-  --color-dimenso2: #442580;
+  --color-dimenso2: #442580 bg-white
 }
 
 .wide-grid-cell {
@@ -73,9 +73,8 @@ body {
   .img-wrapper {
     opacity: 0.6;
     transition: all 0.3s ease-in-out;
-    border-radius: 8px;
     overflow: hidden;
-  }
+}
 
   .img-wrapper img {
     display: block;

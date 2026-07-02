@@ -160,7 +160,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                   RGB
                 </div>
                 <div class="text-[10px] md:text-base font-medium">
-                  212 69 41
+                  245 98 65
                 </div>
               </div>
               <div class="md:mb-6">
@@ -170,7 +170,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                   CMYK
                 </div>
                 <div class="text-[10px] md:text-base font-medium">
-                  0 67 81 17
+                  0 60 73 4
                 </div>
               </div>
               <div>
@@ -179,7 +179,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                 >
                   HEX
                 </div>
-                <div class="text-[10px] md:text-base font-medium">#d44529</div>
+                <div class="text-[10px] md:text-base font-medium">#f56241</div>
               </div>
             </div>
           </div>
@@ -258,7 +258,9 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                 >
                   RGB
                 </div>
-                <div class="text-[10px] md:text-base font-medium">17 26 56</div>
+                <div class="text-[10px] md:text-base font-medium">
+                  80 118 246
+                </div>
               </div>
               <div class="md:mb-6">
                 <div
@@ -267,7 +269,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                   CMYK
                 </div>
                 <div class="text-[10px] md:text-base font-medium">
-                  70 54 0 78
+                  67 52 0 4
                 </div>
               </div>
               <div>
@@ -276,7 +278,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                 >
                   HEX
                 </div>
-                <div class="text-[10px] md:text-base font-medium">#111a38</div>
+                <div class="text-[10px] md:text-base font-medium">#5076F6</div>
               </div>
             </div>
           </div>
@@ -484,7 +486,10 @@ Starting with these core colors, I systematically expanded the palette, ensuring
   />
 
   <FullHeightImage>
-    <ImageLightbox src="../projects/bazinga/bazinga-full-website.webp" alt="bazinga homepage design"/>
+    <ImageLightbox
+      src="../projects/bazinga/bazinga-full-website.webp"
+      alt="bazinga homepage design"
+    />
   </FullHeightImage>
   <Heading3
     title="3. The Agent Creation Flow (Core UI/UX)"
@@ -493,20 +498,108 @@ Starting with these core colors, I systematically expanded the palette, ensuring
 
   <ContentWithMedia
     imageFirst={false}
-    imageCellWidth={8}
-    contentCellWidth={4}
-    contentTitle="The Flow"
+    imageCellWidth={6}
+    contentCellWidth={6}
+    contentTitle="The Assistant Creation Flow"
     contentDescription=`EDIT THIS NOW`
   >
     <div slot="media-slot">
       <ImageLightbox
         src="../../projects/bazinga/bazinga_flow1.webp"
-        alt="bazinga ui before redesign"
+        alt="bazinga assistant ui before redesign"
       />
     </div>
   </ContentWithMedia>
 
+  <ContentWithMedia
+    imageFirst={true}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentTitle="The NEW Flow"
+    contentDescription=``
+  >
+    <div slot="media-slot">
+      <div class="relative w-full col-span-6">
+        <div slot="media-slot" class="overflow-hidden rounded-xl">
+          <ImageLightbox
+            src="../../projects/bazinga/bazinga-assistant-flow.webp"
+            alt="bazinga ui before redesign"
+          />
+        </div>
 
+        <div class="absolute top-[25%] left-[18%] group z-20">
+          <button
+            tabindex="0"
+            class="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#D44528] text-white font-bold text-xs shadow-lg animate-pulse focus:outline-none"
+          >
+            1
+          </button>
+
+          <div
+            class="absolute bottom-full left-0 z-50 mb-2 w-48 sm:w-64 scale-90 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 pointer-events-none origin-bottom-left"
+          >
+            <div
+              class="rounded-lg bg-[#D44528] p-3 text-xs text-white shadow-xl"
+            >
+              Predefined Avatars easily selectable and visible from the start
+            </div>
+            <div
+              class="absolute top-full left-3 h-2 w-2 -translate-x-1/2 -translate-y-1 bg-[#D44528] rotate-45"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute top-[25%] left-[75%] group z-20">
+          <button
+            tabindex="0"
+            class="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#D44528] text-white font-bold text-xs shadow-lg animate-pulse focus:outline-none"
+          >
+            3
+          </button>
+
+          <div
+            class="absolute bottom-full right-0 z-50 mb-2 w-48 sm:w-64 scale-90 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 pointer-events-none origin-bottom-right"
+          >
+            <div
+              class="rounded-lg bg-[#D44528] p-3 text-xs text-white shadow-xl"
+            >
+              Customized chat window to match the Bazinga style as the default
+              theme.
+            </div>
+            <div
+              class="absolute top-full right-3 h-2 w-2 translate-x-1/2 -translate-y-1 bg-[#D44528] rotate-45"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute top-[67%] left-[50%] group z-20 -translate-x-1/2">
+          <button
+            tabindex="0"
+            class="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#D44528] text-white font-bold text-xs shadow-lg animate-pulse focus:outline-none"
+          >
+            2
+          </button>
+
+          <div
+            class="absolute bottom-full left-1/2 z-50 mb-2 w-48 sm:w-64 -translate-x-1/2 scale-90 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 pointer-events-none origin-bottom"
+          >
+            <div
+              class="rounded-lg bg-[#D44528] p-3 text-xs text-white shadow-xl"
+            >
+              Utilizing the UI elements from the component library designed
+              following the marketing design
+            </div>
+            <div
+              class="absolute top-full left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1 bg-[#D44528] rotate-45"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ContentWithMedia>
 
   <!-- <FullHeightImage
     backgroundColor="#111A38"
