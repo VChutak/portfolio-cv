@@ -20,23 +20,22 @@ const {
 } = Astro.props;
 ---
 
-<div class="max-w-7xl flex flex-col gap-6 py-10 mx-auto">
+<div class="max-w-7xl flex flex-col gap-6 py-10 mx-auto px-4">
   <div
-    class="container border-2 rounded-lg w-full min-h-75"
+    class="container border-2 rounded-lg w-full"
     style={`--position: ${startPosition}%;`}
   >
     <div class="image-container">
       <img
-        class="image-before slider-image sm:visible hidden"
-        src={imageBefore}
-        alt="before image"
-        decoding="async"
-      />
-
-      <img
-        class="image-after slider-image sm:visible hidden"
+        class="image-after"
         src={imageAfter}
         alt="after image"
+        decoding="async"
+      />
+      <img
+        class="image-before"
+        src={imageBefore}
+        alt="before image"
         decoding="async"
       />
     </div>
@@ -47,11 +46,11 @@ const {
       max="100"
       value={startPosition}
       aria-label="Percentage of before photo shown"
-      class="slider absolute inset-0 cursor-grab h-full w-full"
+      class="slider absolute inset-0 cursor-grab h-full w-full z-20"
     />
 
-    <div class="slider-line" aria-hidden="true"></div>
-    <div class="slider-button" aria-hidden="true">
+    <div class="slider-line z-10" aria-hidden="true"></div>
+    <div class="slider-button z-10" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"
@@ -112,37 +111,35 @@ const {
 </div>
 
 <style define:vars={{ dynamicColor: lineColor, dynamicIconColor: iconColor }}>
-  img {
-    display: block;
-    max-width: 100%;
-  }
-
   .container {
-    display: grid;
-    place-content: center;
     position: relative;
     overflow: hidden;
     border-color: var(--dynamicColor);
+    width: 100%;
   }
 
   .image-container {
-    max-height: 90vh;
+    position: relative; /* CRITICAL: Binds the absolute before-image to this box */
+    width: 100%;
+    display: flex; /* Removes the tiny ghost margin at the bottom of inline images */
+    max-height: 80vh; /* Prevents it from getting too massive on huge desktop monitors */
   }
 
-  .slider-image {
+  .image-after {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto; /* This image natively dictates the fluid height of the container */
     object-fit: cover;
-    object-position: left;
   }
 
   .image-before {
     position: absolute;
     inset: 0;
-    /* OPTIMIZATION 1: Use clip-path instead of width */
     width: 100%;
+    height: 100%; /* Forces it to perfectly match the image-after dimensions */
+    object-fit: cover;
     clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
-    will-change: clip-path; /* Tells the browser to prep the GPU for this */
+    will-change: clip-path;
   }
 
   .slider {
@@ -157,7 +154,7 @@ const {
   .slider-line {
     position: absolute;
     inset: 0;
-    width: 0.15rem;
+    width: 0.2rem;
     height: 100%;
     background-color: var(--dynamicColor);
     left: var(--position);
@@ -178,7 +175,7 @@ const {
     left: var(--position);
     transform: translate(-50%, -50%);
     pointer-events: none;
-    box-shadow: 1px 1px 1px hsl(0, 50%, 2%, 0.5);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); /* Softened the shadow */
     will-change: left;
   }
 </style>
@@ -192,7 +189,6 @@ const {
 
     if (sliderInput) {
       sliderInput.addEventListener("input", (e) => {
-        // OPTIMIZATION 2: requestAnimationFrame
         if (!isUpdating) {
           window.requestAnimationFrame(() => {
             const target = e.target as HTMLInputElement;

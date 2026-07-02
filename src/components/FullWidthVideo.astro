@@ -5,6 +5,7 @@ const { videoLink, backgroundColor, additionalText, color } = Astro.props;
 
 <div class="w-full py-20" style={{ backgroundColor }}>
   <div class="max-w-7xl mx-auto flex flex-col gap-4 px-4">
+    <slot />
     <div class="pb-[56.25%] relative overflow-hidden max-w-full h-0`">
       <iframe
         src={videoLink}

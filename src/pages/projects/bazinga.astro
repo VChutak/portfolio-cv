@@ -27,7 +27,8 @@ import ImageLightbox from "../../components/ImageLightbox.astro";
     projectStack="Figma, Blazor, Tailwind CSS"
     projectImage="../../projects/bazinga/Bazinga-header.webp"
     projectDescription=`Designed and developed the Bazinga AI platform end-to-end. I built the foundational brand identity and marketing website, then leveraged that design system to architect the core web app—transforming a complex AI assistant configuration process into an intuitive, seamless user flow.`
-    liveLink="https://bazinga.ai/"
+    projectLink="https://bazinga.ai/"
+    linkDescription="Live site"
   />
   <!-- <FullHeightImage
     backgroundColor="#c9371e"
@@ -483,11 +484,11 @@ Starting with these core colors, I systematically expanded the palette, ensuring
   />
 
   <FullHeightImage>
-    <ImageLightbox src="../projects/bazinga/bazinga-full-website.webp" />
+    <ImageLightbox src="../projects/bazinga/bazinga-full-website.webp" alt="bazinga homepage design"/>
   </FullHeightImage>
   <Heading3
     title="3. The Agent Creation Flow (Core UI/UX)"
-    subtitle="Restructured the application's information hierarchy to create an intuitive AI builder, translating deep technical compjjjlexity into a clear, user-centric interface"
+    subtitle="Restructured the application's information hierarchy to create an intuitive AI builder, translating deep technical complexity into a clear, user-centric interface"
   />
 
   <ContentWithMedia
@@ -498,9 +499,14 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     contentDescription=`EDIT THIS NOW`
   >
     <div slot="media-slot">
-      <ImageLightbox src="../../projects/bazinga/bazinga-assistant-flow.webp" />
+      <ImageLightbox
+        src="../../projects/bazinga/bazinga_flow1.webp"
+        alt="bazinga ui before redesign"
+      />
     </div>
   </ContentWithMedia>
+
+
 
   <!-- <FullHeightImage
     backgroundColor="#111A38"

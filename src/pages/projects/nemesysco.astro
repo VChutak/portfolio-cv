@@ -16,6 +16,7 @@ import FullHeightImage from "../../components/FullHeightImage.astro";
 import ContentWithEmbeds from "../../components/ContentWithEmbeds.astro";
 import SplitGallery from "../../components/SplitGallery.astro";
 import SplitGalleryLottie from "../../components/SplitGalleryLottie..astro";
+import ImageLightbox from "../../components/ImageLightbox.astro";
 ---
 
 <Layout title="Nemesysco UI/UX design project by Valeri Ciutac">
@@ -58,11 +59,35 @@ import SplitGalleryLottie from "../../components/SplitGalleryLottie..astro";
   <Heading title="The Process" subtitle="" />
 
   <Heading3
+    isContentFirst={true}
     title="1. Synchronous Interface Architecture"
     subtitle="I designed a specialized split-view desktop layout that paired the video player directly with an adjacent data visualization panel. The goal was to ensure that the emotional telemetry (graphs, timelines, and confidence scores) mapped perfectly to the audio-visual timeline, allowing researchers to contextualize the data in real-time."
-  />
+  >
+    <div slot="media-slot" class="col-span-1 md:col-span-6 rounded-lg">
+      <img src="../../projects/nemesysco/wireframe-1.webp" alt="" />
+    </div>
+  </Heading3>
 
-  <Heading3 title=`2. Diagnosing & Overcoming "Cognitive Tunneling"` -->
+  <!-- <ContentWithMedia
+    imageFirst={false}
+    imageCellWidth={8}
+    contentCellWidth={4}
+    contentImage="../../projects/nemesysco/wireframe-1.webp"
+    contentTitle="The Idea"
+    contentDescription=`TEST DESCRIPTION`
+  /> -->
+
+  <Heading3
+    isContentFirst={false}
+    title=`2. Diagnosing & Overcoming "Cognitive Tunneling"`
+  >
+    <div slot="media-slot" class="col-span-1 md:col-span-6 rounded-lg">
+      <ImageLightbox
+        src="../../projects/nemesysco/heatmap_2.webp"
+        alt="Nemesysco UI Heatmap"
+      />
+    </div>
+
     <ul>
       <li class="max-w-[70ch] text-[var(--text)]/90 mb-2">
         <strong>The Insight:</strong> User testing revealed analysts fixated so heavily
@@ -81,27 +106,11 @@ import SplitGalleryLottie from "../../components/SplitGalleryLottie..astro";
     </ul>
   </Heading3>
 
-  <FullWidthVideo
-    videoLink=`https://player.vimeo.com/video/840047836?badge=0&autopause=0&player_id=0&app_id=58479"    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media`
-    backgroundColor="#3c3c3c"
-    additionalText="Simone's interview used only for demonstration purposes"
-    color="#ffffff"
-  />
-
-  <ContentWithMedia
-    imageFirst={false}
-    imageCellWidth={8}
-    contentCellWidth={4}
-    contentImage="../../projects/nemesysco/wireframe-1.webp"
-    contentTitle="The Idea"
-    contentDescription=`TEST DESCRIPTION`
-  />
-
   <!-- <SplitGallery /> -->
-
   <SplitGalleryLottie />
 
   <Heading3
+    isContentFirst={true}
     centerText={true}
     title="3. Event-Driven Timeline Navigation"
     subtitle="Because deep-tech analysis requires heavy retrospective review, I designed an intelligent playback timeline. Whenever the system detected a significant shift in the subject's mood, the UI automatically plotted an interactive visual marker directly onto the video scrubber. This allowed users to instantly navigate the subject's emotional journey and jump directly to key milestones, rather than manually scrubbing through hours of raw footage."
@@ -322,6 +331,24 @@ import SplitGalleryLottie from "../../components/SplitGalleryLottie..astro";
       </script>
     </div>
   </Heading3>
+
+  <FullWidthVideo
+    videoLink=`https://player.vimeo.com/video/1206481496?badge=0&autopause=0&player_id=0&app_id=58479`
+    additionalText="Simone's interview used only for demonstration purposes"
+    color="#ffffff"
+  >
+    <!-- <div
+      style="padding:75% 0 0 0;position:relative; background-color:transparent !important"
+    >
+      <iframe
+        src="https://player.vimeo.com/video/1206481496?badge=0&autopause=0&player_id=0&app_id=58479&muted=1"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="position:absolute;top:0;left:0;width:100%;height:100%; background-color:transparent !important;"
+        title="Emotional Diamond app design"></iframe>
+    </div><script src="https://player.vimeo.com/api/player.js"></script> -->
+  </FullWidthVideo>
 
   <Heading3
     title="4. Designing for Fault Tolerance & Graceful Recovery"
