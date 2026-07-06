@@ -18,7 +18,7 @@ import TwoCards from "../../components/TwoCards.astro";
 import ThreeCards from "../../components/ThreeCards.astro";
 import { ACTION_QUERY_PARAMS } from "astro:actions";
 import ComparisonSlider from "../../components/ComparisonSlider.astro";
-
+import ImageLightbox from "..//..//components/ImageLightbox.astro";
 const palette = [
   { weight: "50", hex: "F9F6FE", textColor: "text-slate-900" },
   { weight: "100", hex: "F1EAFD", textColor: "text-slate-900" },
@@ -67,7 +67,6 @@ const palette = [
     contentCellOrder={2}
     imageCellWidth={6}
     contentCellWidth={6}
-    contentImage="../../projects/dimenso/dimenso-information-layout.webp"
     contentTitle="A Crisis of Information Hierarchy"
   >
     <p>
@@ -92,6 +91,12 @@ const palette = [
         and unstyled links instead of structured tables or data cards.
       </li>
     </ul>
+<div slot="media-slot" class="shadow-lg p-6">
+ <ImageLightbox 
+ alt="Dimenso barebones ui screenshot"
+ src="../../projects/dimenso/dimenso-information-layout.webp"/> 
+  
+</div>
   </ContentWithMedia>
 
   <!-- <FullHeightImage
@@ -143,9 +148,12 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     contentTitle="First things First"
   >
     <div slot="media-slot" class="w-full max-w-5xl mx-auto">
+
+      <div class="flex flex-row justify-center w-full"><span class="text-center mx-auto mb-4 text-[1rem] text-[--text]">Drag and Drop the sections to fix the architecture of the product card</span></div>
       <div
         class="flex flex-wrap gap-3 p-4 bg-gray-50 rounded-xl mb-8 border border-gray-100 group sticky top-32 z-20 shadow-lg"
       >
+      
         <div
           class="group-has-[.draggable-piece]:hidden flex items-center justify-center w-full gap-2 text-green-600 font-bold animate-fade-in"
         >
@@ -394,7 +402,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               ></path></svg
             >
-            <p class="leading-relaxed">
+            <p class="leading-relaxed text-[0.9rem]!">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
               vulputate libero et velit interdum, ac aliquet odio mattis.
             </p>
@@ -407,7 +415,6 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     <p>
     The foundational step was completely remapping the flow of information. By establishing a strict visual hierarchy, I transformed unstructured, overwhelming data into highly scannable product cards—ensuring users never feel lost while navigating complex inventory logistics.
       </p>
-<span><i>Drag and Drop the sections to fix the architecture of the product card</i></span>
 </div>
     <script>
       let draggedItem = null;
