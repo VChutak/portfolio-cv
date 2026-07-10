@@ -39,12 +39,14 @@ p {
 :root {
   --background: hsl(0, 0%, 100%);
   --text: #1a1a1a;
+  --textSub:#1c1c1c;
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
   --background: #1a1a1a;
   --text: #ffffff;
+  --textSub: #ebebeb;
   color-scheme: dark;
 }
 
