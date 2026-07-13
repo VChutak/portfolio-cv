@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 type Props = {
-  className?:string;
+  className?: string;
   centerText?: boolean;
   title: string;
   subtitle?: string;
@@ -12,18 +12,26 @@ const { className, title, subtitle, centerText, isContentFirst } = Astro.props;
 ---
 
 <div
-  class=`max-w-7xl grid grid-cols-1 md:grid-cols-12 w-full content-start gap-4 px-4 sm:py-30 py-6 ${className}`
+  class=`max-w-7xl grid grid-cols-1 md:grid-cols-12 w-full content-start gap-8 px-4 sm:py-30 py-6 ${className}`
 >
+  <!-- Text Content Div -->
   <div
-    class=`cols-span-1 md:col-span-6 flex flex-col h-full ${centerText ? "justify-center" : "justify-start"} ${isContentFirst ? "order-first" : "order-last"}`
+    class=`col-span-1 md:col-span-6 flex flex-col h-full ${centerText ? "justify-center" : "justify-start"} ${isContentFirst ? "md:order-first" : "md:order-last"}`
   >
     <div class=`flex gap-4 flex-col`>
       <h4 class="text-2xl font-bold text-left">{title}</h4>
       {subtitle && <p class="max-w-[70ch] text-[var(--text)]/90">{subtitle}</p>}
-      <slot class="max-w-[70ch] text-[var(--text)]/90" />
+      <slot />
     </div>
   </div>
 
-  <slot name="media-slot" />
+  <!-- Media Slot Wrapper -->
+  <!-- We add md:col-span-6 so it occupies the remaining 6 columns -->
+  <div class="col-span-1 md:col-span-6 order-first md:order-last">
+    <slot name="media-slot" />
+  </div>
 </div>
-<slot name="footer-slot"/>
+
+<div class="max-w-7xl mx-auto px-4">
+  <slot name="footer-slot" />
+</div>
