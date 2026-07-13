@@ -2076,7 +2076,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     contentTitle="Here comes the colors"
     contentDescription="To accelerate development after the wireframe stage, I derived the platform's UI palette directly from the core logo color. Instead of creating arbitrary shades, I mapped the brand identity to a robust Tailwind CSS scale (50–950). Establishing this systematic color token scheme early allowed us to hit the ground running and rapidly speed up frontend implementation."
   >
-    <div slot="media-slot">
+    <div slot="media-slot" class="w-full">
       <div class="w-full mx-auto">
         {
           /* Grid Setup: 
@@ -2181,17 +2181,17 @@ Starting with these core colors, I systematically expanded the palette, ensuring
     title="3. Frontend Development & Collaboration (Engineering)"
     subtitle="This was a highly collaborative, code-heavy engagement. I didn't just hand off Figma files; I actively coded the frontend UI representations using Blazor. By integrating directly into the client's engineering workflow, I pushed UI updates and component customizations through their Git repository, ensuring the frontend stayed perfectly in sync with their backend development cycles."
   >
-    <div slot="media-slot">
+    <div slot="media-slot" class="w-full">
       <div
-        class="bg-[#5a349d] rounded-lg shadow-lg p-8 md:p-12 flex flex-col md:flex-col items-center justify-between gap-8 w-full"
+        class="bg-[#5a349d] rounded-3xl shadow-lg p-8 md:p-12 flex flex-col items-center gap-4 w-full"
       >
         <div
-          class="flex flex-col items-center flex-grow p-6 bg-[#7046B8] rounded-lg border border-slate-700"
+          class="flex flex-col items-center w-full max-w-sm p-6 bg-[#7046B8] rounded-2xl border border-purple-400/30"
         >
           <div class="flex flex-row items-center gap-6">
             <div class="flex flex-col items-center">
               <div
-                class="w-14 h-14 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-2"
+                class="w-14 h-14 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-200 mb-2"
               >
                 <svg
                   class="w-7 h-7"
@@ -2207,14 +2207,12 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                 >
               </div>
               <span
-                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+                class="text-xs font-bold text-purple-200 uppercase tracking-wider"
                 >Design</span
               >
             </div>
 
-            <div
-              class="flex flex-col items-center justify-center text-indigo-400"
-            >
+            <div class="text-white/50">
               <svg
                 class="w-8 h-8"
                 fill="none"
@@ -2231,7 +2229,7 @@ Starting with these core colors, I systematically expanded the palette, ensuring
 
             <div class="flex flex-col items-center">
               <div
-                class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-400 flex items-center justify-center text-purple-300 mb-2"
+                class="w-14 h-14 rounded-lg bg-purple-600/40 border border-purple-400 flex items-center justify-center text-purple-100 mb-2"
               >
                 <svg
                   class="w-7 h-7"
@@ -2246,8 +2244,8 @@ Starting with these core colors, I systematically expanded the palette, ensuring
                 >
               </div>
               <span
-                class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-                >Blazor/C#</span
+                class="text-xs font-bold text-purple-200 uppercase tracking-wider"
+                >Blazor</span
               >
             </div>
           </div>
@@ -2256,24 +2254,24 @@ Starting with these core colors, I systematically expanded the palette, ensuring
           >
         </div>
 
-        <div
-          class="flex flex-col md:flex-row items-center justify-center gap-2"
-        >
-          <div class="bg-white/20 w-1.5 h-16 md:w-24 md:h-1.5 rounded-full">
-          </div>
-          <div class="bg- px-3 py-1 rounded-lg">
+        <div class="flex flex-col items-center gap-2">
+          <div class="bg-white/30 w-1.5 h-12 rounded-full"></div>
+          <div
+            class="bg-purple-900/50 px-3 py-1 rounded-lg border border-purple-400/20"
+          >
             <span
-              class="text-[10px] font-bold tracking-widest uppercase text-purple-300 whitespace-nowrap"
+              class="text-[10px] font-bold tracking-widest uppercase text-purple-200 whitespace-nowrap"
               >Continuous Push</span
             >
           </div>
-          <div class="bg-white/20 w-1.5 h-16 md:w-24 md:h-1.5 rounded-full">
-          </div>
+          <div class="bg-white/30 w-1.5 h-12 rounded-full"></div>
         </div>
 
-        <div class="flex flex-col items-center p-6 w-32 md:w-40">
+        <div
+          class="flex flex-col items-center p-6 w-full max-w-sm bg-[#7046B8] rounded-2xl border border-purple-400/30"
+        >
           <div
-            class="w-16 h-16 rounded-2xl bg-purple-900/40 border border-purple-800 flex items-center justify-center text-purple-500 mb-4"
+            class="w-16 h-16 rounded-2xl bg-purple-900/40 border border-purple-800 flex items-center justify-center text-purple-300 mb-4"
           >
             <svg
               class="w-8 h-8"
@@ -2288,10 +2286,10 @@ Starting with these core colors, I systematically expanded the palette, ensuring
               ></path></svg
             >
           </div>
-          <span class="text-sm font-bold text-slate-200 text-center"
+          <span class="text-sm font-bold text-white text-center"
             >Git Repository</span
           >
-          <span class="text-xs text-purple-300/70 text-center mt-1"
+          <span class="text-xs text-purple-300/70 text-center"
             >Client Backend</span
           >
         </div>
