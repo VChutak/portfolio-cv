@@ -2,7 +2,10 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { ClientRouter } from "astro:transitions";
-import InnerLaoyut from "./InnerLaoyut.astro";
+// import InnerLaoyut from "./InnerLaoyut.astro";
+
+import Analytics from "@vercel/analytics/astro";
+
 const { title, description, className } = Astro.props;
 ---
 
@@ -81,10 +84,14 @@ const { title, description, className } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <!-- <ClientRouter /> -->
+
+    <Analytics />
   </head>
   <body>
-    <div class=`min-h-screen flex flex-col justify-between items-center ${className}`>
-      <Header style="z-index:50"/>
+    <div
+      class=`min-h-screen flex flex-col justify-between items-center ${className}`
+    >
+      <Header style="z-index:50" />
       <slot />
       <Footer />
     </div>
