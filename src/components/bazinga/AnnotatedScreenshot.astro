@@ -1,0 +1,66 @@
+---
+import ImageLightbox from "../ImageLightbox.astro";
+import type { Hotspot } from "./bazingaTypes";
+
+type Props = {
+  src: string;
+  alt: string;
+  hotspots: Hotspot[];
+};
+
+const { src, alt, hotspots } = Astro.props;
+
+const alignClasses = {
+  left: {
+    wrapper: "",
+    tooltip: "left-0 origin-bottom-left",
+    arrow: "left-3 -translate-x-1/2",
+  },
+  right: {
+    wrapper: "",
+    tooltip: "right-0 origin-bottom-right",
+    arrow: "right-3 translate-x-1/2",
+  },
+  center: {
+    wrapper: "-translate-x-1/2",
+    tooltip: "left-1/2 -translate-x-1/2 origin-bottom",
+    arrow: "left-1/2 -translate-x-1/2",
+  },
+};
+---
+
+<div class="relative w-full col-span-6">
+  <div class="overflow-hidden rounded-xl">
+    <ImageLightbox src={src} alt={alt} />
+  </div>
+
+  {
+    hotspots.map((hotspot) => {
+      const align = alignClasses[hotspot.align];
+      return (
+        <div
+          class={`absolute group z-20 ${align.wrapper}`}
+          style={{ top: hotspot.top, left: hotspot.left }}
+        >
+          <button
+            tabindex="0"
+            class="relative flex h-6 w-6 items-center justify-center rounded-full bg-[#D44528] text-white font-bold text-xs shadow-lg animate-pulse focus:outline-none"
+          >
+            {hotspot.number}
+          </button>
+
+          <div
+            class={`absolute bottom-full z-50 mb-2 w-48 sm:w-64 scale-90 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 pointer-events-none ${align.tooltip}`}
+          >
+            <div class="rounded-lg bg-[#D44528] p-3 text-xs text-white shadow-xl">
+              {hotspot.text}
+            </div>
+            <div
+              class={`absolute top-full h-2 w-2 -translate-y-1 bg-[#D44528] rotate-45 ${align.arrow}`}
+            />
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

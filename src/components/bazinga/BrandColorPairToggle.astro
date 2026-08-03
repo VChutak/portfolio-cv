@@ -1,0 +1,251 @@
+---
+type Props = {
+  orangeName?: string;
+  orangeSubname?: string;
+  orangeRgb: string;
+  orangeCmyk: string;
+  orangeHex: string;
+  orangeMobileImage: string;
+  orangeDesktopImage: string;
+  orangeMobileFallback?: string;
+  orangeDesktopFallback?: string;
+  blueName?: string;
+  blueSubname?: string;
+  blueRgb: string;
+  blueCmyk: string;
+  blueHex: string;
+  blueMobileImage: string;
+  blueDesktopImage: string;
+  blueMobileFallback?: string;
+  blueDesktopFallback?: string;
+};
+
+const {
+  orangeName = "Bazinga",
+  orangeSubname = "Orange",
+  orangeRgb,
+  orangeCmyk,
+  orangeHex,
+  orangeMobileImage,
+  orangeDesktopImage,
+  orangeMobileFallback = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop",
+  orangeDesktopFallback = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+  blueName = "Bazinga",
+  blueSubname = "Blue",
+  blueRgb,
+  blueCmyk,
+  blueHex,
+  blueMobileImage,
+  blueDesktopImage,
+  blueMobileFallback = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400&auto=format&fit=crop",
+  blueDesktopFallback = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+} = Astro.props;
+---
+
+<div
+  class="md:min-w-[700px] sm:min-w-[600px] min-w-[360px] w-full h-full min-h-[600px] flex flex-col md:flex-row items-stretch overflow-hidden relative md:pt-10 px-4 md:px-6 pt-10 pb-10"
+>
+  <input
+    type="radio"
+    id="bazinga-orange"
+    name="bazinga-group"
+    class="peer/orange hidden"
+    checked
+  />
+  <input
+    type="radio"
+    id="bazinga-blue"
+    name="bazinga-group"
+    class="peer/blue hidden"
+  />
+
+  <!-- ========================================== -->
+  <!-- ORANGE CARD                                -->
+  <!-- ========================================== -->
+  <label
+    for="bazinga-orange"
+    class="relative cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0
+      w-full h-[400px] md:h-[500px] md:w-[calc(72%+3rem)] z-10
+      rounded-[2.5rem] rounded-tl-none md:rounded-[3rem] md:rounded-tl-none md:rounded-r-none
+      bg-[#d44529] text-white overflow-visible
+
+      peer-checked/blue:h-[130px] peer-checked/blue:md:h-[500px] peer-checked/blue:md:w-[28%]
+      peer-checked/blue:z-10 peer-checked/blue:md:z-30
+      peer-checked/blue:md:rounded-r-[4rem] peer-checked/blue:md:rounded-bl-[3rem]
+      peer-checked/blue:hover:bg-[#e05437]
+
+      [&_.orange-img-box]:opacity-100 [&_.orange-img-box]:scale-100 [&_.orange-img-box]:pointer-events-auto
+      peer-checked/blue:[&_.orange-img-box]:opacity-0 peer-checked/blue:[&_.orange-img-box]:scale-90 peer-checked/blue:[&_.orange-img-box]:pointer-events-none"
+  >
+    <svg
+      class="absolute bottom-[calc(100%-1px)] left-0 w-10 h-10 md:w-16 md:h-16 pointer-events-none transition-colors duration-700"
+      viewBox="0 0 64 64"
+    >
+      <path
+        d="M 0,64 L 0,0 C 5,50 20,64 64,64 Z"
+        fill="currentColor"
+        class="text-[#d44529] peer-checked/blue:text-[#e05437] transition-colors"
+        style="fill: currentcolor;"></path>
+    </svg>
+
+    <!-- Orange Text Content (Responsive Flex Row on Mobile, Stacked on Desktop) -->
+    <div
+      class="absolute top-6 left-6 right-6 md:top-16 md:left-12 md:right-auto z-40 transition-transform duration-700 flex justify-between items-start md:block"
+    >
+      <h2 class="text-sm md:text-3xl font-bold leading-tight mb-0 md:mb-12">
+        {orangeName}<br />{orangeSubname}
+      </h2>
+
+      <div
+        class="flex gap-4 md:block transition-opacity duration-700 peer-checked/blue:md:opacity-0 peer-checked/blue:md:pointer-events-none text-right md:text-left"
+      >
+        <div class="md:mb-6">
+          <div
+            class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+          >
+            RGB
+          </div>
+          <div class="text-[10px] md:text-base font-medium">{orangeRgb}</div>
+        </div>
+        <div class="md:mb-6">
+          <div
+            class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+          >
+            CMYK
+          </div>
+          <div class="text-[10px] md:text-base font-medium">
+            {orangeCmyk}
+          </div>
+        </div>
+        <div>
+          <div
+            class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+          >
+            HEX
+          </div>
+          <div class="text-[10px] md:text-base font-medium">{orangeHex}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orange Image Box -->
+    <div
+      class="orange-img-box absolute top-[85px] left-[50%] md:top-[50%] md:left-[240px] -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 w-[calc(100%-48px)] md:w-[calc(100%-300px)] max-w-[480px] h-[260px] md:h-[360px] rounded-[1.5rem] md:rounded-[2.5rem] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] p-2 z-30 origin-top md:origin-right"
+    >
+      <div
+        class="w-full h-full rounded-[1rem] md:rounded-[2rem] overflow-hidden relative"
+      >
+        <!-- MOBILE IMAGE -->
+        <img
+          src={orangeMobileImage}
+          alt="Orange visual component mobile"
+          class="w-full h-full object-cover block md:hidden"
+          onerror={`this.src='${orangeMobileFallback}'`}
+        />
+        <!-- DESKTOP IMAGE -->
+        <img
+          src={orangeDesktopImage}
+          alt="Orange visual component"
+          class="w-full h-full object-cover hidden md:block"
+          onerror={`this.src='${orangeDesktopFallback}'`}
+        />
+        <div class="absolute inset-0 pointer-events-none"></div>
+      </div>
+    </div>
+  </label>
+
+  <!-- ========================================== -->
+  <!-- BLUE CARD                                  -->
+  <!-- ========================================== -->
+  <label
+    for="bazinga-blue"
+    class="relative cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0
+      w-full h-[400px] -mt-10 md:h-[500px] md:w-[calc(72%+3rem)] md:mt-0 md:-ml-12 z-20 md:z-10
+      rounded-[2.5rem] rounded-tr-none rounded-br-none md:rounded-[3rem] md:rounded-l-none md:rounded-br-none
+      bg-[#5076f6] text-white overflow-visible
+
+      peer-checked/orange:h-[130px] peer-checked/orange:md:h-[500px] peer-checked/orange:md:w-[28%]
+      peer-checked/orange:z-20
+      peer-checked/orange:md:rounded-l-[4rem]
+      peer-checked/orange:hover:bg-[#5f81f7]
+
+      [&_.blue-img-box]:opacity-100 [&_.blue-img-box]:scale-100 [&_.blue-img-box]:pointer-events-auto
+      peer-checked/orange:[&_.blue-img-box]:opacity-0 peer-checked/orange:[&_.blue-img-box]:scale-90 peer-checked/orange:[&_.blue-img-box]:pointer-events-none"
+  >
+    <svg
+      class="absolute top-[calc(100%-1px)] right-0 w-10 h-10 md:w-16 md:h-16 pointer-events-none transition-colors duration-700"
+      viewBox="0 0 64 64"
+    >
+      <path
+        d="M 64,0 L 64,64 C 64,20 50,0 0,0 Z"
+        fill="currentColor"
+        class="text-[#5076f6] peer-checked/orange:text-[#5f81f7] transition-colors"
+        style="fill: currentcolor;"></path>
+    </svg>
+
+    <!-- Blue Text Content (Responsive Flex Row on Mobile, Stacked on Desktop) -->
+    <div
+      class="absolute bottom-6 left-6 right-6 md:top-16 md:bottom-auto md:right-12 md:left-auto z-40 transition-transform duration-700 flex justify-between items-end md:block text-left md:text-right"
+    >
+      <h2
+        class="text-sm md:text-3xl font-bold leading-tight mb-0 md:mb-12 order-2 md:order-none text-right"
+      >
+        {blueName}<br />{blueSubname}
+      </h2>
+
+      <div
+        class="flex gap-4 md:block transition-opacity duration-700 peer-checked/orange:md:opacity-0 peer-checked/orange:md:pointer-events-none order-1 md:order-none"
+      >
+        <div class="md:mb-6">
+          <div
+            class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+          >
+            RGB
+          </div>
+          <div class="text-[10px] md:text-base font-medium">{blueRgb}</div>
+        </div>
+        <div class="md:mb-6">
+          <div
+            class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+          >
+            CMYK
+          </div>
+          <div class="text-[10px] md:text-base font-medium">{blueCmyk}</div>
+        </div>
+        <div>
+          <div
+            class="font-bold text-[9px] md:text-sm tracking-wider mb-0 md:mb-1 opacity-80 uppercase"
+          >
+            HEX
+          </div>
+          <div class="text-[10px] md:text-base font-medium">{blueHex}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blue Image Box -->
+    <div
+      class="blue-img-box absolute bottom-[85px] left-[50%] md:bottom-auto md:top-[50%] md:left-auto md:right-[240px] -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2 w-[calc(100%-48px)] md:w-[calc(100%-300px)] max-w-[480px] h-[260px] md:h-[360px] rounded-[1.5rem] md:rounded-[2.5rem] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] p-2 z-30 origin-bottom md:origin-left"
+    >
+      <div
+        class="w-full h-full rounded-[1rem] md:rounded-[2rem] overflow-hidden relative"
+      >
+        <!-- MOBILE IMAGE -->
+        <img
+          src={blueMobileImage}
+          alt="Blue visual component mobile"
+          class="w-full h-full object-cover block md:hidden"
+          onerror={`this.src='${blueMobileFallback}'`}
+        />
+        <!-- DESKTOP IMAGE -->
+        <img
+          src={blueDesktopImage}
+          alt="Blue visual component"
+          class="w-full h-full object-cover hidden md:block"
+          onerror={`this.src='${blueDesktopFallback}'`}
+        />
+        <div class="absolute inset-0 pointer-events-none"></div>
+      </div>
+    </div>
+  </label>
+</div>

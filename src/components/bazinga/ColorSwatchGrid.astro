@@ -1,0 +1,27 @@
+---
+import type { ColorSwatch } from "./bazingaTypes";
+
+type Props = {
+  groups: ColorSwatch[][];
+};
+
+const { groups } = Astro.props;
+---
+
+<div class="flex gap-6 flex-col w-full">
+  {
+    groups.map((swatches) => (
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-sans">
+        {swatches.map((swatch, i) => (
+          <div
+            class={`${i === 0 ? "col-span-2 md:col-span-1 md:row-span-2 items-start" : ""} p-5 rounded-2xl flex gap-3 ${swatch.textClass ?? "text-white"}`}
+            style={{ backgroundColor: swatch.hex }}
+          >
+            <span class="font-bold">{swatch.label}</span>
+            <span>{swatch.hex}</span>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</div>

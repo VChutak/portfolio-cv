@@ -1,0 +1,58 @@
+---
+import type { FlowStep } from "./bazingaTypes";
+
+type Props = {
+  heading: string;
+  steps: FlowStep[];
+  variant: "warning" | "success";
+};
+
+const { heading, steps, variant } = Astro.props;
+
+const calloutClasses = {
+  warning: {
+    box: "bg-red-50 border-red-500",
+    label: "text-red-800",
+    text: "text-red-700",
+  },
+  success: {
+    box: "bg-emerald-50 border-emerald-500",
+    label: "text-emerald-800",
+    text: "text-emerald-700",
+  },
+};
+
+const callout = calloutClasses[variant];
+---
+
+<div class="max-w-7xl py-20">
+  <section class="max-w-7xl mx-auto px-6">
+    <h3 class="text-2xl font-bold mb-8 text-[--text]">{heading}</h3>
+
+    <div class="flex flex-col md:flex-row w-full">
+      {
+        steps.map((step, i) => {
+          const isLast = i === steps.length - 1;
+          return (
+            <div
+              class={`relative flex-1 border-l-2 md:border-l-0 md:border-t-2 ${isLast ? "border-transparent" : "border-slate-200"} pl-6 pb-8 md:pl-0 md:pt-6 md:pb-0 ${isLast ? "md:pr-0" : "md:pr-6"}`}
+            >
+              <div class="absolute w-4 h-4 bg-slate-200 rounded-full -left-[7px] top-0 md:top-[-7px] md:left-0" />
+              <h4 class="font-bold text-lg text-[--text]">{step.title}</h4>
+              <p class="text-[--textSub] mb-4">{step.description}</p>
+
+              {step.calloutLabel && step.calloutText && (
+                <div class={`border-l-4 p-4 rounded-r-lg ${callout.box}`}>
+                  <p class={`text-sm font-semibold ${callout.label}`}>
+                    {step.calloutLabel}
+                  </p>
+                  <p class={`text-sm ${callout.text}`}>{step.calloutText}</p>
+                </div>
+              )}
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+</div>
