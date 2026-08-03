@@ -1,0 +1,140 @@
+---
+import type { TimelineEvent } from "./timelineEvent";
+
+type Props = {
+  events: TimelineEvent[];
+  defaultOpenIndex?: number;
+};
+
+const { events, defaultOpenIndex = 2 } = Astro.props;
+---
+
+<div class="flex flex-col w-full max-w-[800px] mx-auto mt-12 gap-6 font-sans">
+  <div
+    class="bg-[#01112B] rounded-lg overflow-y-auto max-h-[220px] flex flex-col custom-scrollbar shadow-xl md:min-h-[300px] min-h-[350px]"
+  >
+    {
+      events.map((event, i) => (
+        <button
+          id={`list-item-${i + 1}`}
+          popovertarget={`popover-${i + 1}`}
+          class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
+        >
+          <div class="h-7 w-2 bg-[#f68c24]" />
+          <div class="font-bold text-white text-lg w-12 text-left">
+            {event.time}
+          </div>
+          <div class="text-slate-300 text-left text-[17px]">
+            {event.prefix}
+            <strong class="font-bold text-white">{event.highlight}</strong>
+            {event.suffix}
+          </div>
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+{
+  events.map((event, i) => (
+    <div
+      id={`popover-${i + 1}`}
+      popover
+      class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
+    >
+      <span>
+        {event.time} | {event.prefix}
+        <strong>{event.highlight}</strong>
+        {event.suffix}
+      </span>
+    </div>
+  ))
+}
+
+<style is:global>
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #01112b;
+    border-radius: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #1a2639;
+    border-radius: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #2a3a52;
+  }
+</style>
+
+<script define:vars={{ defaultOpenIndex }}>
+  function setupPopovers() {
+    document.querySelectorAll("[popover]").forEach((popover) => {
+      popover.addEventListener("toggle", (e) => {
+        const idNumber = popover.id.replace("popover-", "");
+        const timelineMarker = document.getElementById(`btn-${idNumber}`);
+        const listItem = document.getElementById(`list-item-${idNumber}`);
+
+        if (e.newState === "open") {
+          // Position over timeline marker & highlight marker
+          if (timelineMarker) {
+            const markerRect = timelineMarker.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+
+            const top = markerRect.top - popoverRect.height - 12;
+            const left =
+              markerRect.left + markerRect.width / 2 - popoverRect.width / 2;
+
+            const el = popover;
+            el.style.top = `${top}px`;
+            el.style.left = `${left}px`;
+
+            timelineMarker.classList.add("scale-y-[2]", "bg-white");
+          }
+
+          // Highlight list item
+          if (listItem) {
+            listItem.classList.add("bg-[#152033]");
+          }
+        } else {
+          // Remove highlights when the popover closes
+          if (timelineMarker) {
+            timelineMarker.classList.remove("scale-y-[2]", "bg-white");
+          }
+          if (listItem) {
+            listItem.classList.remove("bg-[#152033]", "border-l-[#f68c24]");
+          }
+        }
+      });
+    });
+
+    // Force default popover open on load
+    const defaultPopover = document.getElementById(
+      `popover-${defaultOpenIndex}`,
+    );
+    if (defaultPopover) {
+      defaultPopover.showPopover();
+    }
+  }
+
+  // Hide popovers on scroll
+  function hidePopoversOnScroll() {
+    document.querySelectorAll("[popover]").forEach((popover) => {
+      if (popover.matches(":popover-open")) {
+        popover.hidePopover();
+      }
+    });
+  }
+
+  window.addEventListener("scroll", hidePopoversOnScroll, {
+    capture: true,
+    passive: true,
+  });
+
+  // Run on load
+  setupPopovers();
+
+  // Re-run if Astro uses View Transitions
+  document.addEventListener("astro:page-load", setupPopovers);
+</script>

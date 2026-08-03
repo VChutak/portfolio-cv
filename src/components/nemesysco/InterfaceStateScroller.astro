@@ -1,0 +1,198 @@
+---
+import ProcessStepHeading from "./ProcessStepHeading.astro";
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+
+type Props = {
+  sectionNumber?: string | number;
+  title: string;
+  description: string;
+  visualBgColor?: string;
+  lottieSrc: string;
+  imageTwoSrc: string;
+  imageTwoAlt?: string;
+  imageThreeSrc: string;
+  imageThreeAlt?: string;
+  phaseOneTitle: string;
+  phaseOneDescription: string;
+  phaseTwoTitle: string;
+  phaseTwoDescription: string;
+  phaseThreeTitle: string;
+  phaseThreeDescription: string;
+};
+
+const {
+  sectionNumber = "1",
+  title,
+  description,
+  visualBgColor = "#243E64",
+  lottieSrc,
+  imageTwoSrc,
+  imageTwoAlt = "Active State",
+  imageThreeSrc,
+  imageThreeAlt = "Synthesis State",
+  phaseOneTitle,
+  phaseOneDescription,
+  phaseTwoTitle,
+  phaseTwoDescription,
+  phaseThreeTitle,
+  phaseThreeDescription,
+} = Astro.props;
+---
+
+<ProcessStepHeading
+  number={sectionNumber}
+  title={title}
+  description={description}
+  className="mb-16"
+/>
+
+<div class="flex flex-col md:flex-row gap-12 relative items-start">
+    <div
+      class="w-full md:w-1/2 sticky top-24 rounded-2xl overflow-hidden shadow-lg h-[250px] md:h-[380px] z-10 flex items-center justify-center"
+      style={`background-color:${visualBgColor}`}
+    >
+      <div
+        data-visual="1"
+        class="visual-frame absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center p-8 md:p-12"
+        style="opacity: 1; transform: scale(1);"
+      >
+        <div class="w-full flex flex-col justify-center md:p-30 p-6">
+          <LottieAnimation src={lottieSrc} />
+        </div>
+      </div>
+
+      <div
+        data-visual="2"
+        class="visual-frame absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center p-8 md:p-12 pointer-events-none"
+        style="opacity: 0; transform: scale(0.95);"
+      >
+        <img
+          src={imageTwoSrc}
+          alt={imageTwoAlt}
+          class="max-w-full max-h-full object-contain drop-shadow-md"
+        />
+      </div>
+
+      <div
+        data-visual="3"
+        class="visual-frame absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center p-8 md:p-12 pointer-events-none"
+        style="opacity: 0; transform: scale(0.95);"
+      >
+        <img
+          src={imageThreeSrc}
+          alt={imageThreeAlt}
+          class="max-w-full max-h-full object-contain drop-shadow-md"
+        />
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2 pt-8 md:pt-[10vh] pb-[20vh] md:pb-[30vh]">
+      <div
+        data-target="1"
+        class="scroll-step cursor-pointer transition-all duration-500 py-12 md:py-16 mb-12 md:mb-24 border-l-4 pl-8"
+        style="opacity: 1; border-color: #F68C24;"
+      >
+        <h4 class="text-2xl font-bold text-[--text] mb-4">{phaseOneTitle}</h4>
+        <p class="text-[--text-sub] leading-relaxed text-lg">
+          {phaseOneDescription}
+        </p>
+      </div>
+
+      <div
+        data-target="2"
+        class="scroll-step cursor-pointer transition-all duration-500 py-12 md:py-16 mb-12 md:mb-24 border-l-4 pl-8"
+        style="opacity: 0.3; border-color: transparent;"
+      >
+        <h4 class="text-2xl font-bold text-[--text] mb-4">{phaseTwoTitle}</h4>
+        <p class="text-[--text-sub] leading-relaxed text-lg">
+          {phaseTwoDescription}
+        </p>
+      </div>
+
+      <div
+        data-target="3"
+        class="scroll-step cursor-pointer transition-all duration-500 py-12 md:py-16 border-l-4 pl-8"
+        style="opacity: 0.3; border-color: transparent;"
+      >
+        <h4 class="text-2xl font-bold text-[--text] mb-4">
+          {phaseThreeTitle}
+        </h4>
+        <p class="text-[--text-sub] leading-relaxed text-lg">
+          {phaseThreeDescription}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const steps = document.querySelectorAll(".scroll-step");
+    const visuals = document.querySelectorAll(".visual-frame");
+
+    const activateStep = (targetIndex) => {
+      if (!targetIndex) return;
+
+      // 1. Update text styles
+      steps.forEach((step) => {
+        if (step.getAttribute("data-target") === targetIndex) {
+          step.style.opacity = "1";
+          step.style.borderColor = "#F68C24";
+        } else {
+          step.style.opacity = "0.3";
+          step.style.borderColor = "transparent";
+        }
+      });
+
+      // 2. Update image styles (Pure crossfade, no z-index popping)
+      visuals.forEach((visual) => {
+        if (visual.getAttribute("data-visual") === targetIndex) {
+          visual.style.opacity = "1";
+          visual.style.transform = "scale(1)";
+        } else {
+          visual.style.opacity = "0";
+          visual.style.transform = "scale(0.95)";
+        }
+      });
+    };
+
+    // Keep track of which elements are currently intersecting the view
+    const visibleTargets = new Set();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const target = entry.target.getAttribute("data-target");
+
+          if (entry.isIntersecting) {
+            visibleTargets.add(target);
+          } else {
+            visibleTargets.delete(target);
+          }
+        });
+
+        // If multiple items are in view, always prioritize the one highest on the page (lowest number)
+        if (visibleTargets.size > 0) {
+          const activeTarget = Math.min(
+            ...Array.from(visibleTargets).map(Number),
+          ).toString();
+          activateStep(activeTarget);
+        }
+      },
+      {
+        // Creates a wide 40% trigger zone in the center of the screen
+        rootMargin: "-30% 0px -30% 0px",
+        threshold: 0,
+      },
+    );
+
+    steps.forEach((step) => observer.observe(step));
+
+    // Handle clicks
+    steps.forEach((step) => {
+      step.addEventListener("click", function () {
+        this.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  });
+</script>

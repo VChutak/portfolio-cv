@@ -1,0 +1,305 @@
+---
+import ProcessStepHeading from "./ProcessStepHeading.astro";
+
+type Props = {
+  sectionNumber?: string | number;
+  title: string;
+  description: string;
+  problemToggleLabel?: string;
+  solutionToggleLabel?: string;
+  problemTitle: string;
+  problemDescription: string;
+  solutionTitle: string;
+  solutionDescription: string;
+};
+
+const {
+  sectionNumber = "2",
+  title,
+  description,
+  problemToggleLabel = "Original Overlay",
+  solutionToggleLabel = "My Architecture",
+  problemTitle,
+  problemDescription,
+  solutionTitle,
+  solutionDescription,
+} = Astro.props;
+---
+
+<div class="max-w-7xl py-20 mx-auto px-6">
+  <ProcessStepHeading number={sectionNumber} title={title} description={description} />
+
+  <!-- Interactive Toggle Component -->
+  <div
+    class="architecture-toggle bg-[#243E64] rounded-2xl border border-white/5 p-4 md:p-10 shadow-lg"
+    data-problem-title={problemTitle}
+    data-problem-desc={problemDescription}
+    data-solution-title={solutionTitle}
+    data-solution-desc={solutionDescription}
+  >
+    <!-- Controls (The Toggle Switch) -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-10 gap-6"
+    >
+      <div>
+        <h4
+          id="architecture-title"
+          class="text-xl font-bold text-[--text] mb-2 transition-colors"
+        >
+          {problemTitle}
+        </h4>
+        <p
+          id="architecture-desc"
+          class="text-[--text-sub] max-w-lg text-sm md:text-base"
+        >
+          {problemDescription}
+        </p>
+      </div>
+
+      <!-- Toggle Buttons -->
+      <div
+        class="flex bg-slate-900/50 p-1 rounded-lg border border-white/10 shrink-0 w-full md:w-auto"
+      >
+        <button
+          data-toggle="problem"
+          class="arch-btn active relative flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-md text-xs md:text-sm font-semibold text-white bg-[#F68C24] shadow-md transition-all"
+        >
+          {problemToggleLabel}
+        </button>
+        <button
+          data-toggle="solution"
+          class="arch-btn relative flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-md text-xs md:text-sm font-semibold text-slate-400 hover:text-white transition-all"
+        >
+          {solutionToggleLabel}
+        </button>
+      </div>
+    </div>
+
+    <!-- Visualization Canvas -->
+    <div
+      class="relative w-full h-[300px] md:h-[450px] bg-slate-900/80 rounded-xl overflow-hidden border border-white/5"
+    >
+      <!-- STATE 1: THE PROBLEM (Diagonal Overlay) -->
+      <div
+        id="view-problem"
+        class="absolute inset-0 transition-opacity duration-500 opacity-100 flex items-center justify-center p-4 md:p-8"
+      >
+        <!-- Mock Video Feed (Full container) -->
+        <div
+          class="w-full h-full max-w-3xl bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center relative overflow-hidden"
+        >
+          <span
+            class="text-slate-500 font-mono text-sm md:text-lg tracking-widest opacity-50"
+            >VIDEO FEED</span
+          >
+
+          <!-- Mock Floating Overlay (Top Right) -->
+          <div
+            class="absolute top-4 right-4 md:top-8 md:right-8 w-24 h-24 md:w-48 md:h-48 bg-slate-900/90 border border-slate-600 rounded-lg shadow-2xl flex items-center justify-center backdrop-blur-md z-10"
+          >
+            <span
+              class="text-slate-400 font-mono text-[10px] md:text-sm text-center px-2"
+              >LVA OVERLAY</span
+            >
+          </div>
+
+          <!-- Diagonal Saccade Warning Line -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <line
+              x1="50%"
+              y1="50%"
+              x2="85%"
+              y2="15%"
+              stroke="rgba(239,68,68,0.4)"
+              stroke-width="2"
+              stroke-dasharray="6"></line>
+          </svg>
+
+          <!-- Warning Tag -->
+          <div
+            class="absolute top-1/2 left-[10%] md:left-1/4 -translate-y-1/2 bg-red-500/10 border border-red-500/30 text-red-400 px-3 py-1.5 md:px-4 md:py-2 rounded text-[10px] md:text-xs font-mono text-center z-10"
+          >
+            DIAGONAL FATIGUE
+          </div>
+
+          <!-- Eye Tracking Node -->
+          <div
+            class="eye-tracker-diagonal absolute w-3 h-3 md:w-4 md:h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.8)] z-20"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- STATE 2: THE SOLUTION (Horizontal Side-by-Side Locked) -->
+      <div
+        id="view-solution"
+        class="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex flex-row items-center justify-center p-4 md:p-8 gap-2 md:gap-8"
+      >
+        <!-- Mock Video Feed -->
+        <div
+          class="w-1/2 h-40 md:h-full md:max-h-[300px] bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center relative"
+        >
+          <span
+            class="text-slate-500 font-mono text-[10px] md:text-sm tracking-widest text-center px-1 md:px-2"
+            >VIDEO FEED</span
+          >
+          <!-- Eye Tracking Node -->
+          <div
+            class="eye-tracker-horizontal absolute w-3 h-3 md:w-4 md:h-4 bg-[#F68C24] rounded-full shadow-[0_0_15px_rgba(246,140,36,0.8)] z-20"
+          >
+          </div>
+        </div>
+
+        <!-- Saccade Success Divider Line -->
+        <div
+          class="w-px h-24 md:h-32 border-l-2 border-dashed border-[#F68C24]/50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0"
+        >
+        </div>
+
+        <div
+          class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 bg-[#F68C24]/10 border border-[#F68C24]/30 text-[#F68C24] px-3 py-1.5 md:px-4 md:py-2 rounded text-[10px] md:text-xs font-mono text-center whitespace-nowrap z-10"
+        >
+          CLEAN HORIZONTAL FIELD
+        </div>
+
+        <!-- Mock Data Feed -->
+        <div
+          class="w-1/2 h-40 md:h-full md:max-h-[300px] bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center relative"
+        >
+          <span
+            class="text-slate-500 font-mono text-[10px] md:text-sm tracking-widest text-center px-1 md:px-2"
+            >LVA DATA PANEL</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom CSS for the Eye-Tracking Animations -->
+<style>
+  /* Diagonal tracking from center face to top-right chart */
+  .eye-tracker-diagonal {
+    animation: scanDiagonal 3s ease-in-out infinite;
+  }
+  @keyframes scanDiagonal {
+    0%,
+    100% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    20%,
+    30% {
+      top: 15%;
+      left: 85%;
+      transform: translate(-50%, -50%);
+    } /* Jumps to top right overlay */
+    50%,
+    60% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } /* Jumps back to face */
+    80%,
+    90% {
+      top: 15%;
+      left: 85%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* Clean horizontal tracking locked for all screens */
+  .eye-tracker-horizontal {
+    animation: scanHorizontal 3s ease-in-out infinite;
+  }
+  @keyframes scanHorizontal {
+    0%,
+    100% {
+      right: 10%;
+      transform: translateY(0);
+    }
+    20%,
+    30% {
+      right: -110%;
+      transform: translateY(0);
+    } /* Glances right at data */
+    50%,
+    60% {
+      right: 10%;
+      transform: translateY(0);
+    } /* Glances back to video */
+    80%,
+    90% {
+      right: -110%;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<!-- Toggle Logic -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.querySelector(".architecture-toggle");
+    if (!root) return;
+
+    const btns = root.querySelectorAll(".arch-btn");
+    const viewProblem = document.getElementById("view-problem");
+    const viewSolution = document.getElementById("view-solution");
+    const title = document.getElementById("architecture-title");
+    const desc = document.getElementById("architecture-desc");
+
+    const contentMap = {
+      problem: {
+        title: root.dataset.problemTitle,
+        desc: root.dataset.problemDesc,
+        titleColor: "var(--text)",
+      },
+      solution: {
+        title: root.dataset.solutionTitle,
+        desc: root.dataset.solutionDesc,
+        titleColor: "#F68C24",
+      },
+    };
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const target = e.target.getAttribute("data-toggle");
+
+        // 1. Update Button Styles
+        btns.forEach((b) => {
+          b.classList.remove("bg-[#F68C24]", "text-white", "shadow-md");
+          b.classList.add("text-slate-400");
+          b.classList.remove("active");
+        });
+        e.target.classList.remove("text-slate-400");
+        e.target.classList.add(
+          "bg-[#F68C24]",
+          "text-white",
+          "shadow-md",
+          "active",
+        );
+
+        // 2. Update Text Context
+        title.innerText = contentMap[target].title;
+        title.style.color = contentMap[target].titleColor;
+        desc.innerText = contentMap[target].desc;
+
+        // 3. Swap Visuals
+        if (target === "problem") {
+          viewSolution.style.opacity = "0";
+          viewSolution.style.pointerEvents = "none";
+
+          viewProblem.style.opacity = "1";
+          viewProblem.style.pointerEvents = "auto";
+        } else {
+          viewProblem.style.opacity = "0";
+          viewProblem.style.pointerEvents = "none";
+
+          viewSolution.style.opacity = "1";
+          viewSolution.style.pointerEvents = "auto";
+        }
+      });
+    });
+  });
+</script>

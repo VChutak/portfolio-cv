@@ -1,0 +1,25 @@
+---
+type Props = {
+  number: string | number;
+  title: string;
+  description?: string;
+  className?: string;
+};
+const { number, title, description, className = "mb-12" } = Astro.props;
+---
+
+<div class={className}>
+  <div class="flex items-center gap-4 mb-4">
+    <div
+      class="w-10 h-10 flex items-center justify-center rounded-full bg-[#F68C24]/20 text-[#F68C24] font-bold text-lg"
+    >
+      {number}
+    </div>
+    <h3 class="text-2xl font-bold text-[--text]">{title}</h3>
+  </div>
+  {
+    description && (
+      <p class="text-[--text-sub] max-w-3xl leading-relaxed">{description}</p>
+    )
+  }
+</div>

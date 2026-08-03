@@ -15,9 +15,35 @@ import BeforeAfterSlider from "../../components/BeforeAfterSlider.astro";
 import FullHeightImage from "../../components/FullHeightImage.astro";
 import ContentWithEmbeds from "../../components/ContentWithEmbeds.astro";
 import SplitGallery from "../../components/SplitGallery.astro";
-import SplitGalleryLottie from "../../components/SplitGalleryLottie..astro";
+import SplitGalleryLottie from "../../components/nemesysco/SplitGalleryLottie..astro";
 import ImageLightbox from "../../components/ImageLightbox.astro";
-import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import InterfaceStateScroller from "../../components/nemesysco/InterfaceStateScroller.astro";
+import SpatialArchitectureToggle from "../../components/nemesysco/SpatialArchitectureToggle.astro";
+import EmotionTimelineList from "../../components/nemesysco/EmotionTimelineList.astro";
+import EmotionTimelineScrubberBar from "../../components/nemesysco/EmotionTimelineScrubberBar.astro";
+import type { TimelineEvent } from "../../components/timelineEvent";
+
+const emotionTimelineEvents: TimelineEvent[] = [
+  {
+    time: "0:11",
+    prefix: "Subject is quite ",
+    highlight: "EMOTIONAL",
+    suffix: " about this",
+    position: "35%",
+  },
+  {
+    time: "0:18",
+    prefix: "Subject seems to be mostly ",
+    highlight: "ENERGETIC",
+    position: "50%",
+  },
+  {
+    time: "0:29",
+    prefix: "Low levels of ",
+    highlight: "STRESS",
+    position: "79%",
+  },
+];
 ---
 
 <Layout
@@ -63,491 +89,35 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
   <Heading title="The Process" subtitle="" />
 
   <div class="max-w-7xl py-20 mx-auto px-6">
-    <div class="mb-16">
-      <div>
-        <h3 class="text-2xl font-bold text-[--text]">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-10 h-10 flex items-center justify-center rounded-full bg-[#F68C24]/20 text-[#F68C24] font-bold text-lg"
-            >
-              1
-            </div>
-            <h3 class="text-2xl font-bold text-[--text]">
-              Interface State Mapping (Time-Based UX)
-            </h3>
-          </div>
-        </h3>
-      </div>
-      <p class="text-[--text-sub] max-w-3xl leading-relaxed">
-        Managing user expectations before and during AI output by establishing
-        clear temporal states. I designed a clear visual progression to dictate
-        exactly what the user sees from standby to full synthesis.
-      </p>
-    </div>
+    <InterfaceStateScroller
+      sectionNumber="1"
+      title="Interface State Mapping (Time-Based UX)"
+      description="Managing user expectations before and during AI output by establishing clear temporal states. I designed a clear visual progression to dictate exactly what the user sees from standby to full synthesis."
+      visualBgColor="#243E64"
+      lottieSrc="../../projects/nemesysco/standby.json"
+      imageTwoSrc="../../projects/nemesysco/active.webp"
+      imageTwoAlt="Active State"
+      imageThreeSrc="../../projects/nemesysco/synthesis.webp"
+      imageThreeAlt="Synthesis State"
+      phaseOneTitle="Phase1: System Calibration"
+      phaseOneDescription={`Initially, the core emotional diamond is present but the data rays are silent. Because the AI requires time to calibrate a baseline emotional state, I introduced a continuous "swooping" micro-animation. This provides immediate, critical system feedback—reassuring the analyst that the application is actively processing the audio stream, rather than stalled or frozen, before the real-time data begins.`}
+      phaseTwoTitle="Phase 2: Active Analysis"
+      phaseTwoDescription='Once audio input is detected, the radar animates in real-time. To allow immediate value assessment without cluttering the interface with numbers, I enhanced the diamond graphic with subtle background gradations, making the 50% threshold line slightly thicker to serve as a quick-reference baseline. This keeps the layout "quiet" while focusing the user&apos;s attention entirely on the live geometry shifts.'
+      phaseThreeTitle="Phase 3: Macro-Level Synthesis"
+      phaseThreeDescription={`To summarize the subject's overarching mood, a "Current Emotional Style" indicator was integrated above the diamond. Because it updates infrequently—only changing when a macro state shifts—I minimized its visual weight to keep the primary focus on the active radar. Its display is delayed until a baseline is established, ensuring it tracks long-term trends rather than fleeting micro-expressions.`}
+    />
 
-    <div class="flex flex-col md:flex-row gap-12 relative items-start">
-      <div
-        class="w-full md:w-1/2 sticky top-24 bg-[#243E64] rounded-2xl overflow-hidden shadow-lg h-[250px] md:h-[380px] z-10 flex items-center justify-center"
-      >
-        <div
-          data-visual="1"
-          class="visual-frame absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center p-8 md:p-12"
-          style="opacity: 1; transform: scale(1);"
-        >
-          <div class="w-full flex flex-col justify-center md:p-30 p-6">
-            <LottieAnimation src="../../projects/nemesysco/standby.json" />
-          </div>
-        </div>
-
-        <div
-          data-visual="2"
-          class="visual-frame absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center p-8 md:p-12 pointer-events-none"
-          style="opacity: 0; transform: scale(0.95);"
-        >
-          <img
-            src="../../projects/nemesysco/active.webp"
-            alt="Active State"
-            class="max-w-full max-h-full object-contain drop-shadow-md"
-          />
-        </div>
-
-        <div
-          data-visual="3"
-          class="visual-frame absolute inset-0 transition-all duration-700 ease-in-out flex items-center justify-center p-8 md:p-12 pointer-events-none"
-          style="opacity: 0; transform: scale(0.95);"
-        >
-          <img
-            src="../../projects/nemesysco/synthesis.webp"
-            alt="Synthesis State"
-            class="max-w-full max-h-full object-contain drop-shadow-md"
-          />
-        </div>
-      </div>
-
-      <div class="w-full md:w-1/2 pt-8 md:pt-[10vh] pb-[20vh] md:pb-[30vh]">
-        <div
-          data-target="1"
-          class="scroll-step cursor-pointer transition-all duration-500 py-12 md:py-16 mb-12 md:mb-24 border-l-4 pl-8"
-          style="opacity: 1; border-color: #F68C24;"
-        >
-          <h4 class="text-2xl font-bold text-[--text] mb-4">
-            Phase1: System Calibration
-          </h4>
-          <p class="text-[--text-sub] leading-relaxed text-lg">
-            Initially, the core emotional diamond is present but the data rays
-            are silent. Because the AI requires time to calibrate a baseline
-            emotional state, I introduced a continuous "swooping"
-            micro-animation. This provides immediate, critical system
-            feedback—reassuring the analyst that the application is actively
-            processing the audio stream, rather than stalled or frozen, before
-            the real-time data begins.
-          </p>
-        </div>
-
-        <div
-          data-target="2"
-          class="scroll-step cursor-pointer transition-all duration-500 py-12 md:py-16 mb-12 md:mb-24 border-l-4 pl-8"
-          style="opacity: 0.3; border-color: transparent;"
-        >
-          <h4 class="text-2xl font-bold text-[--text] mb-4">
-            Phase 2: Active Analysis
-          </h4>
-          <p class="text-[--text-sub] leading-relaxed text-lg">
-            Once audio input is detected, the radar animates in real-time. To
-            allow immediate value assessment without cluttering the interface
-            with numbers, I enhanced the diamond graphic with subtle background
-            gradations, making the 50% threshold line slightly thicker to serve
-            as a quick-reference baseline. This keeps the layout "quiet" while
-            focusing the user's attention entirely on the live geometry shifts.
-          </p>
-        </div>
-
-        <div
-          data-target="3"
-          class="scroll-step cursor-pointer transition-all duration-500 py-12 md:py-16 border-l-4 pl-8"
-          style="opacity: 0.3; border-color: transparent;"
-        >
-          <h4 class="text-2xl font-bold text-[--text] mb-4">
-            Phase 3: Macro-Level Synthesis
-          </h4>
-          <p class="text-[--text-sub] leading-relaxed text-lg">
-            To summarize the subject’s overarching mood, a "Current Emotional
-            Style" indicator was integrated above the diamond. Because it
-            updates infrequently—only changing when a macro state shifts—I
-            minimized its visual weight to keep the primary focus on the active
-            radar. Its display is delayed until a baseline is established,
-            ensuring it tracks long-term trends rather than fleeting
-            micro-expressions.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const steps = document.querySelectorAll(".scroll-step");
-        const visuals = document.querySelectorAll(".visual-frame");
-
-        const activateStep = (targetIndex) => {
-          if (!targetIndex) return;
-
-          // 1. Update text styles
-          steps.forEach((step) => {
-            if (step.getAttribute("data-target") === targetIndex) {
-              step.style.opacity = "1";
-              step.style.borderColor = "#F68C24";
-            } else {
-              step.style.opacity = "0.3";
-              step.style.borderColor = "transparent";
-            }
-          });
-
-          // 2. Update image styles (Pure crossfade, no z-index popping)
-          visuals.forEach((visual) => {
-            if (visual.getAttribute("data-visual") === targetIndex) {
-              visual.style.opacity = "1";
-              visual.style.transform = "scale(1)";
-            } else {
-              visual.style.opacity = "0";
-              visual.style.transform = "scale(0.95)";
-            }
-          });
-        };
-
-        // Keep track of which elements are currently intersecting the view
-        const visibleTargets = new Set();
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const target = entry.target.getAttribute("data-target");
-
-              if (entry.isIntersecting) {
-                visibleTargets.add(target);
-              } else {
-                visibleTargets.delete(target);
-              }
-            });
-
-            // If multiple items are in view, always prioritize the one highest on the page (lowest number)
-            if (visibleTargets.size > 0) {
-              const activeTarget = Math.min(
-                ...Array.from(visibleTargets).map(Number),
-              ).toString();
-              activateStep(activeTarget);
-            }
-          },
-          {
-            // Creates a wide 40% trigger zone in the center of the screen
-            rootMargin: "-30% 0px -30% 0px",
-            threshold: 0,
-          },
-        );
-
-        steps.forEach((step) => observer.observe(step));
-
-        // Handle clicks
-        steps.forEach((step) => {
-          step.addEventListener("click", function () {
-            this.scrollIntoView({ behavior: "smooth", block: "center" });
-          });
-        });
-      });
-    </script>
-
-    <div class="max-w-7xl py-20 mx-auto px-6">
-      <!-- Section Intro -->
-      <div class="mb-12">
-        <div class="flex items-center gap-4 mb-4">
-          <div
-            class="w-10 h-10 flex items-center justify-center rounded-full bg-[#F68C24]/20 text-[#F68C24] font-bold text-lg"
-          >
-            2
-          </div>
-          <h3 class="text-2xl font-bold text-[--text]">
-            Spatial Architecture (The Split-Attention Problem)
-          </h3>
-        </div>
-        <p class="text-[--text-sub] max-w-3xl leading-relaxed">
-          The original system utilized a "Picture-in-Picture" overlay for the
-          LVA data. I analyzed the physical viewing habits of analysts and
-          discovered this layout caused severe cognitive fatigue. I mapped the
-          eye travel (saccades) to prove that a strict side-by-side layout was
-          mathematically required to prevent missed facial micro-expressions.
-        </p>
-      </div>
-
-      <!-- Interactive Toggle Component -->
-      <div
-        class="bg-[#243E64] rounded-2xl border border-white/5 p-4 md:p-10 shadow-lg"
-      >
-        <!-- Controls (The Toggle Switch) -->
-        <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-10 gap-6"
-        >
-          <div>
-            <h4
-              id="architecture-title"
-              class="text-xl font-bold text-[--text] mb-2 transition-colors"
-            >
-              The Problem: Floating Overlays
-            </h4>
-            <p
-              id="architecture-desc"
-              class="text-[--text-sub] max-w-lg text-sm md:text-base"
-            >
-              Forces complex diagonal eye travel and creates visual
-              interference. The moving video behind the chart creates a constant
-              figure-ground conflict for the brain.
-            </p>
-          </div>
-
-          <!-- Toggle Buttons -->
-          <div
-            class="flex bg-slate-900/50 p-1 rounded-lg border border-white/10 shrink-0 w-full md:w-auto"
-          >
-            <button
-              data-toggle="problem"
-              class="arch-btn active relative flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-md text-xs md:text-sm font-semibold text-white bg-[#F68C24] shadow-md transition-all"
-            >
-              Original Overlay
-            </button>
-            <button
-              data-toggle="solution"
-              class="arch-btn relative flex-1 md:flex-none px-4 md:px-6 py-2.5 rounded-md text-xs md:text-sm font-semibold text-slate-400 hover:text-white transition-all"
-            >
-              My Architecture
-            </button>
-          </div>
-        </div>
-
-        <!-- Visualization Canvas -->
-        <div
-          class="relative w-full h-[300px] md:h-[450px] bg-slate-900/80 rounded-xl overflow-hidden border border-white/5"
-        >
-          <!-- STATE 1: THE PROBLEM (Diagonal Overlay) -->
-          <div
-            id="view-problem"
-            class="absolute inset-0 transition-opacity duration-500 opacity-100 flex items-center justify-center p-4 md:p-8"
-          >
-            <!-- Mock Video Feed (Full container) -->
-            <div
-              class="w-full h-full max-w-3xl bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center relative overflow-hidden"
-            >
-              <span
-                class="text-slate-500 font-mono text-sm md:text-lg tracking-widest opacity-50"
-                >VIDEO FEED</span
-              >
-
-              <!-- Mock Floating Overlay (Top Right) -->
-              <div
-                class="absolute top-4 right-4 md:top-8 md:right-8 w-24 h-24 md:w-48 md:h-48 bg-slate-900/90 border border-slate-600 rounded-lg shadow-2xl flex items-center justify-center backdrop-blur-md z-10"
-              >
-                <span
-                  class="text-slate-400 font-mono text-[10px] md:text-sm text-center px-2"
-                  >LVA OVERLAY</span
-                >
-              </div>
-
-              <!-- Diagonal Saccade Warning Line -->
-              <svg
-                class="absolute inset-0 w-full h-full pointer-events-none z-0"
-              >
-                <line
-                  x1="50%"
-                  y1="50%"
-                  x2="85%"
-                  y2="15%"
-                  stroke="rgba(239,68,68,0.4)"
-                  stroke-width="2"
-                  stroke-dasharray="6"></line>
-              </svg>
-
-              <!-- Warning Tag -->
-              <div
-                class="absolute top-1/2 left-[10%] md:left-1/4 -translate-y-1/2 bg-red-500/10 border border-red-500/30 text-red-400 px-3 py-1.5 md:px-4 md:py-2 rounded text-[10px] md:text-xs font-mono text-center z-10"
-              >
-                DIAGONAL FATIGUE
-              </div>
-
-              <!-- Eye Tracking Node -->
-              <div
-                class="eye-tracker-diagonal absolute w-3 h-3 md:w-4 md:h-4 bg-red-500 rounded-full shadow-[0_0_15px_rgba(239,68,68,0.8)] z-20"
-              >
-              </div>
-            </div>
-          </div>
-
-          <!-- STATE 2: THE SOLUTION (Horizontal Side-by-Side Locked) -->
-          <div
-            id="view-solution"
-            class="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none flex flex-row items-center justify-center p-4 md:p-8 gap-2 md:gap-8"
-          >
-            <!-- Mock Video Feed -->
-            <div
-              class="w-1/2 h-40 md:h-full md:max-h-[300px] bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center relative"
-            >
-              <span
-                class="text-slate-500 font-mono text-[10px] md:text-sm tracking-widest text-center px-1 md:px-2"
-                >VIDEO FEED</span
-              >
-              <!-- Eye Tracking Node -->
-              <div
-                class="eye-tracker-horizontal absolute w-3 h-3 md:w-4 md:h-4 bg-[#F68C24] rounded-full shadow-[0_0_15px_rgba(246,140,36,0.8)] z-20"
-              >
-              </div>
-            </div>
-
-            <!-- Saccade Success Divider Line -->
-            <div
-              class="w-px h-24 md:h-32 border-l-2 border-dashed border-[#F68C24]/50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-0"
-            >
-            </div>
-
-            <div
-              class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 bg-[#F68C24]/10 border border-[#F68C24]/30 text-[#F68C24] px-3 py-1.5 md:px-4 md:py-2 rounded text-[10px] md:text-xs font-mono text-center whitespace-nowrap z-10"
-            >
-              CLEAN HORIZONTAL FIELD
-            </div>
-
-            <!-- Mock Data Feed -->
-            <div
-              class="w-1/2 h-40 md:h-full md:max-h-[300px] bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center relative"
-            >
-              <span
-                class="text-slate-500 font-mono text-[10px] md:text-sm tracking-widest text-center px-1 md:px-2"
-                >LVA DATA PANEL</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Custom CSS for the Eye-Tracking Animations -->
-    <style>
-      /* Diagonal tracking from center face to top-right chart */
-      .eye-tracker-diagonal {
-        animation: scanDiagonal 3s ease-in-out infinite;
-      }
-      @keyframes scanDiagonal {
-        0%,
-        100% {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-        20%,
-        30% {
-          top: 15%;
-          left: 85%;
-          transform: translate(-50%, -50%);
-        } /* Jumps to top right overlay */
-        50%,
-        60% {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        } /* Jumps back to face */
-        80%,
-        90% {
-          top: 15%;
-          left: 85%;
-          transform: translate(-50%, -50%);
-        }
-      }
-
-      /* Clean horizontal tracking locked for all screens */
-      .eye-tracker-horizontal {
-        animation: scanHorizontal 3s ease-in-out infinite;
-      }
-      @keyframes scanHorizontal {
-        0%,
-        100% {
-          right: 10%;
-          transform: translateY(0);
-        }
-        20%,
-        30% {
-          right: -110%;
-          transform: translateY(0);
-        } /* Glances right at data */
-        50%,
-        60% {
-          right: 10%;
-          transform: translateY(0);
-        } /* Glances back to video */
-        80%,
-        90% {
-          right: -110%;
-          transform: translateY(0);
-        }
-      }
-    </style>
-
-    <!-- Toggle Logic -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btns = document.querySelectorAll(".arch-btn");
-        const viewProblem = document.getElementById("view-problem");
-        const viewSolution = document.getElementById("view-solution");
-        const title = document.getElementById("architecture-title");
-        const desc = document.getElementById("architecture-desc");
-
-        const contentMap = {
-          problem: {
-            title: "The Problem: Floating Overlays",
-            desc: "Forces complex diagonal eye travel and creates visual interference. The moving video behind the chart creates a constant figure-ground conflict for the brain.",
-            titleColor: "var(--text)",
-          },
-          solution: {
-            title: "The Solution: Horizontal Sync",
-            desc: "By extracting the data and locking it perfectly adjacent to the video, both streams remain within a clean horizontal foveal field. Visual occlusion is eliminated.",
-            titleColor: "#F68C24",
-          },
-        };
-
-        btns.forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            const target = e.target.getAttribute("data-toggle");
-
-            // 1. Update Button Styles
-            btns.forEach((b) => {
-              b.classList.remove("bg-[#F68C24]", "text-white", "shadow-md");
-              b.classList.add("text-slate-400");
-              b.classList.remove("active");
-            });
-            e.target.classList.remove("text-slate-400");
-            e.target.classList.add(
-              "bg-[#F68C24]",
-              "text-white",
-              "shadow-md",
-              "active",
-            );
-
-            // 2. Update Text Context
-            title.innerText = contentMap[target].title;
-            title.style.color = contentMap[target].titleColor;
-            desc.innerText = contentMap[target].desc;
-
-            // 3. Swap Visuals
-            if (target === "problem") {
-              viewSolution.style.opacity = "0";
-              viewSolution.style.pointerEvents = "none";
-
-              viewProblem.style.opacity = "1";
-              viewProblem.style.pointerEvents = "auto";
-            } else {
-              viewProblem.style.opacity = "0";
-              viewProblem.style.pointerEvents = "none";
-
-              viewSolution.style.opacity = "1";
-              viewSolution.style.pointerEvents = "auto";
-            }
-          });
-        });
-      });
-    </script>
+    <SpatialArchitectureToggle
+      sectionNumber="2"
+      title="Spatial Architecture (The Split-Attention Problem)"
+      description={`The original system utilized a "Picture-in-Picture" overlay for the LVA data. I analyzed the physical viewing habits of analysts and discovered this layout caused severe cognitive fatigue. I mapped the eye travel (saccades) to prove that a strict side-by-side layout was mathematically required to prevent missed facial micro-expressions.`}
+      problemToggleLabel="Original Overlay"
+      solutionToggleLabel="My Architecture"
+      problemTitle="The Problem: Floating Overlays"
+      problemDescription="Forces complex diagonal eye travel and creates visual interference. The moving video behind the chart creates a constant figure-ground conflict for the brain."
+      solutionTitle="The Solution: Horizontal Sync"
+      solutionDescription="By extracting the data and locking it perfectly adjacent to the video, both streams remain within a clean horizontal foveal field. Visual occlusion is eliminated."
+    />
 
     <Heading3
       isContentFirst={true}
@@ -608,220 +178,17 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
       subtitle="Because deep-tech analysis requires heavy retrospective review, I designed an intelligent playback timeline. Whenever the system detected a significant shift in the subject's mood, the UI automatically plotted an interactive visual marker directly onto the video scrubber. This allowed users to instantly navigate the subject's emotional journey and jump directly to key milestones, rather than manually scrubbing through hours of raw footage."
     >
       <div slot="media-slot" class="w-full col-span-6">
-        <div
-          class="flex flex-col w-full max-w-[800px] mx-auto mt-12 gap-6 font-sans"
-        >
-          <div
-            class="bg-[#01112B] rounded-lg overflow-y-auto max-h-[220px] flex flex-col custom-scrollbar shadow-xl md:min-h-[300px] min-h-[350px]"
-          >
-            <button
-              id="list-item-1"
-              popovertarget="popover-1"
-              class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
-            >
-              <div class="h-7 w-2 bg-[#f68c24]"></div>
-              <div class="font-bold text-white text-lg w-12 text-left">
-                0:11
-              </div>
-              <div class="text-slate-300 text-left text-[17px]">
-                Subject is quite <strong class="font-bold text-white"
-                  >EMOTIONAL</strong
-                > about this
-              </div>
-            </button>
-
-            <button
-              id="list-item-2"
-              popovertarget="popover-2"
-              class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
-            >
-              <div class="h-7 w-2 bg-[#f68c24]"></div>
-              <div class="font-bold text-white text-lg w-12 text-left">
-                0:18
-              </div>
-              <div class="text-slate-300 text-left text-[17px]">
-                Subject seems to be mostly <strong class="font-bold text-white"
-                  >ENERGETIC</strong
-                >
-              </div>
-            </button>
-
-            <button
-              id="list-item-3"
-              popovertarget="popover-3"
-              class="flex items-center gap-6 w-full px-6 py-4 hover:bg-[#152033] transition-all border-l-4 border-transparent cursor-pointer"
-            >
-              <div class="h-7 w-2 bg-[#f68c24]"></div>
-              <div class="font-bold text-white text-lg w-12 text-left">
-                0:29
-              </div>
-              <div class="text-slate-300 text-left text-[17px]">
-                Low levels of <strong class="font-bold text-white"
-                  >STRESS</strong
-                >
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <div
-          id="popover-1"
-          popover
-          class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
-        >
-          <span
-            >0:11 | Subject is quite <strong>EMOTIONAL</strong> about this</span
-          >
-        </div>
-
-        <div
-          id="popover-2"
-          popover
-          class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
-        >
-          <span
-            >0:18 | Subject seems to be mostly <strong>ENERGETIC</strong></span
-          >
-        </div>
-
-        <div
-          id="popover-3"
-          popover
-          class="fixed m-0 overflow-visible bg-white text-[#0b1527] border-none px-4 py-2.5 rounded shadow-lg text-[15px] backdrop:bg-transparent after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-solid after:border-t-white after:border-x-transparent after:border-b-transparent"
-        >
-          <span>0:29 | Low levels of <strong>STRESS</strong></span>
-        </div>
+        <EmotionTimelineList
+          events={emotionTimelineEvents}
+          defaultOpenIndex={2}
+        />
       </div>
 
-      <div slot="footer-slot" class="w-full max-w-7xl px-4 pb-20">
-        <div
-          class="bg-[#01112B] flex items-center pl-8 py-6 gap-4 w-full box-border rounded-xl shadow-xl"
-        >
-          <button
-            class="bg-white text-[#0b1527] border-none rounded-full w-9 h-9 flex items-center justify-center cursor-pointer shrink-0 hover:scale-105 transition-transform"
-            aria-label="Play"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-              <path d="M8 5v14l11-7z"></path>
-            </svg>
-          </button>
-
-          <div
-            class="relative grow h-2.5 flex items-center timeline-track-container"
-          >
-            <div class="absolute w-full h-full bg-[#8a93a0]"></div>
-            <div class="absolute h-full bg-white z-[1]" style="width: 95%;">
-            </div>
-
-            <button
-              id="btn-1"
-              popovertarget="popover-1"
-              class="absolute h-3.5 w-1.5 bg-[#f68c24] border-none p-0 cursor-pointer z-[2] transition-all duration-200 hover:scale-y-125 origin-center after:content-[''] after:absolute after:-inset-4"
-              style="left: 35%;"></button>
-            <button
-              id="btn-2"
-              popovertarget="popover-2"
-              class="absolute h-3.5 w-1.5 bg-[#f68c24] border-none p-0 cursor-pointer z-[2] transition-all duration-200 hover:scale-y-125 origin-center after:content-[''] after:absolute after:-inset-4"
-              style="left: 50%;"></button>
-            <button
-              id="btn-3"
-              popovertarget="popover-3"
-              class="absolute h-3.5 w-1.5 bg-[#f68c24] border-none p-0 cursor-pointer z-[2] transition-all duration-200 hover:scale-y-125 origin-center after:content-[''] after:absolute after:-inset-4"
-              style="left: 79%;"></button>
-          </div>
-        </div>
-      </div>
-
-      <style is:global>
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: #01112b;
-          border-radius: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #1a2639;
-          border-radius: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #2a3a52;
-        }
-      </style>
-
-      <script>
-        function setupPopovers() {
-          document.querySelectorAll("[popover]").forEach((popover) => {
-            popover.addEventListener("toggle", (e) => {
-              const idNumber = popover.id.replace("popover-", "");
-              const timelineMarker = document.getElementById(`btn-${idNumber}`);
-              const listItem = document.getElementById(`list-item-${idNumber}`);
-
-              if (e.newState === "open") {
-                // Position over timeline marker & highlight marker
-                if (timelineMarker) {
-                  const markerRect = timelineMarker.getBoundingClientRect();
-                  const popoverRect = popover.getBoundingClientRect();
-
-                  const top = markerRect.top - popoverRect.height - 12;
-                  const left =
-                    markerRect.left +
-                    markerRect.width / 2 -
-                    popoverRect.width / 2;
-
-                  const el = popover as HTMLElement;
-                  el.style.top = `${top}px`;
-                  el.style.left = `${left}px`;
-
-                  timelineMarker.classList.add("scale-y-[2]", "bg-white");
-                }
-
-                // Highlight list item
-                if (listItem) {
-                  listItem.classList.add("bg-[#152033]");
-                }
-              } else {
-                // Remove highlights when the popover closes
-                if (timelineMarker) {
-                  timelineMarker.classList.remove("scale-y-[2]", "bg-white");
-                }
-                if (listItem) {
-                  listItem.classList.remove(
-                    "bg-[#152033]",
-                    "border-l-[#f68c24]",
-                  );
-                }
-              }
-            });
-          });
-
-          // Force middle popover open on load
-          const defaultPopover = document.getElementById("popover-2");
-          if (defaultPopover) {
-            defaultPopover.showPopover();
-          }
-        }
-
-        // Hide popovers on scroll
-        function hidePopoversOnScroll() {
-          document.querySelectorAll("[popover]").forEach((popover) => {
-            if (popover.matches(":popover-open")) {
-              popover.hidePopover();
-            }
-          });
-        }
-
-        window.addEventListener("scroll", hidePopoversOnScroll, {
-          capture: true,
-          passive: true,
-        });
-
-        // Run on load
-        setupPopovers();
-
-        // Re-run if Astro uses View Transitions
-        document.addEventListener("astro:page-load", setupPopovers);
-      </script>
+      <EmotionTimelineScrubberBar
+        slot="footer-slot"
+        events={emotionTimelineEvents}
+        progress="95%"
+      />
     </Heading3>
 
     <FullWidthVideo
